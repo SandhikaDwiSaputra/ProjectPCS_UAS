@@ -12,8 +12,8 @@ namespace TransData
         public static SqlConnection GetConnection()
         {
             string connectionString =
-                "Data Source=localhost\\SqlExpress;Initial Catalog=Project UAS;" +
-                "Integrated Security=True";
+                "Data Source =localhost\\SQLExpress; Initial Catalog = Project_UAS; " +
+                "User ID = sa; Password = 28Desember";
             SqlConnection connection = new SqlConnection(connectionString);
             return connection;
         }

@@ -1,7 +1,7 @@
 ﻿
 namespace ProjectPCSuas
 {
-    partial class Form4
+    partial class MasterPelanggan
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace ProjectPCSuas
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form4));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MasterPelanggan));
             System.Windows.Forms.Label iDLabel;
             System.Windows.Forms.Label nAMALabel;
             System.Windows.Forms.Label aLAMATLabel;

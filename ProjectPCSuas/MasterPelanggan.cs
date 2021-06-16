@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProjectPCSuas
 {
-    public partial class Form4 : Form
+    public partial class MasterPelanggan : Form
     {
-        public Form4()
+        public MasterPelanggan()
         {
             InitializeComponent();
         }

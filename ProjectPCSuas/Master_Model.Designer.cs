@@ -1,7 +1,7 @@
 ﻿
 namespace ProjectPCSuas
 {
-    partial class Form2
+    partial class MasterModel
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@ namespace ProjectPCSuas
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label mODEL_IDLabel;
             System.Windows.Forms.Label dESCRIPTIONLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MasterModel));
             this.uASDataSet2 = new ProjectPCSuas.UASDataSet2();
             this.m_modelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.m_modelTableAdapter = new ProjectPCSuas.UASDataSet2TableAdapters.m_modelTableAdapter();
@@ -65,18 +65,20 @@ namespace ProjectPCSuas
             // mODEL_IDLabel
             // 
             mODEL_IDLabel.AutoSize = true;
-            mODEL_IDLabel.Location = new System.Drawing.Point(197, 152);
+            mODEL_IDLabel.Location = new System.Drawing.Point(148, 124);
+            mODEL_IDLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             mODEL_IDLabel.Name = "mODEL_IDLabel";
-            mODEL_IDLabel.Size = new System.Drawing.Size(78, 17);
+            mODEL_IDLabel.Size = new System.Drawing.Size(62, 13);
             mODEL_IDLabel.TabIndex = 1;
             mODEL_IDLabel.Text = "MODEL ID:";
             // 
             // dESCRIPTIONLabel
             // 
             dESCRIPTIONLabel.AutoSize = true;
-            dESCRIPTIONLabel.Location = new System.Drawing.Point(197, 180);
+            dESCRIPTIONLabel.Location = new System.Drawing.Point(148, 146);
+            dESCRIPTIONLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             dESCRIPTIONLabel.Name = "dESCRIPTIONLabel";
-            dESCRIPTIONLabel.Size = new System.Drawing.Size(104, 17);
+            dESCRIPTIONLabel.Size = new System.Drawing.Size(83, 13);
             dESCRIPTIONLabel.TabIndex = 3;
             dESCRIPTIONLabel.Text = "DESCRIPTION:";
             // 
@@ -148,7 +150,7 @@ namespace ProjectPCSuas
             this.m_modelBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.m_modelBindingNavigator.Name = "m_modelBindingNavigator";
             this.m_modelBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.m_modelBindingNavigator.Size = new System.Drawing.Size(766, 27);
+            this.m_modelBindingNavigator.Size = new System.Drawing.Size(574, 27);
             this.m_modelBindingNavigator.TabIndex = 0;
             this.m_modelBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -158,13 +160,13 @@ namespace ProjectPCSuas
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 24);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -174,7 +176,7 @@ namespace ProjectPCSuas
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
@@ -183,7 +185,7 @@ namespace ProjectPCSuas
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem
@@ -192,7 +194,7 @@ namespace ProjectPCSuas
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
@@ -206,7 +208,7 @@ namespace ProjectPCSuas
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(38, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
@@ -221,7 +223,7 @@ namespace ProjectPCSuas
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -230,7 +232,7 @@ namespace ProjectPCSuas
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
@@ -243,32 +245,33 @@ namespace ProjectPCSuas
             this.m_modelBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.m_modelBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("m_modelBindingNavigatorSaveItem.Image")));
             this.m_modelBindingNavigatorSaveItem.Name = "m_modelBindingNavigatorSaveItem";
-            this.m_modelBindingNavigatorSaveItem.Size = new System.Drawing.Size(29, 24);
+            this.m_modelBindingNavigatorSaveItem.Size = new System.Drawing.Size(24, 24);
             this.m_modelBindingNavigatorSaveItem.Text = "Save Data";
             this.m_modelBindingNavigatorSaveItem.Click += new System.EventHandler(this.m_modelBindingNavigatorSaveItem_Click);
             // 
             // mODEL_IDTextBox
             // 
             this.mODEL_IDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.m_modelBindingSource, "MODEL_ID", true));
-            this.mODEL_IDTextBox.Location = new System.Drawing.Point(307, 149);
+            this.mODEL_IDTextBox.Location = new System.Drawing.Point(230, 121);
+            this.mODEL_IDTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.mODEL_IDTextBox.Name = "mODEL_IDTextBox";
-            this.mODEL_IDTextBox.Size = new System.Drawing.Size(100, 22);
+            this.mODEL_IDTextBox.Size = new System.Drawing.Size(76, 20);
             this.mODEL_IDTextBox.TabIndex = 2;
             // 
             // dESCRIPTIONTextBox
             // 
             this.dESCRIPTIONTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.m_modelBindingSource, "DESCRIPTION", true));
-            this.dESCRIPTIONTextBox.Location = new System.Drawing.Point(307, 177);
+            this.dESCRIPTIONTextBox.Location = new System.Drawing.Point(230, 144);
+            this.dESCRIPTIONTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dESCRIPTIONTextBox.Name = "dESCRIPTIONTextBox";
-            this.dESCRIPTIONTextBox.Size = new System.Drawing.Size(100, 22);
+            this.dESCRIPTIONTextBox.Size = new System.Drawing.Size(76, 20);
             this.dESCRIPTIONTextBox.TabIndex = 4;
             // 
             // BrowseBTN
             // 
-            this.BrowseBTN.Location = new System.Drawing.Point(543, 61);
-            this.BrowseBTN.Margin = new System.Windows.Forms.Padding(4);
+            this.BrowseBTN.Location = new System.Drawing.Point(407, 50);
             this.BrowseBTN.Name = "BrowseBTN";
-            this.BrowseBTN.Size = new System.Drawing.Size(100, 28);
+            this.BrowseBTN.Size = new System.Drawing.Size(75, 23);
             this.BrowseBTN.TabIndex = 30;
             this.BrowseBTN.Text = "Browse";
             this.BrowseBTN.UseVisualStyleBackColor = true;
@@ -277,18 +280,17 @@ namespace ProjectPCSuas
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(194, 55);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(146, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(288, 36);
+            this.label1.Size = new System.Drawing.Size(236, 29);
             this.label1.TabIndex = 29;
             this.label1.Text = "Input Master Model";
             // 
-            // Form2
+            // MasterModel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(766, 275);
+            this.ClientSize = new System.Drawing.Size(574, 223);
             this.Controls.Add(this.BrowseBTN);
             this.Controls.Add(this.label1);
             this.Controls.Add(mODEL_IDLabel);
@@ -296,7 +298,8 @@ namespace ProjectPCSuas
             this.Controls.Add(dESCRIPTIONLabel);
             this.Controls.Add(this.dESCRIPTIONTextBox);
             this.Controls.Add(this.m_modelBindingNavigator);
-            this.Name = "Form2";
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name = "MasterModel";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.uASDataSet2)).EndInit();

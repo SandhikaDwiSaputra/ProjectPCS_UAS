@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProjectPCSuas
 {
-    public partial class Form3 : Form
+    public partial class MasterSuplier : Form
     {
-        public Form3()
+        public MasterSuplier()
         {
             InitializeComponent();
         }

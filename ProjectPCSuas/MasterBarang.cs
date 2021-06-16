@@ -8,13 +8,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using TransData;
 
 namespace ProjectPCSuas
 {
-    public partial class Form1 : Form
+    public partial class MasterBarang : Form
     {
-        public Form1()
+        public MasterBarang()
         {
             InitializeComponent();
         }

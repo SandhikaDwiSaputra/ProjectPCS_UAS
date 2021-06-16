@@ -1,7 +1,7 @@
 ﻿
 namespace ProjectPCSuas
 {
-    partial class Form1
+    partial class MasterBarang
     {
         /// <summary>
         /// Required designer variable.
@@ -43,7 +43,7 @@ namespace ProjectPCSuas
             System.Windows.Forms.Label mERK2Label;
             System.Windows.Forms.Label mERK3Label;
             System.Windows.Forms.Label kETERANGANLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MasterBarang));
             this.uASDataSet2 = new ProjectPCSuas.UASDataSet2();
             this.m_barangBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.m_barangTableAdapter = new ProjectPCSuas.UASDataSet2TableAdapters.m_barangTableAdapter();

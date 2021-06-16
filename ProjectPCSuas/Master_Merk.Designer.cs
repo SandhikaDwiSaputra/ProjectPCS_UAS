@@ -260,6 +260,7 @@ namespace ProjectPCSuas
             this.mERK_DESCTextBox.Name = "mERK_DESCTextBox";
             this.mERK_DESCTextBox.Size = new System.Drawing.Size(100, 22);
             this.mERK_DESCTextBox.TabIndex = 6;
+            this.mERK_DESCTextBox.TextChanged += new System.EventHandler(this.mERK_DESCTextBox_TextChanged);
             // 
             // label1
             // 

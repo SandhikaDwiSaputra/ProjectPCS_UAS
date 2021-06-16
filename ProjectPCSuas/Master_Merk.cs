@@ -31,5 +31,10 @@ namespace ProjectPCSuas
             this.m_merkTableAdapter.Fill(this.uASDataSet2.m_merk);
 
         }
+        
+        private void mERK_DESCTextBox_TextChanged(object sender, EventArgs e)
+        {
+            mERK_DESCTextBox.CharacterCasing = CharacterCasing.Upper;
+        }
     }
 }

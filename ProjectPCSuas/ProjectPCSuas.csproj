@@ -85,6 +85,11 @@
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="Project_UASDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Project_UASDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UASDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -118,6 +123,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Project_UASDataSet.xsc">
+      <DependentUpon>Project_UASDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Project_UASDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Project_UASDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Project_UASDataSet.xss">
+      <DependentUpon>Project_UASDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\DataSources\TransData.TransDB.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

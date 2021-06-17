@@ -33,10 +33,11 @@ namespace ProjectPCSuas
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Master_Merk));
             System.Windows.Forms.Label iDLabel;
             System.Windows.Forms.Label mERK_DESCLabel;
-            this.uASDataSet2 = new ProjectPCSuas.UASDataSet2();
+            this.label1 = new System.Windows.Forms.Label();
+            this.project_UASDataSet = new ProjectPCSuas.Project_UASDataSet();
             this.m_merkBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.m_merkTableAdapter = new ProjectPCSuas.UASDataSet2TableAdapters.m_merkTableAdapter();
-            this.tableAdapterManager = new ProjectPCSuas.UASDataSet2TableAdapters.TableAdapterManager();
+            this.m_merkTableAdapter = new ProjectPCSuas.Project_UASDataSetTableAdapters.m_merkTableAdapter();
+            this.tableAdapterManager = new ProjectPCSuas.Project_UASDataSetTableAdapters.TableAdapterManager();
             this.m_merkBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -52,24 +53,34 @@ namespace ProjectPCSuas
             this.m_merkBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.iDTextBox = new System.Windows.Forms.TextBox();
             this.mERK_DESCTextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             iDLabel = new System.Windows.Forms.Label();
             mERK_DESCLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.uASDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.project_UASDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_merkBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_merkBindingNavigator)).BeginInit();
             this.m_merkBindingNavigator.SuspendLayout();
             this.SuspendLayout();
             // 
-            // uASDataSet2
+            // label1
             // 
-            this.uASDataSet2.DataSetName = "UASDataSet2";
-            this.uASDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(240, 80);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(271, 36);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Input Master Merk";
+            // 
+            // project_UASDataSet
+            // 
+            this.project_UASDataSet.DataSetName = "Project_UASDataSet";
+            this.project_UASDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // m_merkBindingSource
             // 
             this.m_merkBindingSource.DataMember = "m_merk";
-            this.m_merkBindingSource.DataSource = this.uASDataSet2;
+            this.m_merkBindingSource.DataSource = this.project_UASDataSet;
             // 
             // m_merkTableAdapter
             // 
@@ -100,7 +111,7 @@ namespace ProjectPCSuas
             this.tableAdapterManager.t_pembelian_headerTableAdapter = null;
             this.tableAdapterManager.t_penawaran_detailTableAdapter = null;
             this.tableAdapterManager.t_penawaran_headerTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = ProjectPCSuas.UASDataSet2TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = ProjectPCSuas.Project_UASDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // m_merkBindingNavigator
             // 
@@ -130,7 +141,7 @@ namespace ProjectPCSuas
             this.m_merkBindingNavigator.Name = "m_merkBindingNavigator";
             this.m_merkBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
             this.m_merkBindingNavigator.Size = new System.Drawing.Size(754, 27);
-            this.m_merkBindingNavigator.TabIndex = 0;
+            this.m_merkBindingNavigator.TabIndex = 31;
             this.m_merkBindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorMoveFirstItem
@@ -225,69 +236,57 @@ namespace ProjectPCSuas
             this.m_merkBindingNavigatorSaveItem.Name = "m_merkBindingNavigatorSaveItem";
             this.m_merkBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
             this.m_merkBindingNavigatorSaveItem.Text = "Save Data";
-            this.m_merkBindingNavigatorSaveItem.Click += new System.EventHandler(this.m_merkBindingNavigatorSaveItem_Click);
+            this.m_merkBindingNavigatorSaveItem.Click += new System.EventHandler(this.m_merkBindingNavigatorSaveItem_Click_1);
             // 
             // iDLabel
             // 
             iDLabel.AutoSize = true;
-            iDLabel.Location = new System.Drawing.Point(276, 155);
+            iDLabel.Location = new System.Drawing.Point(272, 133);
             iDLabel.Name = "iDLabel";
             iDLabel.Size = new System.Drawing.Size(25, 17);
-            iDLabel.TabIndex = 1;
+            iDLabel.TabIndex = 31;
             iDLabel.Text = "ID:";
             // 
             // iDTextBox
             // 
             this.iDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.m_merkBindingSource, "ID", true));
-            this.iDTextBox.Location = new System.Drawing.Point(376, 152);
+            this.iDTextBox.Location = new System.Drawing.Point(370, 130);
             this.iDTextBox.Name = "iDTextBox";
             this.iDTextBox.Size = new System.Drawing.Size(100, 22);
-            this.iDTextBox.TabIndex = 2;
+            this.iDTextBox.TabIndex = 32;
             // 
             // mERK_DESCLabel
             // 
             mERK_DESCLabel.AutoSize = true;
-            mERK_DESCLabel.Location = new System.Drawing.Point(276, 211);
+            mERK_DESCLabel.Location = new System.Drawing.Point(272, 161);
             mERK_DESCLabel.Name = "mERK_DESCLabel";
             mERK_DESCLabel.Size = new System.Drawing.Size(92, 17);
-            mERK_DESCLabel.TabIndex = 5;
+            mERK_DESCLabel.TabIndex = 33;
             mERK_DESCLabel.Text = "MERK DESC:";
             // 
             // mERK_DESCTextBox
             // 
             this.mERK_DESCTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.m_merkBindingSource, "MERK_DESC", true));
-            this.mERK_DESCTextBox.Location = new System.Drawing.Point(376, 208);
+            this.mERK_DESCTextBox.Location = new System.Drawing.Point(370, 158);
             this.mERK_DESCTextBox.Name = "mERK_DESCTextBox";
             this.mERK_DESCTextBox.Size = new System.Drawing.Size(100, 22);
-            this.mERK_DESCTextBox.TabIndex = 6;
-            this.mERK_DESCTextBox.TextChanged += new System.EventHandler(this.mERK_DESCTextBox_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(240, 80);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(271, 36);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "Input Master Merk";
+            this.mERK_DESCTextBox.TabIndex = 34;
             // 
             // Master_Merk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(754, 297);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(754, 301);
             this.Controls.Add(iDLabel);
             this.Controls.Add(this.iDTextBox);
             this.Controls.Add(mERK_DESCLabel);
             this.Controls.Add(this.mERK_DESCTextBox);
             this.Controls.Add(this.m_merkBindingNavigator);
+            this.Controls.Add(this.label1);
             this.Name = "Master_Merk";
             this.Text = "Master_Merk";
             this.Load += new System.EventHandler(this.Master_Merk_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.uASDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.project_UASDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_merkBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_merkBindingNavigator)).EndInit();
             this.m_merkBindingNavigator.ResumeLayout(false);
@@ -298,11 +297,11 @@ namespace ProjectPCSuas
         }
 
         #endregion
-
-        private UASDataSet2 uASDataSet2;
+        private System.Windows.Forms.Label label1;
+        private Project_UASDataSet project_UASDataSet;
         private System.Windows.Forms.BindingSource m_merkBindingSource;
-        private UASDataSet2TableAdapters.m_merkTableAdapter m_merkTableAdapter;
-        private UASDataSet2TableAdapters.TableAdapterManager tableAdapterManager;
+        private Project_UASDataSetTableAdapters.m_merkTableAdapter m_merkTableAdapter;
+        private Project_UASDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingNavigator m_merkBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
@@ -318,6 +317,5 @@ namespace ProjectPCSuas
         private System.Windows.Forms.ToolStripButton m_merkBindingNavigatorSaveItem;
         private System.Windows.Forms.TextBox iDTextBox;
         private System.Windows.Forms.TextBox mERK_DESCTextBox;
-        private System.Windows.Forms.Label label1;
     }
 }

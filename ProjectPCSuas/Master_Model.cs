@@ -31,5 +31,11 @@ namespace ProjectPCSuas
             this.m_modelTableAdapter.Fill(this.uASDataSet2.m_model);
 
         }
+
+        private void BrowseBTN_Click(object sender, EventArgs e)
+        {
+            BrowseModel BB = new BrowseModel();
+            BB.Show();
+        }
     }
 }

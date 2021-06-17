@@ -47,5 +47,11 @@ namespace ProjectPCSuas
             this.tableAdapterManager.UpdateAll(this.project_UASDataSet);
 
         }
+
+        private void BrowseBTN_Click(object sender, EventArgs e)
+        {
+            BrowseMerk BB = new BrowseMerk();
+            BB.Show();
+        }
     }
 }

@@ -41,5 +41,11 @@ namespace ProjectPCSuas
         {
 
         }
+
+        private void BrowseBTN_Click(object sender, EventArgs e)
+        {
+            BrowsePelanggan BB = new BrowsePelanggan();
+            BB.Show();
+        }
     }
 }

@@ -48,6 +48,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BrowseBarang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BrowseBarang.Designer.cs">
+      <DependentUpon>BrowseBarang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BrowseMerk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BrowseMerk.Designer.cs">
+      <DependentUpon>BrowseMerk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BrowseModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BrowseModel.Designer.cs">
+      <DependentUpon>BrowseModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BrowsePelanggan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BrowsePelanggan.Designer.cs">
+      <DependentUpon>BrowsePelanggan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BrowseSuplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BrowseSuplier.Designer.cs">
+      <DependentUpon>BrowseSuplier.cs</DependentUpon>
+    </Compile>
     <Compile Include="MasterBarang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +126,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UASDataSet2.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BrowseBarang.resx">
+      <DependentUpon>BrowseBarang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BrowseMerk.resx">
+      <DependentUpon>BrowseMerk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BrowseModel.resx">
+      <DependentUpon>BrowseModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BrowsePelanggan.resx">
+      <DependentUpon>BrowsePelanggan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BrowseSuplier.resx">
+      <DependentUpon>BrowseSuplier.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MasterBarang.resx">
       <DependentUpon>MasterBarang.cs</DependentUpon>
     </EmbeddedResource>

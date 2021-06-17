@@ -28,6 +28,10 @@ namespace ProjectPCSuas
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'project_UASDataSet1.m_merk' table. You can move, or remove it, as needed.
+            this.m_merkTableAdapter.Fill(this.project_UASDataSet1.m_merk);
+            // TODO: This line of code loads data into the 'project_UASDataSet.m_barang' table. You can move, or remove it, as needed.
+            this.m_barangTableAdapter1.Fill(this.project_UASDataSet.m_barang);
             // TODO: This line of code loads data into the 'uASDataSet2.m_barang' table. You can move, or remove it, as needed.
             this.m_barangTableAdapter.Fill(this.uASDataSet2.m_barang);
 
@@ -42,6 +46,12 @@ namespace ProjectPCSuas
         {
             
 
+        }
+
+        private void BrowseBTN_Click(object sender, EventArgs e)
+        {
+            BrowseBarang BB = new BrowseBarang();
+            BB.Show();
         }
     }
 }

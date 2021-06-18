@@ -20,6 +20,8 @@ namespace ProjectPCSuas
 
         private void MasterMerk_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'project_UASDataSet.m_merk' table. You can move, or remove it, as needed.
+            this.m_merkTableAdapter.Fill(this.project_UASDataSet.m_merk);
             listView1.Items.Clear();
             List<MasterMerk> merkList;
             try
@@ -77,6 +79,20 @@ namespace ProjectPCSuas
                 MessageBox.Show(ex.Message, ex.GetType().ToString());
                 this.Close();
             }
+        }
+
+        private void m_merkBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.m_merkBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.project_UASDataSet);
+
+        }
+
+        private void BrowseBTN_Click(object sender, EventArgs e)
+        {
+            BrowseMerk BM = new BrowseMerk();
+            BM.Show();
         }
     }
 }

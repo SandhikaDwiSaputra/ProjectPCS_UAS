@@ -84,6 +84,12 @@
     <Compile Include="MasterBarang.Designer.cs">
       <DependentUpon>MasterBarang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Master_Merk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master_Merk.Designer.cs">
+      <DependentUpon>Master_Merk.cs</DependentUpon>
+    </Compile>
     <Compile Include="MasterSuplier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,12 +101,6 @@
     </Compile>
     <Compile Include="MasterPelanggan.Designer.cs">
       <DependentUpon>MasterPelanggan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Master_Merk.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Master_Merk.Designer.cs">
-      <DependentUpon>Master_Merk.cs</DependentUpon>
     </Compile>
     <Compile Include="Master_Model.cs">
       <SubType>Form</SubType>
@@ -144,14 +144,14 @@
     <EmbeddedResource Include="MasterBarang.resx">
       <DependentUpon>MasterBarang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Master_Merk.resx">
+      <DependentUpon>Master_Merk.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MasterSuplier.resx">
       <DependentUpon>MasterSuplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MasterPelanggan.resx">
       <DependentUpon>MasterPelanggan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Master_Merk.resx">
-      <DependentUpon>Master_Merk.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Master_Model.resx">
       <DependentUpon>Master_Model.cs</DependentUpon>
@@ -205,6 +205,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\LibraryMasterMerk\LibraryMasterMerk.csproj">
+      <Project>{e180bf00-17d3-494d-bc50-8a9bd0b4ccd3}</Project>
+      <Name>LibraryMasterMerk</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TransData\TransData.csproj">
       <Project>{04be2825-4d85-4d1b-bc81-9ca8dae90880}</Project>
       <Name>TransData</Name>

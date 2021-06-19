@@ -144,5 +144,36 @@ namespace LibraryMasterMerk
             }
             return merkList;
         }
+
+        //update
+        public static bool updateMerk(MasterMerk oldMerk, MasterMerk newMerk)
+        {
+            List<MasterMerk> merkList = new List<MasterMerk>();
+            SqlConnection connection = new SqlConnection(@"Data Source=.\SQLExpress;Initial Catalog=UAS;Integrated Security=True");
+            string updateStatement =
+                "UPDATE m_merk SET" +
+                "MERK_DESC = @newDesc" +
+                "WHERE ID = @oldID";
+            SqlCommand updateCommand = new SqlCommand(updateStatement, connection);
+            updateCommand.Parameters.AddWithValue("@newDesc", newMerk.Merk_desc);
+            updateCommand.Parameters.AddWithValue("@oldID", oldMerk.Id);
+            try
+            {
+                connection.Open();
+                int count = updateCommand.ExecuteNonQuery();
+                if (count > 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
     }
 }

@@ -32,20 +32,13 @@ namespace ProjectPCSuas
         private void BrowseMerk_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'project_UASDataSet.m_merk' table. You can move, or remove it, as needed.
-            if (iDComboBox.SelectedIndex != -1)
-            {
-                this.GetMerkData();
-            }
             this.m_merkTableAdapter.Fill(this.project_UASDataSet.m_merk);
-
+            this.Refresh();
         }
 
         private void GetMerkData()
         {
-            int merkID=1;
-            if (iDComboBox.SelectedIndex != -1)
-            {
-                merkID = (int)iDComboBox.SelectedValue;
+            int merkID = Convert.ToInt32(textBox1.Text);
                 try
                 {
                     merkList = ClassMerk.getByMerkID(merkID);
@@ -67,12 +60,6 @@ namespace ProjectPCSuas
                 {
                     MessageBox.Show(ex.Message, ex.GetType().ToString());
                 }
-            }
-        }
-
-        private void iDComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            this.GetMerkData();
         }
 
         private void m_merkDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -80,11 +67,10 @@ namespace ProjectPCSuas
             
             if (e.ColumnIndex == 2)
             {
-                int ID = Convert.ToInt32(m_merkDataGridView.Rows[e.RowIndex].Cells[0]);
-                //int i = e.RowIndex;
-                //DataGridViewRow row = m_merkDataGridView.Rows[i];
-                //DataGridViewCell cell = row.Cells[0];
-                //int ID = (int)cell.Value;
+                int i = e.RowIndex;
+                DataGridViewRow row = m_merkDataGridView.Rows[i];
+                DataGridViewCell cell = row.Cells[0];
+                int ID = (int)cell.Value;
                 DialogResult result = MessageBox.Show("Apakah anda yakin ingin delete?",
                 "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
@@ -107,11 +93,63 @@ namespace ProjectPCSuas
                     }
                 }
             }
+
+            if (e.ColumnIndex == 3)
+            {
+                int i = e.RowIndex;
+                DataGridViewRow row = m_merkDataGridView.Rows[i];
+                DataGridViewCell cell = row.Cells[0];
+                int ID = (int)cell.Value;
+                DataGridViewRow row2 = m_merkDataGridView.Rows[i];
+                DataGridViewCell cell2 = row.Cells[1];
+                string des = cell2.Value.ToString();
+
+                UpdateMasterMerk update = new UpdateMasterMerk();
+                update.id2 = ID;
+                update.desc = des;
+
+                DialogResult result = update.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    CurrencyManager cm = (CurrencyManager)m_merkDataGridView.BindingContext[merkList];
+                }
+            }
         }
 
         private void m_merkDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.GetMerkData();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                merkList = ClassMerk.get();
+                if (merkList.Count > 0)
+                {
+                    MasterMerk masterMerk;
+                    for (int i = 0; i < merkList.Count; i++)
+                    {
+                        masterMerk = merkList[i];
+                    }
+                    m_merkDataGridView.DataSource = merkList;
+                }
+                else
+                {
+                    MessageBox.Show("Data tidak ditemukan");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+            }
         }
     }
 }

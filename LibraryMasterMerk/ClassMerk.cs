@@ -175,5 +175,31 @@ namespace LibraryMasterMerk
                 connection.Close();
             }
         }
+
+        //Delete
+        public static bool deleteMerk(int id)
+        {
+            SqlConnection connection = new SqlConnection(@"Data Source=.\SQLExpress;Initial Catalog=UAS;Integrated Security=True");
+            string deleteStatement =
+                "DELETE FROM m_merk WHERE ID=" + id;
+            SqlCommand updateCommand = new SqlCommand(deleteStatement, connection);
+            try
+            {
+                connection.Open();
+                int count = updateCommand.ExecuteNonQuery();
+                if (count > 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
     }
 }

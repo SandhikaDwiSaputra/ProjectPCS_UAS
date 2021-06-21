@@ -146,17 +146,13 @@ namespace LibraryMasterMerk
         }
 
         //update
-        public static bool updateMerk(MasterMerk oldMerk, MasterMerk newMerk)
+        public static bool updateMerk(int id, string desc)
         {
             List<MasterMerk> merkList = new List<MasterMerk>();
             SqlConnection connection = new SqlConnection(@"Data Source=.\SQLExpress;Initial Catalog=UAS;Integrated Security=True");
             string updateStatement =
-                "UPDATE m_merk SET" +
-                "MERK_DESC = @newDesc" +
-                "WHERE ID = @oldID";
+                "UPDATE m_merk SET MERK_DESC = '"+ desc + "' WHERE ID =" + id;
             SqlCommand updateCommand = new SqlCommand(updateStatement, connection);
-            updateCommand.Parameters.AddWithValue("@newDesc", newMerk.Merk_desc);
-            updateCommand.Parameters.AddWithValue("@oldID", oldMerk.Id);
             try
             {
                 connection.Open();

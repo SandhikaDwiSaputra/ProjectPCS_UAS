@@ -30,8 +30,8 @@ namespace ProjectPCSuas
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BrowseMerk));
             System.Windows.Forms.Label iDLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BrowseMerk));
             this.project_UASDataSet = new ProjectPCSuas.Project_UASDataSet();
             this.m_merkBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.m_merkTableAdapter = new ProjectPCSuas.Project_UASDataSetTableAdapters.m_merkTableAdapter();
@@ -52,6 +52,7 @@ namespace ProjectPCSuas
             this.m_merkDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Button = new System.Windows.Forms.DataGridViewButtonColumn();
             this.iDComboBox = new System.Windows.Forms.ComboBox();
             iDLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.project_UASDataSet)).BeginInit();
@@ -60,6 +61,15 @@ namespace ProjectPCSuas
             this.m_merkBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_merkDataGridView)).BeginInit();
             this.SuspendLayout();
+            // 
+            // iDLabel
+            // 
+            iDLabel.AutoSize = true;
+            iDLabel.Location = new System.Drawing.Point(8, 52);
+            iDLabel.Name = "iDLabel";
+            iDLabel.Size = new System.Drawing.Size(21, 13);
+            iDLabel.TabIndex = 5;
+            iDLabel.Text = "ID:";
             // 
             // project_UASDataSet
             // 
@@ -128,7 +138,7 @@ namespace ProjectPCSuas
             this.m_merkBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.m_merkBindingNavigator.Name = "m_merkBindingNavigator";
             this.m_merkBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.m_merkBindingNavigator.Size = new System.Drawing.Size(301, 25);
+            this.m_merkBindingNavigator.Size = new System.Drawing.Size(740, 25);
             this.m_merkBindingNavigator.TabIndex = 0;
             this.m_merkBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -232,12 +242,15 @@ namespace ProjectPCSuas
             this.m_merkDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.m_merkDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2});
+            this.dataGridViewTextBoxColumn2,
+            this.Button});
             this.m_merkDataGridView.DataSource = this.m_merkBindingSource;
-            this.m_merkDataGridView.Location = new System.Drawing.Point(8, 76);
+            this.m_merkDataGridView.Location = new System.Drawing.Point(11, 87);
             this.m_merkDataGridView.Name = "m_merkDataGridView";
-            this.m_merkDataGridView.Size = new System.Drawing.Size(247, 203);
+            this.m_merkDataGridView.Size = new System.Drawing.Size(421, 203);
             this.m_merkDataGridView.TabIndex = 1;
+            this.m_merkDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.m_merkDataGridView_CellContentClick);
+            this.m_merkDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.m_merkDataGridView_DataError);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -252,14 +265,16 @@ namespace ProjectPCSuas
             this.dataGridViewTextBoxColumn2.HeaderText = "MERK_DESC";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
-            // iDLabel
+            // Button
             // 
-            iDLabel.AutoSize = true;
-            iDLabel.Location = new System.Drawing.Point(8, 52);
-            iDLabel.Name = "iDLabel";
-            iDLabel.Size = new System.Drawing.Size(21, 13);
-            iDLabel.TabIndex = 5;
-            iDLabel.Text = "ID:";
+            this.Button.DataPropertyName = "ID";
+            this.Button.HeaderText = "";
+            this.Button.Name = "Button";
+            this.Button.ReadOnly = true;
+            this.Button.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Button.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Button.Text = "Delete";
+            this.Button.UseColumnTextForButtonValue = true;
             // 
             // iDComboBox
             // 
@@ -278,7 +293,7 @@ namespace ProjectPCSuas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(301, 450);
+            this.ClientSize = new System.Drawing.Size(740, 450);
             this.Controls.Add(iDLabel);
             this.Controls.Add(this.iDComboBox);
             this.Controls.Add(this.m_merkDataGridView);
@@ -317,8 +332,9 @@ namespace ProjectPCSuas
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton m_merkBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView m_merkDataGridView;
+        private System.Windows.Forms.ComboBox iDComboBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.ComboBox iDComboBox;
+        private System.Windows.Forms.DataGridViewButtonColumn Button;
     }
 }

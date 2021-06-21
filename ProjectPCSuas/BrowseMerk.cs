@@ -46,33 +46,72 @@ namespace ProjectPCSuas
             if (iDComboBox.SelectedIndex != -1)
             {
                 merkID = (int)iDComboBox.SelectedValue;
-            }
-            try
-            {
-                merkList = ClassMerk.getByMerkID(merkID);
-                if (merkList.Count > 0)
+                try
                 {
-                    MasterMerk masterMerk;
-                    for (int i = 0; i < merkList.Count; i++)
+                    merkList = ClassMerk.getByMerkID(merkID);
+                    if (merkList.Count > 0)
                     {
-                        masterMerk = merkList[i];
+                        MasterMerk masterMerk;
+                        for (int i = 0; i < merkList.Count; i++)
+                        {
+                            masterMerk = merkList[i];
+                        }
+                        m_merkDataGridView.DataSource = merkList;
                     }
-                    m_merkDataGridView.DataSource = merkList;
+                    else
+                    {
+                        MessageBox.Show("Data tidak ditemukan");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Data tidak ditemukan");
+                    MessageBox.Show(ex.Message, ex.GetType().ToString());
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, ex.GetType().ToString());
             }
         }
 
         private void iDComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.GetMerkData();
+        }
+
+        private void m_merkDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+            if (e.ColumnIndex == 2)
+            {
+                int ID = Convert.ToInt32(m_merkDataGridView.Rows[e.RowIndex].Cells[0]);
+                //int i = e.RowIndex;
+                //DataGridViewRow row = m_merkDataGridView.Rows[i];
+                //DataGridViewCell cell = row.Cells[0];
+                //int ID = (int)cell.Value;
+                DialogResult result = MessageBox.Show("Apakah anda yakin ingin delete?",
+                "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    try
+                    {
+                        if (!(ClassMerk.deleteMerk(ID)))
+                        {
+                            MessageBox.Show("Another user has updated or deleted " +
+                                "that vendor.", "Database Error");
+                        }
+                        else
+                        {
+                            this.m_merkTableAdapter.Fill(this.project_UASDataSet.m_merk);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, ex.GetType().ToString());
+                    }
+                }
+            }
+        }
+
+        private void m_merkDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+
         }
     }
 }

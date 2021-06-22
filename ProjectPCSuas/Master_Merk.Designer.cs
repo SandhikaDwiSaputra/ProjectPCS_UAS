@@ -30,51 +30,30 @@ namespace ProjectPCSuas
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label iDLabel;
             System.Windows.Forms.Label mERK_DESCLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Master_Merk));
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader0 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TBcari = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.project_UASDataSet = new ProjectPCSuas.Project_UASDataSet();
             this.m_merkBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.m_merkTableAdapter = new ProjectPCSuas.Project_UASDataSetTableAdapters.m_merkTableAdapter();
             this.tableAdapterManager = new ProjectPCSuas.Project_UASDataSetTableAdapters.TableAdapterManager();
-            this.m_merkBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.m_merkBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.iDTextBox = new System.Windows.Forms.TextBox();
             this.mERK_DESCTextBox = new System.Windows.Forms.TextBox();
-            this.BrowseBTN = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            iDLabel = new System.Windows.Forms.Label();
+            this.m_merkDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Button = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Update = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.button2 = new System.Windows.Forms.Button();
+            this.columnHeader0 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.button3 = new System.Windows.Forms.Button();
             mERK_DESCLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.project_UASDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_merkBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_merkBindingNavigator)).BeginInit();
-            this.m_merkBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_merkDataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // iDLabel
-            // 
-            iDLabel.AutoSize = true;
-            iDLabel.Location = new System.Drawing.Point(26, 105);
-            iDLabel.Name = "iDLabel";
-            iDLabel.Size = new System.Drawing.Size(21, 13);
-            iDLabel.TabIndex = 4;
-            iDLabel.Text = "ID:";
             // 
             // mERK_DESCLabel
             // 
@@ -84,27 +63,6 @@ namespace ProjectPCSuas
             mERK_DESCLabel.Size = new System.Drawing.Size(73, 13);
             mERK_DESCLabel.TabIndex = 6;
             mERK_DESCLabel.Text = "MERK DESC:";
-            // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader0,
-            this.columnHeader1});
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(24, 207);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(133, 97);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader0
-            // 
-            this.columnHeader0.Text = "ID";
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Merk_Desc";
             // 
             // TBcari
             // 
@@ -164,138 +122,6 @@ namespace ProjectPCSuas
             this.tableAdapterManager.t_penawaran_headerTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = ProjectPCSuas.Project_UASDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // m_merkBindingNavigator
-            // 
-            this.m_merkBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.m_merkBindingNavigator.BindingSource = this.m_merkBindingSource;
-            this.m_merkBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.m_merkBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.m_merkBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.m_merkBindingNavigatorSaveItem});
-            this.m_merkBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.m_merkBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.m_merkBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.m_merkBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.m_merkBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.m_merkBindingNavigator.Name = "m_merkBindingNavigator";
-            this.m_merkBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.m_merkBindingNavigator.Size = new System.Drawing.Size(800, 25);
-            this.m_merkBindingNavigator.TabIndex = 3;
-            this.m_merkBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Position";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // m_merkBindingNavigatorSaveItem
-            // 
-            this.m_merkBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.m_merkBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("m_merkBindingNavigatorSaveItem.Image")));
-            this.m_merkBindingNavigatorSaveItem.Name = "m_merkBindingNavigatorSaveItem";
-            this.m_merkBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.m_merkBindingNavigatorSaveItem.Text = "Save Data";
-            this.m_merkBindingNavigatorSaveItem.Click += new System.EventHandler(this.m_merkBindingNavigatorSaveItem_Click);
-            // 
-            // iDTextBox
-            // 
-            this.iDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.m_merkBindingSource, "ID", true));
-            this.iDTextBox.Location = new System.Drawing.Point(105, 102);
-            this.iDTextBox.Name = "iDTextBox";
-            this.iDTextBox.Size = new System.Drawing.Size(100, 20);
-            this.iDTextBox.TabIndex = 5;
-            // 
             // mERK_DESCTextBox
             // 
             this.mERK_DESCTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.m_merkBindingSource, "MERK_DESC", true));
@@ -303,16 +129,7 @@ namespace ProjectPCSuas
             this.mERK_DESCTextBox.Name = "mERK_DESCTextBox";
             this.mERK_DESCTextBox.Size = new System.Drawing.Size(100, 20);
             this.mERK_DESCTextBox.TabIndex = 7;
-            // 
-            // BrowseBTN
-            // 
-            this.BrowseBTN.Location = new System.Drawing.Point(251, 51);
-            this.BrowseBTN.Name = "BrowseBTN";
-            this.BrowseBTN.Size = new System.Drawing.Size(75, 23);
-            this.BrowseBTN.TabIndex = 32;
-            this.BrowseBTN.Text = "Browse";
-            this.BrowseBTN.UseVisualStyleBackColor = true;
-            this.BrowseBTN.Click += new System.EventHandler(this.BrowseBTN_Click);
+            this.mERK_DESCTextBox.TextChanged += new System.EventHandler(this.mERK_DESCTextBox_TextChanged);
             // 
             // label1
             // 
@@ -324,18 +141,110 @@ namespace ProjectPCSuas
             this.label1.TabIndex = 31;
             this.label1.Text = "Input Master Merk";
             // 
+            // m_merkDataGridView
+            // 
+            this.m_merkDataGridView.AutoGenerateColumns = false;
+            this.m_merkDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.m_merkDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.Button,
+            this.Update});
+            this.m_merkDataGridView.DataSource = this.m_merkBindingSource;
+            this.m_merkDataGridView.Location = new System.Drawing.Point(24, 207);
+            this.m_merkDataGridView.Name = "m_merkDataGridView";
+            this.m_merkDataGridView.Size = new System.Drawing.Size(443, 203);
+            this.m_merkDataGridView.TabIndex = 33;
+            this.m_merkDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.m_merkDataGridView_CellContentClick);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "MERK_DESC";
+            this.dataGridViewTextBoxColumn2.HeaderText = "MERK_DESC";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // Button
+            // 
+            this.Button.DataPropertyName = "ID";
+            this.Button.HeaderText = "";
+            this.Button.Name = "Button";
+            this.Button.ReadOnly = true;
+            this.Button.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Button.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Button.Text = "Delete";
+            this.Button.UseColumnTextForButtonValue = true;
+            // 
+            // Update
+            // 
+            this.Update.DataPropertyName = "ID";
+            this.Update.HeaderText = "";
+            this.Update.Name = "Update";
+            this.Update.ReadOnly = true;
+            this.Update.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Update.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Update.Text = "Update";
+            this.Update.UseColumnTextForButtonValue = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(211, 125);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 34;
+            this.button2.Text = "Insert";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // columnHeader0
+            // 
+            this.columnHeader0.Text = "ID";
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Merk_Desc";
+            // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader0,
+            this.columnHeader1});
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(740, 89);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(133, 97);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.Visible = false;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(292, 125);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 35;
+            this.button3.Text = "Clear";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Master_Merk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.BrowseBTN);
+            this.ClientSize = new System.Drawing.Size(483, 450);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.m_merkDataGridView);
             this.Controls.Add(this.label1);
-            this.Controls.Add(iDLabel);
-            this.Controls.Add(this.iDTextBox);
             this.Controls.Add(mERK_DESCLabel);
             this.Controls.Add(this.mERK_DESCTextBox);
-            this.Controls.Add(this.m_merkBindingNavigator);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.TBcari);
             this.Controls.Add(this.listView1);
@@ -344,41 +253,30 @@ namespace ProjectPCSuas
             this.Load += new System.EventHandler(this.MasterMerk_Load);
             ((System.ComponentModel.ISupportInitialize)(this.project_UASDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_merkBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_merkBindingNavigator)).EndInit();
-            this.m_merkBindingNavigator.ResumeLayout(false);
-            this.m_merkBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_merkDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader columnHeader0;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.TextBox TBcari;
         private System.Windows.Forms.Button button1;
         private Project_UASDataSet project_UASDataSet;
         private System.Windows.Forms.BindingSource m_merkBindingSource;
         private Project_UASDataSetTableAdapters.m_merkTableAdapter m_merkTableAdapter;
         private Project_UASDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator m_merkBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton m_merkBindingNavigatorSaveItem;
-        private System.Windows.Forms.TextBox iDTextBox;
         private System.Windows.Forms.TextBox mERK_DESCTextBox;
-        private System.Windows.Forms.Button BrowseBTN;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView m_merkDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewButtonColumn Button;
+        private System.Windows.Forms.DataGridViewButtonColumn Update;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ColumnHeader columnHeader0;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Button button3;
     }
 }

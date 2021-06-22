@@ -57,3 +57,29 @@ C:\FILE KULIAH\SMT 4\PCS Kelas\UwAeS\ProjectPCS_UAS-master\ProjectPCS_UAS-master
 C:\FILE KULIAH\SMT 4\PCS Kelas\UwAeS\ProjectPCS_UAS-master\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.Properties.Resources.resources
 C:\FILE KULIAH\SMT 4\PCS Kelas\UwAeS\ProjectPCS_UAS-master\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.csproj.GenerateResource.Cache
 C:\FILE KULIAH\SMT 4\PCS Kelas\UwAeS\ProjectPCS_UAS-master\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.UpdateMasterMerk.resources
+C:\Users\SanDhika\source\repos\ProjectPCSuas\ProjectPCSuas\obj\Debug\ProjectPCSuas.csproj.AssemblyReference.cache
+C:\Users\SanDhika\source\repos\ProjectPCSuas\ProjectPCSuas\obj\Debug\ProjectPCSuas.BrowseBarang.resources
+C:\Users\SanDhika\source\repos\ProjectPCSuas\ProjectPCSuas\obj\Debug\ProjectPCSuas.BrowseMerk.resources
+C:\Users\SanDhika\source\repos\ProjectPCSuas\ProjectPCSuas\obj\Debug\ProjectPCSuas.BrowseModel.resources
+C:\Users\SanDhika\source\repos\ProjectPCSuas\ProjectPCSuas\obj\Debug\ProjectPCSuas.BrowsePelanggan.resources
+C:\Users\SanDhika\source\repos\ProjectPCSuas\ProjectPCSuas\obj\Debug\ProjectPCSuas.BrowseSuplier.resources
+C:\Users\SanDhika\source\repos\ProjectPCSuas\ProjectPCSuas\obj\Debug\ProjectPCSuas.MasterBarang.resources
+C:\Users\SanDhika\source\repos\ProjectPCSuas\ProjectPCSuas\obj\Debug\ProjectPCSuas.Master_Merk.resources
+C:\Users\SanDhika\source\repos\ProjectPCSuas\ProjectPCSuas\obj\Debug\ProjectPCSuas.MasterSuplier.resources
+C:\Users\SanDhika\source\repos\ProjectPCSuas\ProjectPCSuas\obj\Debug\ProjectPCSuas.MasterPelanggan.resources
+C:\Users\SanDhika\source\repos\ProjectPCSuas\ProjectPCSuas\obj\Debug\ProjectPCSuas.MasterModel.resources
+C:\Users\SanDhika\source\repos\ProjectPCSuas\ProjectPCSuas\obj\Debug\ProjectPCSuas.Menu.resources
+C:\Users\SanDhika\source\repos\ProjectPCSuas\ProjectPCSuas\obj\Debug\ProjectPCSuas.Properties.Resources.resources
+C:\Users\SanDhika\source\repos\ProjectPCSuas\ProjectPCSuas\obj\Debug\ProjectPCSuas.csproj.GenerateResource.cache
+C:\Users\SanDhika\source\repos\ProjectPCSuas\ProjectPCSuas\obj\Debug\ProjectPCSuas.csproj.CoreCompileInputs.cache
+C:\Users\SanDhika\source\repos\ProjectPCSuas\ProjectPCSuas\obj\Debug\ProjectPCSuas.exe
+C:\Users\SanDhika\source\repos\ProjectPCSuas\ProjectPCSuas\obj\Debug\ProjectPCSuas.pdb
+C:\Users\SanDhika\source\repos\ProjectPCSuas\ProjectPCSuas\bin\Debug\ProjectPCSuas.exe.config
+C:\Users\SanDhika\source\repos\ProjectPCSuas\ProjectPCSuas\bin\Debug\ProjectPCSuas.exe
+C:\Users\SanDhika\source\repos\ProjectPCSuas\ProjectPCSuas\bin\Debug\ProjectPCSuas.pdb
+C:\Users\SanDhika\source\repos\ProjectPCSuas\ProjectPCSuas\bin\Debug\LibraryMasterMerk.dll
+C:\Users\SanDhika\source\repos\ProjectPCSuas\ProjectPCSuas\bin\Debug\TransData.dll
+C:\Users\SanDhika\source\repos\ProjectPCSuas\ProjectPCSuas\bin\Debug\LibraryMasterMerk.pdb
+C:\Users\SanDhika\source\repos\ProjectPCSuas\ProjectPCSuas\bin\Debug\TransData.pdb
+C:\Users\SanDhika\source\repos\ProjectPCSuas\ProjectPCSuas\obj\Debug\ProjectPCSuas.UpdateMasterMerk.resources
+C:\Users\SanDhika\source\repos\ProjectPCSuas\ProjectPCSuas\obj\Debug\ProjectPCSuas.csproj.CopyComplete

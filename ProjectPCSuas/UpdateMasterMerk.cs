@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LibraryMasterMerk;
+
 namespace ProjectPCSuas
 {
     public partial class UpdateMasterMerk : Form
@@ -39,6 +40,8 @@ namespace ProjectPCSuas
                 {
                     MessageBox.Show("Berhasil");
                     this.Close();
+                    Master_Merk MM = new Master_Merk();
+                    MM.Show();
                 }
             }
             catch (Exception ex)

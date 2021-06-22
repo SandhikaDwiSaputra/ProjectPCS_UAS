@@ -197,5 +197,34 @@ namespace LibraryMasterMerk
                 connection.Close();
             }
         }
+
+        public static List<MasterMerk> Tambah(String desc)
+        {
+            List<MasterMerk> merkList = new List<MasterMerk>();
+            SqlConnection connection = new SqlConnection(@"Data Source=.\SQLExpress;Initial Catalog=UAS;Integrated Security=True");
+            string selectStatement =
+                $"INSERT INTO m_merk VALUES('{desc}')";
+            SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
+            try
+            {
+                connection.Open();
+
+                SqlCommand cmd = new SqlCommand(selectStatement, connection);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+
+            return merkList;
+
+        }
     }
 }

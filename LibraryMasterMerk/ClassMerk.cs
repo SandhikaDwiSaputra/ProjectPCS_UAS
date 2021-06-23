@@ -12,7 +12,7 @@ namespace LibraryMasterMerk
         public static List<MasterMerk> get()
         {
             List<MasterMerk> merkList = new List<MasterMerk>();
-            SqlConnection connection = new SqlConnection(@"Data Source=.\SQLExpress;Initial Catalog=UAS;Integrated Security=True");
+            SqlConnection connection = new SqlConnection(@"Data Source=.\SQLExpress;Initial Catalog=Project_UAS;Integrated Security=True");
             string selectStatement =
                 "SELECT ID, MERK_DESC " +
                 "FROM m_merk ";
@@ -45,7 +45,7 @@ namespace LibraryMasterMerk
         public static List<MasterMerk> getByMerkCode(String code)
         {
             List<MasterMerk> merkList = new List<MasterMerk>();
-            SqlConnection connection = new SqlConnection(@"Data Source=.\SQLExpress;Initial Catalog=UAS;Integrated Security=True");
+            SqlConnection connection = new SqlConnection(@"Data Source=.\SQLExpress;Initial Catalog=Project_UAS;Integrated Security=True");
             string selectStatement =
                 "SELECT ID, MERK_DESC " +
                 "FROM m_merk " +
@@ -79,7 +79,7 @@ namespace LibraryMasterMerk
         public static List<MasterMerk> getByMerkDesc(String desc)
         {
             List<MasterMerk> merkList = new List<MasterMerk>();
-            SqlConnection connection = new SqlConnection(@"Data Source=.\SQLExpress;Initial Catalog=UAS;Integrated Security=True");
+            SqlConnection connection = new SqlConnection(@"Data Source=.\SQLExpress;Initial Catalog=Project_UAS;Integrated Security=True");
             string selectStatement =
                 "SELECT ID,   MERK_DESC " +
                 "FROM m_merk " +
@@ -114,7 +114,7 @@ namespace LibraryMasterMerk
         public static List<MasterMerk> getByMerkID(int id)
         {
             List<MasterMerk> merkList = new List<MasterMerk>();
-            SqlConnection connection = new SqlConnection(@"Data Source=.\SQLExpress;Initial Catalog=UAS;Integrated Security=True");
+            SqlConnection connection = new SqlConnection(@"Data Source=.\SQLExpress;Initial Catalog=Project_UAS;Integrated Security=True");
             string selectStatement =
                 "SELECT ID,   MERK_DESC " +
                 "FROM m_merk " +
@@ -149,7 +149,7 @@ namespace LibraryMasterMerk
         public static bool updateMerk(int id, string desc)
         {
             List<MasterMerk> merkList = new List<MasterMerk>();
-            SqlConnection connection = new SqlConnection(@"Data Source=.\SQLExpress;Initial Catalog=UAS;Integrated Security=True");
+            SqlConnection connection = new SqlConnection(@"Data Source=.\SQLExpress;Initial Catalog=Project_UAS;Integrated Security=True");
             string updateStatement =
                 "UPDATE m_merk SET MERK_DESC = '"+ desc + "' WHERE ID =" + id;
             SqlCommand updateCommand = new SqlCommand(updateStatement, connection);
@@ -175,7 +175,7 @@ namespace LibraryMasterMerk
         //Delete
         public static bool deleteMerk(int id)
         {
-            SqlConnection connection = new SqlConnection(@"Data Source=.\SQLExpress;Initial Catalog=UAS;Integrated Security=True");
+            SqlConnection connection = new SqlConnection(@"Data Source=.\SQLExpress;Initial Catalog=Project_UAS;Integrated Security=True");
             string deleteStatement =
                 "DELETE FROM m_merk WHERE ID=" + id;
             SqlCommand updateCommand = new SqlCommand(deleteStatement, connection);
@@ -201,9 +201,8 @@ namespace LibraryMasterMerk
         public static List<MasterMerk> Tambah(String desc)
         {
             List<MasterMerk> merkList = new List<MasterMerk>();
-            SqlConnection connection = new SqlConnection(@"Data Source=.\SQLExpress;Initial Catalog=UAS;Integrated Security=True");
-            string selectStatement =
-                $"INSERT INTO m_merk VALUES('{desc}')";
+            SqlConnection connection = new SqlConnection(@"Data Source=.\SQLExpress;Initial Catalog=Project_UAS;Integrated Security=True");
+            string selectStatement = "INSERT INTO m_merk VALUES('"+desc+"')";
             SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
             try
             {

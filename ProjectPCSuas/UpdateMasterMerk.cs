@@ -22,6 +22,8 @@ namespace ProjectPCSuas
         public string desc;
         private void UpdateMasterMerk_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'project_UASDataSet.m_merk' table. You can move, or remove it, as needed.
+            this.m_merkTableAdapter.Fill(this.project_UASDataSet.m_merk);
             iDTextBox.Text = id2 + "";
             mERK_DESCTextBox.Text = desc;
         }
@@ -48,6 +50,14 @@ namespace ProjectPCSuas
             {
                 MessageBox.Show(ex.Message, ex.GetType().ToString());
             }
+        }
+
+        private void m_merkBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.m_merkBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.project_UASDataSet);
+
         }
     }
 }

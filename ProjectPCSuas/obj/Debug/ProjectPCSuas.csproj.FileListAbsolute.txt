@@ -83,3 +83,59 @@ C:\Users\SanDhika\source\repos\ProjectPCSuas\ProjectPCSuas\bin\Debug\LibraryMast
 C:\Users\SanDhika\source\repos\ProjectPCSuas\ProjectPCSuas\bin\Debug\TransData.pdb
 C:\Users\SanDhika\source\repos\ProjectPCSuas\ProjectPCSuas\obj\Debug\ProjectPCSuas.UpdateMasterMerk.resources
 C:\Users\SanDhika\source\repos\ProjectPCSuas\ProjectPCSuas\obj\Debug\ProjectPCSuas.csproj.CopyComplete
+C:\Users\dell\Downloads\ProjectPCS_UAS-master (2)\ProjectPCS_UAS-master\ProjectPCSuas\bin\Debug\ProjectPCSuas.exe.config
+C:\Users\dell\Downloads\ProjectPCS_UAS-master (2)\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.exe
+C:\Users\dell\Downloads\ProjectPCS_UAS-master (2)\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.pdb
+C:\Users\dell\Downloads\ProjectPCS_UAS-master (2)\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.csprojResolveAssemblyReference.cache
+C:\Users\dell\Downloads\ProjectPCS_UAS-master (2)\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.BrowseBarang.resources
+C:\Users\dell\Downloads\ProjectPCS_UAS-master (2)\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.BrowseMerk.resources
+C:\Users\dell\Downloads\ProjectPCS_UAS-master (2)\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.BrowseModel.resources
+C:\Users\dell\Downloads\ProjectPCS_UAS-master (2)\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.BrowsePelanggan.resources
+C:\Users\dell\Downloads\ProjectPCS_UAS-master (2)\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.BrowseSuplier.resources
+C:\Users\dell\Downloads\ProjectPCS_UAS-master (2)\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.MasterBarang.resources
+C:\Users\dell\Downloads\ProjectPCS_UAS-master (2)\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.Master_Merk.resources
+C:\Users\dell\Downloads\ProjectPCS_UAS-master (2)\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.MasterSuplier.resources
+C:\Users\dell\Downloads\ProjectPCS_UAS-master (2)\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.MasterPelanggan.resources
+C:\Users\dell\Downloads\ProjectPCS_UAS-master (2)\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.MasterModel.resources
+C:\Users\dell\Downloads\ProjectPCS_UAS-master (2)\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.Menu.resources
+C:\Users\dell\Downloads\ProjectPCS_UAS-master (2)\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.Properties.Resources.resources
+C:\Users\dell\Downloads\ProjectPCS_UAS-master (2)\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.UpdateMasterMerk.resources
+C:\Users\dell\Downloads\ProjectPCS_UAS-master (2)\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.csproj.GenerateResource.Cache
+C:\Users\dell\Downloads\ProjectPCS_UAS-master (2)\ProjectPCS_UAS-master\ProjectPCSuas\bin\Debug\ProjectPCSuas.exe
+C:\Users\dell\Downloads\ProjectPCS_UAS-master (2)\ProjectPCS_UAS-master\ProjectPCSuas\bin\Debug\ProjectPCSuas.pdb
+C:\Users\dell\Downloads\ProjectPCS_UAS-master (2)\ProjectPCS_UAS-master\ProjectPCSuas\bin\Debug\LibraryMasterMerk.dll
+C:\Users\dell\Downloads\ProjectPCS_UAS-master (2)\ProjectPCS_UAS-master\ProjectPCSuas\bin\Debug\mscorlib.dll
+C:\Users\dell\Downloads\ProjectPCS_UAS-master (2)\ProjectPCS_UAS-master\ProjectPCSuas\bin\Debug\TransData.dll
+C:\Users\dell\Downloads\ProjectPCS_UAS-master (2)\ProjectPCS_UAS-master\ProjectPCSuas\bin\Debug\LibraryMasterMerk.pdb
+C:\Users\dell\Downloads\ProjectPCS_UAS-master (2)\ProjectPCS_UAS-master\ProjectPCSuas\bin\Debug\TransData.pdb
+C:\Users\dell\Downloads\ProjectPCS_UAS-master (2)\ProjectPCS_UAS-master\ProjectPCSuas\bin\Debug\normidna.nlp
+C:\Users\dell\Downloads\ProjectPCS_UAS-master (2)\ProjectPCS_UAS-master\ProjectPCSuas\bin\Debug\normnfc.nlp
+C:\Users\dell\Downloads\ProjectPCS_UAS-master (2)\ProjectPCS_UAS-master\ProjectPCSuas\bin\Debug\normnfd.nlp
+C:\Users\dell\Downloads\ProjectPCS_UAS-master (2)\ProjectPCS_UAS-master\ProjectPCSuas\bin\Debug\normnfkc.nlp
+C:\Users\dell\Downloads\ProjectPCS_UAS-master (2)\ProjectPCS_UAS-master\ProjectPCSuas\bin\Debug\normnfkd.nlp
+C:\Users\Stefanus\OneDrive\Documents\PCS\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.csprojAssemblyReference.cache
+C:\Users\Stefanus\OneDrive\Documents\PCS\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.BrowseBarang.resources
+C:\Users\Stefanus\OneDrive\Documents\PCS\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.BrowseMerk.resources
+C:\Users\Stefanus\OneDrive\Documents\PCS\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.BrowseModel.resources
+C:\Users\Stefanus\OneDrive\Documents\PCS\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.BrowsePelanggan.resources
+C:\Users\Stefanus\OneDrive\Documents\PCS\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.BrowseSuplier.resources
+C:\Users\Stefanus\OneDrive\Documents\PCS\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.MasterBarang.resources
+C:\Users\Stefanus\OneDrive\Documents\PCS\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.Master_Merk.resources
+C:\Users\Stefanus\OneDrive\Documents\PCS\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.MasterSuplier.resources
+C:\Users\Stefanus\OneDrive\Documents\PCS\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.MasterPelanggan.resources
+C:\Users\Stefanus\OneDrive\Documents\PCS\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.MasterModel.resources
+C:\Users\Stefanus\OneDrive\Documents\PCS\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.Menu.resources
+C:\Users\Stefanus\OneDrive\Documents\PCS\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.Properties.Resources.resources
+C:\Users\Stefanus\OneDrive\Documents\PCS\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.UpdateMasterMerk.resources
+C:\Users\Stefanus\OneDrive\Documents\PCS\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.csproj.GenerateResource.cache
+C:\Users\Stefanus\OneDrive\Documents\PCS\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.csproj.CoreCompileInputs.cache
+C:\Users\Stefanus\OneDrive\Documents\PCS\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.exe
+C:\Users\Stefanus\OneDrive\Documents\PCS\ProjectPCS_UAS-master\ProjectPCSuas\bin\Debug\ProjectPCSuas.exe.config
+C:\Users\Stefanus\OneDrive\Documents\PCS\ProjectPCS_UAS-master\ProjectPCSuas\bin\Debug\ProjectPCSuas.exe
+C:\Users\Stefanus\OneDrive\Documents\PCS\ProjectPCS_UAS-master\ProjectPCSuas\bin\Debug\ProjectPCSuas.pdb
+C:\Users\Stefanus\OneDrive\Documents\PCS\ProjectPCS_UAS-master\ProjectPCSuas\bin\Debug\LibraryMasterMerk.dll
+C:\Users\Stefanus\OneDrive\Documents\PCS\ProjectPCS_UAS-master\ProjectPCSuas\bin\Debug\TransData.dll
+C:\Users\Stefanus\OneDrive\Documents\PCS\ProjectPCS_UAS-master\ProjectPCSuas\bin\Debug\LibraryMasterMerk.pdb
+C:\Users\Stefanus\OneDrive\Documents\PCS\ProjectPCS_UAS-master\ProjectPCSuas\bin\Debug\TransData.pdb
+C:\Users\Stefanus\OneDrive\Documents\PCS\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.csproj.CopyComplete
+C:\Users\Stefanus\OneDrive\Documents\PCS\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.pdb

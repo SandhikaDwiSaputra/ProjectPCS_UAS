@@ -221,5 +221,11 @@ namespace ProjectPCSuas
         {
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            BrowseMerk bm = new BrowseMerk();
+            bm.Show();
+        }
     }
 }

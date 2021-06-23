@@ -42,8 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClassMerk.cs" />
+    <Compile Include="ClassModel.cs" />
     <Compile Include="dbUAS.cs" />
     <Compile Include="MasterMerk.cs" />
+    <Compile Include="MasterModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

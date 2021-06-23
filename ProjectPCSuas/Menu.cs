@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LibraryMasterMerk;
 
 namespace ProjectPCSuas
 {
@@ -45,6 +46,11 @@ namespace ProjectPCSuas
         {
             MasterSuplier MS = new MasterSuplier();
             MS.Show();
+        }
+
+        private void m_merkBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -151,5 +151,11 @@ namespace ProjectPCSuas
                 MessageBox.Show(ex.Message, ex.GetType().ToString());
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Master_Merk mm = new Master_Merk();
+            mm.Show();
+        }
     }
 }

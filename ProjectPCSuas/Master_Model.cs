@@ -10,14 +10,20 @@ using System.Windows.Forms;
 
 namespace ProjectPCSuas
 {
-    public partial class MasterModel : Form
+    public partial class Master_Model : Form
     {
-        public MasterModel()
+        public Master_Model()
         {
             InitializeComponent();
         }
 
-        private void m_modelBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void BrowseBTN_Click(object sender, EventArgs e)
+        {
+            BrowseModel BB = new BrowseModel();
+            BB.Show();
+        }
+
+        private void m_modelBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
         {
             this.Validate();
             this.m_modelBindingSource.EndEdit();
@@ -25,17 +31,11 @@ namespace ProjectPCSuas
 
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+        private void Master_Model_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'uASDataSet2.m_model' table. You can move, or remove it, as needed.
             this.m_modelTableAdapter.Fill(this.uASDataSet2.m_model);
 
-        }
-
-        private void BrowseBTN_Click(object sender, EventArgs e)
-        {
-            BrowseModel BB = new BrowseModel();
-            BB.Show();
         }
     }
 }

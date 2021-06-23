@@ -32,7 +32,7 @@ namespace ProjectPCSuas
 
         private void button3_Click(object sender, EventArgs e)
         {
-            MasterModel MM = new MasterModel();
+            Master_Model MM = new Master_Model();
             MM.Show();
         }
 

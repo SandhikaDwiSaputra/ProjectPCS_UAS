@@ -17,35 +17,29 @@ namespace ProjectPCSuas
             InitializeComponent();
         }
 
-        private void m_pelangganBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.m_pelangganBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.uASDataSet2);
-
-        }
+        
 
         private void Form4_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'uASDataSet2.m_pelanggan' table. You can move, or remove it, as needed.
-            this.m_pelangganTableAdapter.Fill(this.uASDataSet2.m_pelanggan);
+            // TODO: This line of code loads data into the 'project_UASDataSet.m_pelanggan' table. You can move, or remove it, as needed.
+            this.m_pelangganTableAdapter.Fill(this.project_UASDataSet.m_pelanggan);
 
         }
 
-        private void hPTextBox_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void iDTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void BrowseBTN_Click(object sender, EventArgs e)
         {
             BrowsePelanggan BB = new BrowsePelanggan();
             BB.Show();
+        }
+
+        private void m_pelangganBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.m_pelangganBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.project_UASDataSet);
+
         }
     }
 }

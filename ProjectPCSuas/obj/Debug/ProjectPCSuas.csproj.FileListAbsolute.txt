@@ -67,7 +67,6 @@ C:\Users\SanDhika\source\repos\ProjectPCSuas\ProjectPCSuas\obj\Debug\ProjectPCSu
 C:\Users\SanDhika\source\repos\ProjectPCSuas\ProjectPCSuas\obj\Debug\ProjectPCSuas.Master_Merk.resources
 C:\Users\SanDhika\source\repos\ProjectPCSuas\ProjectPCSuas\obj\Debug\ProjectPCSuas.MasterSuplier.resources
 C:\Users\SanDhika\source\repos\ProjectPCSuas\ProjectPCSuas\obj\Debug\ProjectPCSuas.MasterPelanggan.resources
-C:\Users\SanDhika\source\repos\ProjectPCSuas\ProjectPCSuas\obj\Debug\ProjectPCSuas.MasterModel.resources
 C:\Users\SanDhika\source\repos\ProjectPCSuas\ProjectPCSuas\obj\Debug\ProjectPCSuas.Menu.resources
 C:\Users\SanDhika\source\repos\ProjectPCSuas\ProjectPCSuas\obj\Debug\ProjectPCSuas.Properties.Resources.resources
 C:\Users\SanDhika\source\repos\ProjectPCSuas\ProjectPCSuas\obj\Debug\ProjectPCSuas.csproj.GenerateResource.cache
@@ -139,3 +138,4 @@ C:\Users\Stefanus\OneDrive\Documents\PCS\ProjectPCS_UAS-master\ProjectPCSuas\bin
 C:\Users\Stefanus\OneDrive\Documents\PCS\ProjectPCS_UAS-master\ProjectPCSuas\bin\Debug\TransData.pdb
 C:\Users\Stefanus\OneDrive\Documents\PCS\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.csproj.CopyComplete
 C:\Users\Stefanus\OneDrive\Documents\PCS\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.pdb
+C:\Users\SanDhika\source\repos\ProjectPCSuas\ProjectPCSuas\obj\Debug\ProjectPCSuas.Master_Model.resources

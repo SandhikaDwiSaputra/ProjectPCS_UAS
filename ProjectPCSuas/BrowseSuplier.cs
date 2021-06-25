@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,8 +12,6 @@ namespace ProjectPCSuas
 {
     public partial class BrowseSuplier : Form
     {
-        SqlConnection conn;
-
         public BrowseSuplier()
         {
             InitializeComponent();
@@ -32,15 +29,6 @@ namespace ProjectPCSuas
         {
             // TODO: This line of code loads data into the 'project_UASDataSet.m_supplier' table. You can move, or remove it, as needed.
             this.m_supplierTableAdapter.Fill(this.project_UASDataSet.m_supplier);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
 
         }
 
@@ -50,9 +38,9 @@ namespace ProjectPCSuas
             {
                 this.m_supplierTableAdapter.FillByPId(this.project_UASDataSet.m_supplier, p_IDToolStripTextBox.Text);
             }
-            catch (SqlException ex)
+            catch (System.Exception ex)
             {
-                MessageBox.Show(ex.Message, ex.GetType().ToString());
+                System.Windows.Forms.MessageBox.Show(ex.Message);
             }
 
         }
@@ -61,9 +49,10 @@ namespace ProjectPCSuas
         {
             if (e.ColumnIndex == 11)
             {
-                SupplierDetail sd = new SupplierDetail();
-                sd.id = m_supplierDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
-                sd.Show();
+                MasterSuplier ms = new MasterSuplier();
+                ms.id = m_supplierDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+                ms.detail = true;
+                ms.Show();
             }
         }
     }

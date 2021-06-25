@@ -30,11 +30,8 @@ namespace ProjectPCSuas
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.project_UASDataSet = new ProjectPCSuas.Project_UASDataSet();
-            this.m_supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.m_supplierTableAdapter = new ProjectPCSuas.Project_UASDataSetTableAdapters.m_supplierTableAdapter();
-            this.tableAdapterManager = new ProjectPCSuas.Project_UASDataSetTableAdapters.TableAdapterManager();
             this.m_supplierDataGridView = new System.Windows.Forms.DataGridView();
+            this.View = new System.Windows.Forms.DataGridViewButtonColumn();
             this.fillByPIdToolStrip = new System.Windows.Forms.ToolStrip();
             this.p_IDToolStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.p_IDToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
@@ -50,53 +47,15 @@ namespace ProjectPCSuas
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.View = new System.Windows.Forms.DataGridViewButtonColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.project_UASDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_supplierBindingSource)).BeginInit();
+            this.m_supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.project_UASDataSet = new ProjectPCSuas.Project_UASDataSet();
+            this.m_supplierTableAdapter = new ProjectPCSuas.Project_UASDataSetTableAdapters.m_supplierTableAdapter();
+            this.tableAdapterManager = new ProjectPCSuas.Project_UASDataSetTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.m_supplierDataGridView)).BeginInit();
             this.fillByPIdToolStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_supplierBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.project_UASDataSet)).BeginInit();
             this.SuspendLayout();
-            // 
-            // project_UASDataSet
-            // 
-            this.project_UASDataSet.DataSetName = "Project_UASDataSet";
-            this.project_UASDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // m_supplierBindingSource
-            // 
-            this.m_supplierBindingSource.DataMember = "m_supplier";
-            this.m_supplierBindingSource.DataSource = this.project_UASDataSet;
-            // 
-            // m_supplierTableAdapter
-            // 
-            this.m_supplierTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.m_barangTableAdapter = null;
-            this.tableAdapterManager.m_groupuserTableAdapter = null;
-            this.tableAdapterManager.m_hakaksesgroupuserTableAdapter = null;
-            this.tableAdapterManager.m_kotaTableAdapter = null;
-            this.tableAdapterManager.m_merkTableAdapter = null;
-            this.tableAdapterManager.m_modelTableAdapter = null;
-            this.tableAdapterManager.m_pelangganTableAdapter = null;
-            this.tableAdapterManager.m_supplierTableAdapter = this.m_supplierTableAdapter;
-            this.tableAdapterManager.m_usersTableAdapter = null;
-            this.tableAdapterManager.rework_detailTableAdapter = null;
-            this.tableAdapterManager.reworkTableAdapter = null;
-            this.tableAdapterManager.stock_historyTableAdapter = null;
-            this.tableAdapterManager.stockTableAdapter = null;
-            this.tableAdapterManager.t_invoice_detailTableAdapter = null;
-            this.tableAdapterManager.t_invoice_headerTableAdapter = null;
-            this.tableAdapterManager.t_invoiceppn_detailTableAdapter = null;
-            this.tableAdapterManager.t_invoiceppn_headerTableAdapter = null;
-            this.tableAdapterManager.t_label_hargaTableAdapter = null;
-            this.tableAdapterManager.t_pembelian_detailTableAdapter = null;
-            this.tableAdapterManager.t_pembelian_headerTableAdapter = null;
-            this.tableAdapterManager.t_penawaran_detailTableAdapter = null;
-            this.tableAdapterManager.t_penawaran_headerTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = ProjectPCSuas.Project_UASDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // m_supplierDataGridView
             // 
@@ -116,11 +75,21 @@ namespace ProjectPCSuas
             this.dataGridViewTextBoxColumn11,
             this.View});
             this.m_supplierDataGridView.DataSource = this.m_supplierBindingSource;
-            this.m_supplierDataGridView.Location = new System.Drawing.Point(0, 41);
+            this.m_supplierDataGridView.Location = new System.Drawing.Point(10, 62);
             this.m_supplierDataGridView.Name = "m_supplierDataGridView";
             this.m_supplierDataGridView.Size = new System.Drawing.Size(1143, 295);
             this.m_supplierDataGridView.TabIndex = 1;
             this.m_supplierDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.m_supplierDataGridView_CellContentClick);
+            // 
+            // View
+            // 
+            this.View.DataPropertyName = "P_ID";
+            this.View.HeaderText = "";
+            this.View.Name = "View";
+            this.View.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.View.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.View.Text = "Detail";
+            this.View.UseColumnTextForButtonValue = true;
             // 
             // fillByPIdToolStrip
             // 
@@ -131,7 +100,7 @@ namespace ProjectPCSuas
             this.fillByPIdToolStrip.Location = new System.Drawing.Point(0, 0);
             this.fillByPIdToolStrip.Name = "fillByPIdToolStrip";
             this.fillByPIdToolStrip.Size = new System.Drawing.Size(1173, 25);
-            this.fillByPIdToolStrip.TabIndex = 14;
+            this.fillByPIdToolStrip.TabIndex = 2;
             this.fillByPIdToolStrip.Text = "fillByPIdToolStrip";
             // 
             // p_IDToolStripLabel
@@ -219,15 +188,46 @@ namespace ProjectPCSuas
             this.dataGridViewTextBoxColumn11.HeaderText = "NOTE";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             // 
-            // View
+            // m_supplierBindingSource
             // 
-            this.View.DataPropertyName = "P_ID";
-            this.View.HeaderText = "";
-            this.View.Name = "View";
-            this.View.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.View.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.View.Text = "View";
-            this.View.UseColumnTextForButtonValue = true;
+            this.m_supplierBindingSource.DataMember = "m_supplier";
+            this.m_supplierBindingSource.DataSource = this.project_UASDataSet;
+            // 
+            // project_UASDataSet
+            // 
+            this.project_UASDataSet.DataSetName = "Project_UASDataSet";
+            this.project_UASDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // m_supplierTableAdapter
+            // 
+            this.m_supplierTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.m_barangTableAdapter = null;
+            this.tableAdapterManager.m_groupuserTableAdapter = null;
+            this.tableAdapterManager.m_hakaksesgroupuserTableAdapter = null;
+            this.tableAdapterManager.m_kotaTableAdapter = null;
+            this.tableAdapterManager.m_merkTableAdapter = null;
+            this.tableAdapterManager.m_modelTableAdapter = null;
+            this.tableAdapterManager.m_pelangganTableAdapter = null;
+            this.tableAdapterManager.m_supplierTableAdapter = this.m_supplierTableAdapter;
+            this.tableAdapterManager.m_usersTableAdapter = null;
+            this.tableAdapterManager.rework_detailTableAdapter = null;
+            this.tableAdapterManager.reworkTableAdapter = null;
+            this.tableAdapterManager.stock_historyTableAdapter = null;
+            this.tableAdapterManager.stockTableAdapter = null;
+            this.tableAdapterManager.t_invoice_detailTableAdapter = null;
+            this.tableAdapterManager.t_invoice_headerTableAdapter = null;
+            this.tableAdapterManager.t_invoiceppn_detailTableAdapter = null;
+            this.tableAdapterManager.t_invoiceppn_headerTableAdapter = null;
+            this.tableAdapterManager.t_label_hargaTableAdapter = null;
+            this.tableAdapterManager.t_pembelian_detailTableAdapter = null;
+            this.tableAdapterManager.t_pembelian_headerTableAdapter = null;
+            this.tableAdapterManager.t_penawaran_detailTableAdapter = null;
+            this.tableAdapterManager.t_penawaran_headerTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = ProjectPCSuas.Project_UASDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // BrowseSuplier
             // 
@@ -239,11 +239,11 @@ namespace ProjectPCSuas
             this.Name = "BrowseSuplier";
             this.Text = "BrowseSuplier";
             this.Load += new System.EventHandler(this.BrowseSuplier_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.project_UASDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_supplierBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_supplierDataGridView)).EndInit();
             this.fillByPIdToolStrip.ResumeLayout(false);
             this.fillByPIdToolStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_supplierBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.project_UASDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,10 +256,6 @@ namespace ProjectPCSuas
         private Project_UASDataSetTableAdapters.m_supplierTableAdapter m_supplierTableAdapter;
         private Project_UASDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView m_supplierDataGridView;
-        private System.Windows.Forms.ToolStrip fillByPIdToolStrip;
-        private System.Windows.Forms.ToolStripLabel p_IDToolStripLabel;
-        private System.Windows.Forms.ToolStripTextBox p_IDToolStripTextBox;
-        private System.Windows.Forms.ToolStripButton fillByPIdToolStripButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -272,5 +268,9 @@ namespace ProjectPCSuas
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewButtonColumn View;
+        private System.Windows.Forms.ToolStrip fillByPIdToolStrip;
+        private System.Windows.Forms.ToolStripLabel p_IDToolStripLabel;
+        private System.Windows.Forms.ToolStripTextBox p_IDToolStripTextBox;
+        private System.Windows.Forms.ToolStripButton fillByPIdToolStripButton;
     }
 }

@@ -27,6 +27,8 @@ namespace ProjectPCSuas
 
         private void Form3_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'project_UASDataSet.m_supplier' table. You can move, or remove it, as needed.
+            this.m_supplierTableAdapter1.Fill(this.project_UASDataSet.m_supplier);
             // TODO: This line of code loads data into the 'uASDataSet2.m_supplier' table. You can move, or remove it, as needed.
             this.m_supplierTableAdapter.Fill(this.uASDataSet2.m_supplier);
 
@@ -36,6 +38,19 @@ namespace ProjectPCSuas
         {
             BrowseSuplier BB = new BrowseSuplier();
             BB.Show();
+        }
+
+        private void fillByPIdToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.m_supplierTableAdapter1.FillByPId(this.project_UASDataSet.m_supplier, p_IDToolStripTextBox.Text);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

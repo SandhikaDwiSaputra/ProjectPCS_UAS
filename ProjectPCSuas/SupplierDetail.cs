@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -11,11 +10,11 @@ using System.Windows.Forms;
 
 namespace ProjectPCSuas
 {
-    public partial class BrowseSuplier : Form
+    public partial class SupplierDetail : Form
     {
-        SqlConnection conn;
+        public string id;
 
-        public BrowseSuplier()
+        public SupplierDetail()
         {
             InitializeComponent();
         }
@@ -28,20 +27,20 @@ namespace ProjectPCSuas
 
         }
 
-        private void BrowseSuplier_Load(object sender, EventArgs e)
+        private void SupplierDetail_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'project_UASDataSet.m_supplier' table. You can move, or remove it, as needed.
             this.m_supplierTableAdapter.Fill(this.project_UASDataSet.m_supplier);
-        }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-
+            p_IDToolStripTextBox.Text = id;
+            try
+            {
+                this.m_supplierTableAdapter.FillByPId(this.project_UASDataSet.m_supplier, p_IDToolStripTextBox.Text);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
         }
 
         private void fillByPIdToolStripButton_Click(object sender, EventArgs e)
@@ -50,21 +49,23 @@ namespace ProjectPCSuas
             {
                 this.m_supplierTableAdapter.FillByPId(this.project_UASDataSet.m_supplier, p_IDToolStripTextBox.Text);
             }
-            catch (SqlException ex)
+            catch (System.Exception ex)
             {
-                MessageBox.Show(ex.Message, ex.GetType().ToString());
+                System.Windows.Forms.MessageBox.Show(ex.Message);
             }
 
         }
 
-        private void m_supplierDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            if (e.ColumnIndex == 11)
-            {
-                SupplierDetail sd = new SupplierDetail();
-                sd.id = m_supplierDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
-                sd.Show();
-            }
+            this.m_supplierBindingSource.RemoveCurrent();
+            this.tableAdapterManager.UpdateAll(this.project_UASDataSet);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.m_supplierBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.project_UASDataSet);
         }
     }
 }

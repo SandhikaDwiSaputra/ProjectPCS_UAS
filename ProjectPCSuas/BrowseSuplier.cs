@@ -55,5 +55,10 @@ namespace ProjectPCSuas
                 ms.Show();
             }
         }
+
+        private void fillByPIdToolStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

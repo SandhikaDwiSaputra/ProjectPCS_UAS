@@ -95,5 +95,10 @@ namespace ProjectPCSuas
             this.m_supplierBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.uASDataSet2);
         }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

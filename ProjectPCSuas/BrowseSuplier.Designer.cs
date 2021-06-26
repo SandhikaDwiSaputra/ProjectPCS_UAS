@@ -31,11 +31,6 @@ namespace ProjectPCSuas
         {
             this.components = new System.ComponentModel.Container();
             this.m_supplierDataGridView = new System.Windows.Forms.DataGridView();
-            this.View = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.fillByPIdToolStrip = new System.Windows.Forms.ToolStrip();
-            this.p_IDToolStripLabel = new System.Windows.Forms.ToolStripLabel();
-            this.p_IDToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.fillByPIdToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,14 +42,19 @@ namespace ProjectPCSuas
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.View = new System.Windows.Forms.DataGridViewButtonColumn();
             this.m_supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.project_UASDataSet = new ProjectPCSuas.Project_UASDataSet();
+            this.fillByPIdToolStrip = new System.Windows.Forms.ToolStrip();
+            this.p_IDToolStripLabel = new System.Windows.Forms.ToolStripLabel();
+            this.p_IDToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.fillByPIdToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.m_supplierTableAdapter = new ProjectPCSuas.Project_UASDataSetTableAdapters.m_supplierTableAdapter();
             this.tableAdapterManager = new ProjectPCSuas.Project_UASDataSetTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.m_supplierDataGridView)).BeginInit();
-            this.fillByPIdToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_supplierBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.project_UASDataSet)).BeginInit();
+            this.fillByPIdToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_supplierDataGridView
@@ -80,47 +80,6 @@ namespace ProjectPCSuas
             this.m_supplierDataGridView.Size = new System.Drawing.Size(1143, 295);
             this.m_supplierDataGridView.TabIndex = 1;
             this.m_supplierDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.m_supplierDataGridView_CellContentClick);
-            // 
-            // View
-            // 
-            this.View.DataPropertyName = "P_ID";
-            this.View.HeaderText = "";
-            this.View.Name = "View";
-            this.View.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.View.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.View.Text = "Detail";
-            this.View.UseColumnTextForButtonValue = true;
-            // 
-            // fillByPIdToolStrip
-            // 
-            this.fillByPIdToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.p_IDToolStripLabel,
-            this.p_IDToolStripTextBox,
-            this.fillByPIdToolStripButton});
-            this.fillByPIdToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.fillByPIdToolStrip.Name = "fillByPIdToolStrip";
-            this.fillByPIdToolStrip.Size = new System.Drawing.Size(1173, 25);
-            this.fillByPIdToolStrip.TabIndex = 2;
-            this.fillByPIdToolStrip.Text = "fillByPIdToolStrip";
-            // 
-            // p_IDToolStripLabel
-            // 
-            this.p_IDToolStripLabel.Name = "p_IDToolStripLabel";
-            this.p_IDToolStripLabel.Size = new System.Drawing.Size(33, 22);
-            this.p_IDToolStripLabel.Text = "P_ID:";
-            // 
-            // p_IDToolStripTextBox
-            // 
-            this.p_IDToolStripTextBox.Name = "p_IDToolStripTextBox";
-            this.p_IDToolStripTextBox.Size = new System.Drawing.Size(100, 25);
-            // 
-            // fillByPIdToolStripButton
-            // 
-            this.fillByPIdToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillByPIdToolStripButton.Name = "fillByPIdToolStripButton";
-            this.fillByPIdToolStripButton.Size = new System.Drawing.Size(56, 22);
-            this.fillByPIdToolStripButton.Text = "FillByPId";
-            this.fillByPIdToolStripButton.Click += new System.EventHandler(this.fillByPIdToolStripButton_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -188,6 +147,16 @@ namespace ProjectPCSuas
             this.dataGridViewTextBoxColumn11.HeaderText = "NOTE";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             // 
+            // View
+            // 
+            this.View.DataPropertyName = "P_ID";
+            this.View.HeaderText = "";
+            this.View.Name = "View";
+            this.View.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.View.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.View.Text = "Detail";
+            this.View.UseColumnTextForButtonValue = true;
+            // 
             // m_supplierBindingSource
             // 
             this.m_supplierBindingSource.DataMember = "m_supplier";
@@ -197,6 +166,38 @@ namespace ProjectPCSuas
             // 
             this.project_UASDataSet.DataSetName = "Project_UASDataSet";
             this.project_UASDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // fillByPIdToolStrip
+            // 
+            this.fillByPIdToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.p_IDToolStripLabel,
+            this.p_IDToolStripTextBox,
+            this.fillByPIdToolStripButton});
+            this.fillByPIdToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.fillByPIdToolStrip.Name = "fillByPIdToolStrip";
+            this.fillByPIdToolStrip.Size = new System.Drawing.Size(1173, 25);
+            this.fillByPIdToolStrip.TabIndex = 2;
+            this.fillByPIdToolStrip.Text = "fillByPIdToolStrip";
+            this.fillByPIdToolStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.fillByPIdToolStrip_ItemClicked);
+            // 
+            // p_IDToolStripLabel
+            // 
+            this.p_IDToolStripLabel.Name = "p_IDToolStripLabel";
+            this.p_IDToolStripLabel.Size = new System.Drawing.Size(33, 22);
+            this.p_IDToolStripLabel.Text = "P_ID:";
+            // 
+            // p_IDToolStripTextBox
+            // 
+            this.p_IDToolStripTextBox.Name = "p_IDToolStripTextBox";
+            this.p_IDToolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            // 
+            // fillByPIdToolStripButton
+            // 
+            this.fillByPIdToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillByPIdToolStripButton.Name = "fillByPIdToolStripButton";
+            this.fillByPIdToolStripButton.Size = new System.Drawing.Size(56, 22);
+            this.fillByPIdToolStripButton.Text = "FillByPId";
+            this.fillByPIdToolStripButton.Click += new System.EventHandler(this.fillByPIdToolStripButton_Click);
             // 
             // m_supplierTableAdapter
             // 
@@ -240,10 +241,10 @@ namespace ProjectPCSuas
             this.Text = "BrowseSuplier";
             this.Load += new System.EventHandler(this.BrowseSuplier_Load);
             ((System.ComponentModel.ISupportInitialize)(this.m_supplierDataGridView)).EndInit();
-            this.fillByPIdToolStrip.ResumeLayout(false);
-            this.fillByPIdToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_supplierBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.project_UASDataSet)).EndInit();
+            this.fillByPIdToolStrip.ResumeLayout(false);
+            this.fillByPIdToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

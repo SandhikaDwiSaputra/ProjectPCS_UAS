@@ -44,8 +44,6 @@ namespace ProjectPCSuas
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MasterSuplier));
             this.m_supplierBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.m_supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.uASDataSet2 = new ProjectPCSuas.UASDataSet2();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -74,10 +72,12 @@ namespace ProjectPCSuas
             this.p_IDToolStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.p_IDToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.fillByPId2ToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.m_supplierTableAdapter = new ProjectPCSuas.UASDataSet2TableAdapters.m_supplierTableAdapter();
-            this.tableAdapterManager = new ProjectPCSuas.UASDataSet2TableAdapters.TableAdapterManager();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.m_supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uASDataSet2 = new ProjectPCSuas.UASDataSet2();
+            this.m_supplierTableAdapter = new ProjectPCSuas.UASDataSet2TableAdapters.m_supplierTableAdapter();
+            this.tableAdapterManager = new ProjectPCSuas.UASDataSet2TableAdapters.TableAdapterManager();
             p_IDLabel = new System.Windows.Forms.Label();
             nAMALabel = new System.Windows.Forms.Label();
             aLAMATLabel = new System.Windows.Forms.Label();
@@ -91,9 +91,9 @@ namespace ProjectPCSuas
             nOTELabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.m_supplierBindingNavigator)).BeginInit();
             this.m_supplierBindingNavigator.SuspendLayout();
+            this.fillByPId2ToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_supplierBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uASDataSet2)).BeginInit();
-            this.fillByPId2ToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // p_IDLabel
@@ -246,16 +246,6 @@ namespace ProjectPCSuas
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
-            // m_supplierBindingSource
-            // 
-            this.m_supplierBindingSource.DataMember = "m_supplier";
-            this.m_supplierBindingSource.DataSource = this.uASDataSet2;
-            // 
-            // uASDataSet2
-            // 
-            this.uASDataSet2.DataSetName = "UASDataSet2";
-            this.uASDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
@@ -271,6 +261,7 @@ namespace ProjectPCSuas
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -491,6 +482,36 @@ namespace ProjectPCSuas
             this.fillByPId2ToolStripButton.Text = "FillByPId";
             this.fillByPId2ToolStripButton.Click += new System.EventHandler(this.fillByPId2ToolStripButton_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(87, 288);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 33;
+            this.button1.Text = "Update";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(168, 288);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 34;
+            this.button2.Text = "Delete";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // m_supplierBindingSource
+            // 
+            this.m_supplierBindingSource.DataMember = "m_supplier";
+            this.m_supplierBindingSource.DataSource = this.uASDataSet2;
+            // 
+            // uASDataSet2
+            // 
+            this.uASDataSet2.DataSetName = "UASDataSet2";
+            this.uASDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // m_supplierTableAdapter
             // 
             this.m_supplierTableAdapter.ClearBeforeFill = true;
@@ -521,26 +542,6 @@ namespace ProjectPCSuas
             this.tableAdapterManager.t_penawaran_detailTableAdapter = null;
             this.tableAdapterManager.t_penawaran_headerTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = ProjectPCSuas.UASDataSet2TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(87, 288);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 33;
-            this.button1.Text = "Update";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(168, 288);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 34;
-            this.button2.Text = "Delete";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // MasterSuplier
             // 
@@ -582,10 +583,10 @@ namespace ProjectPCSuas
             ((System.ComponentModel.ISupportInitialize)(this.m_supplierBindingNavigator)).EndInit();
             this.m_supplierBindingNavigator.ResumeLayout(false);
             this.m_supplierBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_supplierBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uASDataSet2)).EndInit();
             this.fillByPId2ToolStrip.ResumeLayout(false);
             this.fillByPId2ToolStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_supplierBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uASDataSet2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -623,7 +623,7 @@ namespace ProjectPCSuas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1051, 623);
+            this.ClientSize = new System.Drawing.Size(1051, 666);
             this.Controls.Add(label6);
             this.Controls.Add(this.Gtotal);
             this.Controls.Add(label5);

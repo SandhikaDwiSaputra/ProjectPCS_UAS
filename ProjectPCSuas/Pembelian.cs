@@ -156,7 +156,7 @@ namespace ProjectPCSuas
             int num = -1;
             if (!int.TryParse(cek, out num))
             {
-                MessageBox.Show("Input Must Be Number");
+                MessageBox.Show("Input Harus Angka");
             }
             else if (Convert.ToInt32(cekBarang) > 0)
             {

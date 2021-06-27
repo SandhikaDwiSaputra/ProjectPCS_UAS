@@ -141,3 +141,7 @@ C:\Users\SanDhika\source\repos\ProjectPCSuas\ProjectPCSuas\obj\Debug\ProjectPCSu
 C:\Users\dell\Downloads\ProjectPCS_UAS-master\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.Master_Model.resources
 C:\Users\dell\Downloads\ProjectPCS_UAS-master\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.Pembelian.resources
 C:\Users\dell\Downloads\ProjectPCS_UAS-master\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.UpdateMasterMerk.resources
+C:\Users\dell\Downloads\ProjectPCS_UAS-master\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.PenawaranHeader.resources
+C:\Users\dell\Downloads\ProjectPCS_UAS\ProjectPCS_UAS-master\ProjectPCSuas\bin\Debug\ProjectPCSuas.exe.config
+C:\Users\dell\Downloads\ProjectPCS_UAS\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.exe
+C:\Users\dell\Downloads\ProjectPCS_UAS\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.pdb

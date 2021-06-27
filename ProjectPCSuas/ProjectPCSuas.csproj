@@ -85,6 +85,12 @@
     <Compile Include="BrowseSuplier.Designer.cs">
       <DependentUpon>BrowseSuplier.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataPenawaran.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataPenawaran.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DataSupplier.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -151,6 +157,12 @@
     <Compile Include="PrintPembelian.Designer.cs">
       <DependentUpon>PrintPembelian.cs</DependentUpon>
     </Compile>
+    <Compile Include="PrintPenawaran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintPenawaran.Designer.cs">
+      <DependentUpon>PrintPenawaran.cs</DependentUpon>
+    </Compile>
     <Compile Include="PrintSupp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,6 +214,10 @@
     <EmbeddedResource Include="BrowseSuplier.resx">
       <DependentUpon>BrowseSuplier.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DataPenawaran.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DataPenawaran.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="DataSupplier.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>DataSupplier.cs</LastGenOutput>
@@ -235,6 +251,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PrintPembelian.resx">
       <DependentUpon>PrintPembelian.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintPenawaran.resx">
+      <DependentUpon>PrintPenawaran.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrintSupp.resx">
       <DependentUpon>PrintSupp.cs</DependentUpon>

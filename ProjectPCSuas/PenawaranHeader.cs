@@ -394,5 +394,11 @@ namespace ProjectPCSuas
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            PrintPenawaran pp = new PrintPenawaran();
+            pp.Show();
+        }
     }
 }

@@ -103,6 +103,14 @@
             this.m_barangTableAdapter = new ProjectPCSuas.UASDataSet2TableAdapters.m_barangTableAdapter();
             this.dESCRIPTIONComboBox = new System.Windows.Forms.ComboBox();
             this.mbarangBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fillByNoPNWToolStrip = new System.Windows.Forms.ToolStrip();
+            this.nO_PNWToolStripLabel = new System.Windows.Forms.ToolStripLabel();
+            this.nO_PNWToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.fillByNoPNWToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             nO_PNWLabel = new System.Windows.Forms.Label();
             p_IDLabel = new System.Windows.Forms.Label();
             tGL_PNWLabel = new System.Windows.Forms.Label();
@@ -131,12 +139,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.t_penawaran_detailDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_barangBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mbarangBindingSource)).BeginInit();
+            this.fillByNoPNWToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // nO_PNWLabel
             // 
             nO_PNWLabel.AutoSize = true;
-            nO_PNWLabel.Location = new System.Drawing.Point(13, 45);
+            nO_PNWLabel.Location = new System.Drawing.Point(16, 68);
             nO_PNWLabel.Name = "nO_PNWLabel";
             nO_PNWLabel.Size = new System.Drawing.Size(55, 13);
             nO_PNWLabel.TabIndex = 1;
@@ -145,7 +154,7 @@
             // p_IDLabel
             // 
             p_IDLabel.AutoSize = true;
-            p_IDLabel.Location = new System.Drawing.Point(13, 71);
+            p_IDLabel.Location = new System.Drawing.Point(16, 94);
             p_IDLabel.Name = "p_IDLabel";
             p_IDLabel.Size = new System.Drawing.Size(31, 13);
             p_IDLabel.TabIndex = 3;
@@ -154,7 +163,7 @@
             // tGL_PNWLabel
             // 
             tGL_PNWLabel.AutoSize = true;
-            tGL_PNWLabel.Location = new System.Drawing.Point(309, 42);
+            tGL_PNWLabel.Location = new System.Drawing.Point(312, 65);
             tGL_PNWLabel.Name = "tGL_PNWLabel";
             tGL_PNWLabel.Size = new System.Drawing.Size(60, 13);
             tGL_PNWLabel.TabIndex = 5;
@@ -163,7 +172,7 @@
             // tGL_TERIMALabel
             // 
             tGL_TERIMALabel.AutoSize = true;
-            tGL_TERIMALabel.Location = new System.Drawing.Point(605, 42);
+            tGL_TERIMALabel.Location = new System.Drawing.Point(608, 65);
             tGL_TERIMALabel.Name = "tGL_TERIMALabel";
             tGL_TERIMALabel.Size = new System.Drawing.Size(75, 13);
             tGL_TERIMALabel.TabIndex = 7;
@@ -172,7 +181,7 @@
             // mODELLabel
             // 
             mODELLabel.AutoSize = true;
-            mODELLabel.Location = new System.Drawing.Point(13, 97);
+            mODELLabel.Location = new System.Drawing.Point(16, 120);
             mODELLabel.Name = "mODELLabel";
             mODELLabel.Size = new System.Drawing.Size(48, 13);
             mODELLabel.TabIndex = 9;
@@ -181,7 +190,7 @@
             // eNGINELabel
             // 
             eNGINELabel.AutoSize = true;
-            eNGINELabel.Location = new System.Drawing.Point(309, 97);
+            eNGINELabel.Location = new System.Drawing.Point(312, 120);
             eNGINELabel.Name = "eNGINELabel";
             eNGINELabel.Size = new System.Drawing.Size(51, 13);
             eNGINELabel.TabIndex = 11;
@@ -190,7 +199,7 @@
             // sERIAL_NOLabel
             // 
             sERIAL_NOLabel.AutoSize = true;
-            sERIAL_NOLabel.Location = new System.Drawing.Point(605, 97);
+            sERIAL_NOLabel.Location = new System.Drawing.Point(608, 120);
             sERIAL_NOLabel.Name = "sERIAL_NOLabel";
             sERIAL_NOLabel.Size = new System.Drawing.Size(67, 13);
             sERIAL_NOLabel.TabIndex = 13;
@@ -199,7 +208,7 @@
             // pART_CHARGLabel
             // 
             pART_CHARGLabel.AutoSize = true;
-            pART_CHARGLabel.Location = new System.Drawing.Point(396, 371);
+            pART_CHARGLabel.Location = new System.Drawing.Point(403, 441);
             pART_CHARGLabel.Name = "pART_CHARGLabel";
             pART_CHARGLabel.Size = new System.Drawing.Size(80, 13);
             pART_CHARGLabel.TabIndex = 15;
@@ -208,7 +217,7 @@
             // sERVICE_CHLabel
             // 
             sERVICE_CHLabel.AutoSize = true;
-            sERVICE_CHLabel.Location = new System.Drawing.Point(396, 437);
+            sERVICE_CHLabel.Location = new System.Drawing.Point(403, 507);
             sERVICE_CHLabel.Name = "sERVICE_CHLabel";
             sERVICE_CHLabel.Size = new System.Drawing.Size(74, 13);
             sERVICE_CHLabel.TabIndex = 17;
@@ -217,7 +226,7 @@
             // kETERANGANLabel
             // 
             kETERANGANLabel.AutoSize = true;
-            kETERANGANLabel.Location = new System.Drawing.Point(13, 404);
+            kETERANGANLabel.Location = new System.Drawing.Point(20, 474);
             kETERANGANLabel.Name = "kETERANGANLabel";
             kETERANGANLabel.Size = new System.Drawing.Size(84, 13);
             kETERANGANLabel.TabIndex = 19;
@@ -226,7 +235,7 @@
             // kETERANGA2Label
             // 
             kETERANGA2Label.AutoSize = true;
-            kETERANGA2Label.Location = new System.Drawing.Point(13, 434);
+            kETERANGA2Label.Location = new System.Drawing.Point(20, 504);
             kETERANGA2Label.Name = "kETERANGA2Label";
             kETERANGA2Label.Size = new System.Drawing.Size(82, 13);
             kETERANGA2Label.TabIndex = 21;
@@ -235,7 +244,7 @@
             // dISCOUNTLabel
             // 
             dISCOUNTLabel.AutoSize = true;
-            dISCOUNTLabel.Location = new System.Drawing.Point(396, 404);
+            dISCOUNTLabel.Location = new System.Drawing.Point(403, 474);
             dISCOUNTLabel.Name = "dISCOUNTLabel";
             dISCOUNTLabel.Size = new System.Drawing.Size(66, 13);
             dISCOUNTLabel.TabIndex = 23;
@@ -244,7 +253,7 @@
             // pPNLabel
             // 
             pPNLabel.AutoSize = true;
-            pPNLabel.Location = new System.Drawing.Point(396, 469);
+            pPNLabel.Location = new System.Drawing.Point(403, 539);
             pPNLabel.Name = "pPNLabel";
             pPNLabel.Size = new System.Drawing.Size(32, 13);
             pPNLabel.TabIndex = 29;
@@ -253,7 +262,7 @@
             // pOWOLabel
             // 
             pOWOLabel.AutoSize = true;
-            pOWOLabel.Location = new System.Drawing.Point(13, 130);
+            pOWOLabel.Location = new System.Drawing.Point(16, 153);
             pOWOLabel.Name = "pOWOLabel";
             pOWOLabel.Size = new System.Drawing.Size(44, 13);
             pOWOLabel.TabIndex = 31;
@@ -262,7 +271,7 @@
             // aSSYLabel
             // 
             aSSYLabel.AutoSize = true;
-            aSSYLabel.Location = new System.Drawing.Point(309, 130);
+            aSSYLabel.Location = new System.Drawing.Point(312, 153);
             aSSYLabel.Name = "aSSYLabel";
             aSSYLabel.Size = new System.Drawing.Size(38, 13);
             aSSYLabel.TabIndex = 33;
@@ -271,7 +280,7 @@
             // qTYLabel
             // 
             qTYLabel.AutoSize = true;
-            qTYLabel.Location = new System.Drawing.Point(13, 464);
+            qTYLabel.Location = new System.Drawing.Point(20, 534);
             qTYLabel.Name = "qTYLabel";
             qTYLabel.Size = new System.Drawing.Size(32, 13);
             qTYLabel.TabIndex = 46;
@@ -280,7 +289,7 @@
             // dESCRIPTIONLabel
             // 
             dESCRIPTIONLabel.AutoSize = true;
-            dESCRIPTIONLabel.Location = new System.Drawing.Point(13, 371);
+            dESCRIPTIONLabel.Location = new System.Drawing.Point(20, 441);
             dESCRIPTIONLabel.Name = "dESCRIPTIONLabel";
             dESCRIPTIONLabel.Size = new System.Drawing.Size(89, 13);
             dESCRIPTIONLabel.TabIndex = 51;
@@ -377,6 +386,7 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Add new";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorCountItem
             // 
@@ -471,7 +481,7 @@
             // nO_PNWTextBox
             // 
             this.nO_PNWTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_penawaran_headerBindingSource, "NO_PNW", true));
-            this.nO_PNWTextBox.Location = new System.Drawing.Point(103, 42);
+            this.nO_PNWTextBox.Location = new System.Drawing.Point(106, 65);
             this.nO_PNWTextBox.Name = "nO_PNWTextBox";
             this.nO_PNWTextBox.Size = new System.Drawing.Size(200, 20);
             this.nO_PNWTextBox.TabIndex = 2;
@@ -482,7 +492,7 @@
             this.p_IDComboBox.DataSource = this.msupplierBindingSource;
             this.p_IDComboBox.DisplayMember = "NAMA";
             this.p_IDComboBox.FormattingEnabled = true;
-            this.p_IDComboBox.Location = new System.Drawing.Point(103, 68);
+            this.p_IDComboBox.Location = new System.Drawing.Point(106, 91);
             this.p_IDComboBox.Name = "p_IDComboBox";
             this.p_IDComboBox.Size = new System.Drawing.Size(200, 21);
             this.p_IDComboBox.TabIndex = 4;
@@ -496,7 +506,7 @@
             // tGL_PNWDateTimePicker
             // 
             this.tGL_PNWDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.t_penawaran_headerBindingSource, "TGL_PNW", true));
-            this.tGL_PNWDateTimePicker.Location = new System.Drawing.Point(399, 38);
+            this.tGL_PNWDateTimePicker.Location = new System.Drawing.Point(402, 61);
             this.tGL_PNWDateTimePicker.Name = "tGL_PNWDateTimePicker";
             this.tGL_PNWDateTimePicker.Size = new System.Drawing.Size(136, 20);
             this.tGL_PNWDateTimePicker.TabIndex = 6;
@@ -504,7 +514,7 @@
             // tGL_TERIMADateTimePicker
             // 
             this.tGL_TERIMADateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.t_penawaran_headerBindingSource, "TGL_TERIMA", true));
-            this.tGL_TERIMADateTimePicker.Location = new System.Drawing.Point(695, 38);
+            this.tGL_TERIMADateTimePicker.Location = new System.Drawing.Point(698, 61);
             this.tGL_TERIMADateTimePicker.Name = "tGL_TERIMADateTimePicker";
             this.tGL_TERIMADateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.tGL_TERIMADateTimePicker.TabIndex = 8;
@@ -515,7 +525,7 @@
             this.mODELComboBox.DataSource = this.mmodelBindingSource;
             this.mODELComboBox.DisplayMember = "DESCRIPTION";
             this.mODELComboBox.FormattingEnabled = true;
-            this.mODELComboBox.Location = new System.Drawing.Point(103, 94);
+            this.mODELComboBox.Location = new System.Drawing.Point(106, 117);
             this.mODELComboBox.Name = "mODELComboBox";
             this.mODELComboBox.Size = new System.Drawing.Size(200, 21);
             this.mODELComboBox.TabIndex = 10;
@@ -529,7 +539,7 @@
             // eNGINETextBox
             // 
             this.eNGINETextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_penawaran_headerBindingSource, "ENGINE", true));
-            this.eNGINETextBox.Location = new System.Drawing.Point(399, 94);
+            this.eNGINETextBox.Location = new System.Drawing.Point(402, 117);
             this.eNGINETextBox.Name = "eNGINETextBox";
             this.eNGINETextBox.Size = new System.Drawing.Size(200, 20);
             this.eNGINETextBox.TabIndex = 12;
@@ -537,7 +547,7 @@
             // sERIAL_NOTextBox
             // 
             this.sERIAL_NOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_penawaran_headerBindingSource, "SERIAL_NO", true));
-            this.sERIAL_NOTextBox.Location = new System.Drawing.Point(695, 94);
+            this.sERIAL_NOTextBox.Location = new System.Drawing.Point(698, 117);
             this.sERIAL_NOTextBox.Name = "sERIAL_NOTextBox";
             this.sERIAL_NOTextBox.Size = new System.Drawing.Size(200, 20);
             this.sERIAL_NOTextBox.TabIndex = 14;
@@ -545,7 +555,7 @@
             // pART_CHARGTextBox
             // 
             this.pART_CHARGTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_penawaran_headerBindingSource, "PART_CHARG", true));
-            this.pART_CHARGTextBox.Location = new System.Drawing.Point(486, 368);
+            this.pART_CHARGTextBox.Location = new System.Drawing.Point(493, 438);
             this.pART_CHARGTextBox.Name = "pART_CHARGTextBox";
             this.pART_CHARGTextBox.Size = new System.Drawing.Size(200, 20);
             this.pART_CHARGTextBox.TabIndex = 16;
@@ -554,7 +564,7 @@
             // sERVICE_CHTextBox
             // 
             this.sERVICE_CHTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_penawaran_headerBindingSource, "SERVICE_CH", true));
-            this.sERVICE_CHTextBox.Location = new System.Drawing.Point(486, 434);
+            this.sERVICE_CHTextBox.Location = new System.Drawing.Point(493, 504);
             this.sERVICE_CHTextBox.Name = "sERVICE_CHTextBox";
             this.sERVICE_CHTextBox.Size = new System.Drawing.Size(200, 20);
             this.sERVICE_CHTextBox.TabIndex = 18;
@@ -563,7 +573,7 @@
             // kETERANGANTextBox
             // 
             this.kETERANGANTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_penawaran_headerBindingSource, "KETERANGAN", true));
-            this.kETERANGANTextBox.Location = new System.Drawing.Point(103, 401);
+            this.kETERANGANTextBox.Location = new System.Drawing.Point(110, 471);
             this.kETERANGANTextBox.Name = "kETERANGANTextBox";
             this.kETERANGANTextBox.Size = new System.Drawing.Size(200, 20);
             this.kETERANGANTextBox.TabIndex = 20;
@@ -571,7 +581,7 @@
             // kETERANGA2TextBox
             // 
             this.kETERANGA2TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_penawaran_headerBindingSource, "KETERANGA2", true));
-            this.kETERANGA2TextBox.Location = new System.Drawing.Point(103, 431);
+            this.kETERANGA2TextBox.Location = new System.Drawing.Point(110, 501);
             this.kETERANGA2TextBox.Name = "kETERANGA2TextBox";
             this.kETERANGA2TextBox.Size = new System.Drawing.Size(200, 20);
             this.kETERANGA2TextBox.TabIndex = 22;
@@ -579,7 +589,7 @@
             // dISCOUNTTextBox
             // 
             this.dISCOUNTTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_penawaran_headerBindingSource, "DISCOUNT", true));
-            this.dISCOUNTTextBox.Location = new System.Drawing.Point(486, 401);
+            this.dISCOUNTTextBox.Location = new System.Drawing.Point(493, 471);
             this.dISCOUNTTextBox.Name = "dISCOUNTTextBox";
             this.dISCOUNTTextBox.Size = new System.Drawing.Size(200, 20);
             this.dISCOUNTTextBox.TabIndex = 24;
@@ -588,7 +598,7 @@
             // bATALCheckBox
             // 
             this.bATALCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.t_penawaran_headerBindingSource, "BATAL", true));
-            this.bATALCheckBox.Location = new System.Drawing.Point(541, 37);
+            this.bATALCheckBox.Location = new System.Drawing.Point(544, 60);
             this.bATALCheckBox.Name = "bATALCheckBox";
             this.bATALCheckBox.Size = new System.Drawing.Size(61, 24);
             this.bATALCheckBox.TabIndex = 26;
@@ -598,7 +608,7 @@
             // pPNTextBox
             // 
             this.pPNTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_penawaran_headerBindingSource, "PPN", true));
-            this.pPNTextBox.Location = new System.Drawing.Point(486, 466);
+            this.pPNTextBox.Location = new System.Drawing.Point(493, 536);
             this.pPNTextBox.Name = "pPNTextBox";
             this.pPNTextBox.Size = new System.Drawing.Size(200, 20);
             this.pPNTextBox.TabIndex = 30;
@@ -606,7 +616,7 @@
             // pOWOTextBox
             // 
             this.pOWOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_penawaran_headerBindingSource, "POWO", true));
-            this.pOWOTextBox.Location = new System.Drawing.Point(103, 127);
+            this.pOWOTextBox.Location = new System.Drawing.Point(106, 150);
             this.pOWOTextBox.Name = "pOWOTextBox";
             this.pOWOTextBox.Size = new System.Drawing.Size(200, 20);
             this.pOWOTextBox.TabIndex = 32;
@@ -614,7 +624,7 @@
             // aSSYTextBox
             // 
             this.aSSYTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_penawaran_headerBindingSource, "ASSY", true));
-            this.aSSYTextBox.Location = new System.Drawing.Point(399, 127);
+            this.aSSYTextBox.Location = new System.Drawing.Point(402, 150);
             this.aSSYTextBox.Name = "aSSYTextBox";
             this.aSSYTextBox.Size = new System.Drawing.Size(200, 20);
             this.aSSYTextBox.TabIndex = 34;
@@ -627,7 +637,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(396, 509);
+            this.label1.Location = new System.Drawing.Point(403, 579);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(42, 13);
             this.label1.TabIndex = 36;
@@ -635,7 +645,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(486, 506);
+            this.textBox1.Location = new System.Drawing.Point(493, 576);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(200, 20);
             this.textBox1.TabIndex = 37;
@@ -660,10 +670,12 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn7});
             this.t_penawaran_detailDataGridView.DataSource = this.t_penawaran_detailBindingSource;
-            this.t_penawaran_detailDataGridView.Location = new System.Drawing.Point(12, 165);
+            this.t_penawaran_detailDataGridView.Location = new System.Drawing.Point(19, 235);
             this.t_penawaran_detailDataGridView.Name = "t_penawaran_detailDataGridView";
             this.t_penawaran_detailDataGridView.Size = new System.Drawing.Size(541, 180);
             this.t_penawaran_detailDataGridView.TabIndex = 37;
+            this.t_penawaran_detailDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.t_penawaran_detailDataGridView_CellContentClick);
+            this.t_penawaran_detailDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.t_penawaran_detailDataGridView_CellDoubleClick);
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -698,7 +710,7 @@
             // qTYTextBox
             // 
             this.qTYTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_penawaran_detailBindingSource, "QTY", true));
-            this.qTYTextBox.Location = new System.Drawing.Point(103, 460);
+            this.qTYTextBox.Location = new System.Drawing.Point(110, 530);
             this.qTYTextBox.Name = "qTYTextBox";
             this.qTYTextBox.Size = new System.Drawing.Size(200, 20);
             this.qTYTextBox.TabIndex = 47;
@@ -706,21 +718,21 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(285, 550);
+            this.button1.Location = new System.Drawing.Point(266, 620);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(101, 23);
             this.button1.TabIndex = 50;
-            this.button1.Text = "Tambah";
+            this.button1.Text = "Tambah Barang";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(366, 550);
+            this.button2.Location = new System.Drawing.Point(373, 620);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(96, 23);
             this.button2.TabIndex = 51;
-            this.button2.Text = "Hapus";
+            this.button2.Text = "Hapus Barang";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -739,7 +751,7 @@
             this.dESCRIPTIONComboBox.DataSource = this.mbarangBindingSource;
             this.dESCRIPTIONComboBox.DisplayMember = "DESCRIPTION";
             this.dESCRIPTIONComboBox.FormattingEnabled = true;
-            this.dESCRIPTIONComboBox.Location = new System.Drawing.Point(102, 368);
+            this.dESCRIPTIONComboBox.Location = new System.Drawing.Point(109, 438);
             this.dESCRIPTIONComboBox.Name = "dESCRIPTIONComboBox";
             this.dESCRIPTIONComboBox.Size = new System.Drawing.Size(200, 21);
             this.dESCRIPTIONComboBox.TabIndex = 52;
@@ -751,11 +763,83 @@
             this.mbarangBindingSource.DataMember = "m_barang";
             this.mbarangBindingSource.DataSource = this.uASDataSet2;
             // 
+            // fillByNoPNWToolStrip
+            // 
+            this.fillByNoPNWToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nO_PNWToolStripLabel,
+            this.nO_PNWToolStripTextBox,
+            this.fillByNoPNWToolStripButton});
+            this.fillByNoPNWToolStrip.Location = new System.Drawing.Point(0, 25);
+            this.fillByNoPNWToolStrip.Name = "fillByNoPNWToolStrip";
+            this.fillByNoPNWToolStrip.Size = new System.Drawing.Size(943, 25);
+            this.fillByNoPNWToolStrip.TabIndex = 53;
+            this.fillByNoPNWToolStrip.Text = "fillByNoPNWToolStrip";
+            // 
+            // nO_PNWToolStripLabel
+            // 
+            this.nO_PNWToolStripLabel.Name = "nO_PNWToolStripLabel";
+            this.nO_PNWToolStripLabel.Size = new System.Drawing.Size(60, 22);
+            this.nO_PNWToolStripLabel.Text = "NO_PNW:";
+            // 
+            // nO_PNWToolStripTextBox
+            // 
+            this.nO_PNWToolStripTextBox.Name = "nO_PNWToolStripTextBox";
+            this.nO_PNWToolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            // 
+            // fillByNoPNWToolStripButton
+            // 
+            this.fillByNoPNWToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillByNoPNWToolStripButton.Name = "fillByNoPNWToolStripButton";
+            this.fillByNoPNWToolStripButton.Size = new System.Drawing.Size(82, 22);
+            this.fillByNoPNWToolStripButton.Text = "FillByNoPNW";
+            this.fillByNoPNWToolStripButton.Click += new System.EventHandler(this.fillByNoPNWToolStripButton_Click);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(106, 209);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(200, 20);
+            this.textBox2.TabIndex = 55;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(20, 212);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.TabIndex = 56;
+            this.label2.Text = "KODE:";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(315, 206);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 57;
+            this.button3.Text = "Cari";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(396, 207);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 58;
+            this.button4.Text = "Clear";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // PenawaranHeader
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(943, 610);
+            this.ClientSize = new System.Drawing.Size(943, 663);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.fillByNoPNWToolStrip);
             this.Controls.Add(dESCRIPTIONLabel);
             this.Controls.Add(this.dESCRIPTIONComboBox);
             this.Controls.Add(this.button2);
@@ -812,6 +896,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.t_penawaran_detailDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_barangBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mbarangBindingSource)).EndInit();
+            this.fillByNoPNWToolStrip.ResumeLayout(false);
+            this.fillByNoPNWToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -875,5 +961,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.ToolStrip fillByNoPNWToolStrip;
+        private System.Windows.Forms.ToolStripLabel nO_PNWToolStripLabel;
+        private System.Windows.Forms.ToolStripTextBox nO_PNWToolStripTextBox;
+        private System.Windows.Forms.ToolStripButton fillByNoPNWToolStripButton;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }

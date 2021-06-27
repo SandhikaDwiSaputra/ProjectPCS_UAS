@@ -40,6 +40,7 @@ namespace ProjectPCSuas
             this.m_merkTableAdapter = new ProjectPCSuas.Project_UASDataSetTableAdapters.m_merkTableAdapter();
             this.tableAdapterManager = new ProjectPCSuas.Project_UASDataSetTableAdapters.TableAdapterManager();
             this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.project_UASDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_merkBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -145,11 +146,22 @@ namespace ProjectPCSuas
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(200, 188);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(98, 23);
+            this.button7.TabIndex = 8;
+            this.button7.Text = "Penawaran";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -176,5 +188,6 @@ namespace ProjectPCSuas
         private Project_UASDataSetTableAdapters.m_merkTableAdapter m_merkTableAdapter;
         private Project_UASDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
     }
 }

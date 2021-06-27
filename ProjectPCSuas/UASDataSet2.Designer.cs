@@ -23050,7 +23050,7 @@ SELECT ID_STOCK_HISTORY, ID_BARANG, ID_INVOICE, ID_PEMBELIAN, ID_REWORK, REWORK_
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT NO_PNW, KODE, PART_NO, DESCRIPTIO, QTY, QTY_M, UNIT_PRICE, UNIT_PRIC2 FROM" +
@@ -23065,9 +23065,16 @@ SELECT ID_STOCK_HISTORY, ID_BARANG, ID_INVOICE, ID_PEMBELIAN, ID_REWORK, REWORK_
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "SELECT NO_PNW, KODE, PART_NO, DESCRIPTIO, QTY, QTY_M, UNIT_PRICE, UNIT_PRIC2 \r\nFR" +
-                "OM dbo.t_penawaran_detail\r\nWHERE NO_PNW = @NO_PNW";
+                "OM dbo.t_penawaran_detail\r\nWHERE NO_PNW = @NO_PNW\r\nAND KODE = @KODE";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NO_PNW", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "NO_PNW", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KODE", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "KODE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT NO_PNW, KODE, PART_NO, DESCRIPTIO, QTY, QTY_M, UNIT_PRICE, UNIT_PRIC2 \r\nFR" +
+                "OM dbo.t_penawaran_detail\r\nWHERE NO_PNW = @NO_PNW";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NO_PNW", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "NO_PNW", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -23117,8 +23124,33 @@ SELECT ID_STOCK_HISTORY, ID_BARANG, ID_INVOICE, ID_PEMBELIAN, ID_REWORK, REWORK_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByNOPNW(UASDataSet2.t_penawaran_detailDataTable dataTable, string NO_PNW) {
+        public virtual int FillBy1(UASDataSet2.t_penawaran_detailDataTable dataTable, string NO_PNW, string KODE) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((NO_PNW == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(NO_PNW));
+            }
+            if ((KODE == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(KODE));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByNOPNW(UASDataSet2.t_penawaran_detailDataTable dataTable, string NO_PNW) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((NO_PNW == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -23509,13 +23541,20 @@ SELECT NO_PNW, P_ID, TGL_PNW, TGL_TERIMA, MODEL, ENGINE, SERIAL_NO, PART_CHARG, 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT NO_PNW, P_ID, TGL_PNW, TGL_TERIMA, MODEL, ENGINE, SERIAL_NO, PART_CHARG, S" +
                 "ERVICE_CH, KETERANGAN, KETERANGA2, DISCOUNT, BATAL, CEK, PPN, POWO, ASSY FROM db" +
                 "o.t_penawaran_header";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT NO_PNW, P_ID, TGL_PNW, TGL_TERIMA, MODEL, ENGINE, SERIAL_NO, PART_CHARG, S" +
+                "ERVICE_CH, KETERANGAN, KETERANGA2, DISCOUNT, BATAL, CEK, PPN, POWO, ASSY \r\nFROM " +
+                "dbo.t_penawaran_header\r\nWHERE NO_PNW = @NO_PNW";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NO_PNW", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "NO_PNW", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -23540,6 +23579,25 @@ SELECT NO_PNW, P_ID, TGL_PNW, TGL_TERIMA, MODEL, ENGINE, SERIAL_NO, PART_CHARG, 
             UASDataSet2.t_penawaran_headerDataTable dataTable = new UASDataSet2.t_penawaran_headerDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByNoPNW(UASDataSet2.t_penawaran_headerDataTable dataTable, string NO_PNW) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((NO_PNW == null)) {
+                throw new global::System.ArgumentNullException("NO_PNW");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(NO_PNW));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

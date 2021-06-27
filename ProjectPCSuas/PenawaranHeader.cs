@@ -52,7 +52,9 @@ namespace ProjectPCSuas
 
             textBox1.ReadOnly = true;
             pPNTextBox.ReadOnly = true;
+            pART_CHARGTextBox.ReadOnly = true;
             qTYTextBox.Text = "0";
+            button2.Enabled = false;
 
             data();
             total();
@@ -73,7 +75,7 @@ namespace ProjectPCSuas
                     {
                         System.Windows.Forms.MessageBox.Show(ex.Message);
                     }
-
+                    qTYTextBox.Text = "";
                     conn.Close();
                 }
             }
@@ -136,63 +138,64 @@ namespace ProjectPCSuas
 
         private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
         {
+            data();
             total();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            conn.Open();
-            
-            String DataBrg ="SELECT kode " +
-                             "FROM m_barang " +
-                             "WHERE id = " + dESCRIPTIONComboBox.SelectedValue;
-            SqlCommand comm = new SqlCommand(DataBrg, conn);
-
-            String DataBrg2 = "SELECT part_no " +
-                             "FROM m_barang " +
-                             "WHERE id = " + dESCRIPTIONComboBox.SelectedValue;
-            SqlCommand comm2 = new SqlCommand(DataBrg2, conn);
-
-            String DataBrg3 = "SELECT description " +
-                             "FROM m_barang " +
-                             "WHERE id = " + dESCRIPTIONComboBox.SelectedValue;
-            SqlCommand comm3 = new SqlCommand(DataBrg3, conn);
-
-            String DataBrg4 = "SELECT unit_price " +
-                             "FROM m_barang " +
-                             "WHERE id = " + dESCRIPTIONComboBox.SelectedValue;
-            SqlCommand comm4 = new SqlCommand(DataBrg4, conn);
-
-            String kode = comm.ExecuteScalar().ToString();
-            String part_no = comm2.ExecuteScalar().ToString();
-            String description = comm3.ExecuteScalar().ToString();
-            String unit = comm4.ExecuteScalar().ToString();
-            
-            String DataBrg6 = "SELECT COUNT(*) FROM t_penawaran_detail " +
-                              "WHERE kode = '" + kode + "' "+
-                              "AND no_pnw = '"+ nO_PNWTextBox.Text + "'";
-            SqlCommand comm6 = new SqlCommand(DataBrg6, conn);
-            String cekBarang = comm6.ExecuteScalar().ToString();
-
-            if (Convert.ToInt32(cekBarang) > 0)
+            if (button1.Text.Equals("Tambah Barang"))
             {
-                String DataBrg7 = "SELECT qty FROM t_penawaran_detail WHERE kode = '" + kode + "' AND no_pnw = '"+ nO_PNWTextBox.Text + "'";
-                SqlCommand comm7 = new SqlCommand(DataBrg7, conn);
-                String qtyAwal = comm7.ExecuteScalar().ToString();
-                
-                int tambahQTY = Convert.ToInt32(qTYTextBox.Text) + Convert.ToInt32(qtyAwal);
-                String query = "UPDATE t_penawaran_detail SET qty = " + tambahQTY + " WHERE kode = '" + kode + "' AND NO_PNW='" + nO_PNWTextBox.Text + "'";
-                comm = new SqlCommand(query, conn);
-                comm.ExecuteNonQuery();                
-            }
-            else
-            {
+                conn.Open();
+
+                String DataBrg = "SELECT kode " +
+                                 "FROM m_barang " +
+                                 "WHERE id = " + dESCRIPTIONComboBox.SelectedValue;
+                SqlCommand comm = new SqlCommand(DataBrg, conn);
+
+                String DataBrg2 = "SELECT part_no " +
+                                 "FROM m_barang " +
+                                 "WHERE id = " + dESCRIPTIONComboBox.SelectedValue;
+                SqlCommand comm2 = new SqlCommand(DataBrg2, conn);
+
+                String DataBrg3 = "SELECT description " +
+                                 "FROM m_barang " +
+                                 "WHERE id = " + dESCRIPTIONComboBox.SelectedValue;
+                SqlCommand comm3 = new SqlCommand(DataBrg3, conn);
+
+                String DataBrg4 = "SELECT unit_price " +
+                                 "FROM m_barang " +
+                                 "WHERE id = " + dESCRIPTIONComboBox.SelectedValue;
+                SqlCommand comm4 = new SqlCommand(DataBrg4, conn);
+
+                String kode = comm.ExecuteScalar().ToString();
+                String part_no = comm2.ExecuteScalar().ToString();
+                String description = comm3.ExecuteScalar().ToString();
+                String unit = comm4.ExecuteScalar().ToString();
+
                 String query = "Insert into t_penawaran_detail values('" + nO_PNWTextBox.Text + "', '" + kode + "', '" + part_no + "', '" + description + "', " + Convert.ToInt32(qTYTextBox.Text) + ", 0, " + Convert.ToInt32(unit) + ", " + Convert.ToInt32(unit) + ")";
                 comm = new SqlCommand(query, conn);
                 comm.ExecuteNonQuery();
+
+                conn.Close();
             }
-            conn.Close();
-            
+            else
+            {
+                conn.Open();
+                String DataBrg = "SELECT kode " +
+                                 "FROM m_barang " +
+                                 "WHERE id = " + dESCRIPTIONComboBox.SelectedValue;
+                SqlCommand comm = new SqlCommand(DataBrg, conn);
+
+                String kode = comm.ExecuteScalar().ToString();
+
+                String query = "UPDATE t_penawaran_detail SET qty = " + Convert.ToInt32(qTYTextBox.Text) + " WHERE kode = '" + kode + "' AND NO_PNW='" + nO_PNWTextBox.Text + "'";
+                comm = new SqlCommand(query, conn);
+                comm.ExecuteNonQuery();
+                conn.Close();
+                button1.Text = "Tambah Barang";
+                button2.Enabled = false;
+            }    
 
             if (p_IDComboBox.SelectedIndex == -1 || mODELComboBox.SelectedIndex == -1 || tGL_PNWDateTimePicker.Text.Equals("") || tGL_TERIMADateTimePicker.Text.Equals(""))
             {
@@ -202,6 +205,7 @@ namespace ProjectPCSuas
             {
                 this.t_penawaran_detailTableAdapter.Fill(this.uASDataSet2.t_penawaran_detail);
                 data();
+                total();
             }
         }
 
@@ -212,16 +216,19 @@ namespace ProjectPCSuas
 
         private void bindingNavigatorMovePreviousItem_Click(object sender, EventArgs e)
         {
+            data();
             total();
         }
 
         private void bindingNavigatorMoveFirstItem_Click(object sender, EventArgs e)
         {
+            data();
             total();
         }
 
         private void bindingNavigatorMoveLastItem_Click(object sender, EventArgs e)
         {
+            data();
             total();
         }
 
@@ -278,6 +285,7 @@ namespace ProjectPCSuas
                      t_penawaran_headerBindingSource.MoveNext();
                  }
              }
+             button2.Enabled = false;
         }
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
@@ -315,6 +323,76 @@ namespace ProjectPCSuas
             conn.Close();
 
             total();
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            data();
+            total();
+        }
+
+        private void t_penawaran_detailDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            String kode = t_penawaran_detailDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+            try
+            {
+                this.t_penawaran_detailTableAdapter.FillBy1(this.uASDataSet2.t_penawaran_detail, nO_PNWTextBox.Text, kode);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+            button2.Enabled = true;
+            button1.Text = "Update Barang";
+        }
+
+        private void t_penawaran_detailDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void fillByNoPNWToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.t_penawaran_headerTableAdapter.FillByNoPNW(this.uASDataSet2.t_penawaran_header, nO_PNWToolStripTextBox.Text);
+                data();
+                total();
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.t_penawaran_detailTableAdapter.FillBy(this.uASDataSet2.t_penawaran_detail, textBox2.Text);
+                button1.Text = "Update Barang";
+                button2.Enabled = true;
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                data();
+                total();
+                button2.Enabled = false;
+                button1.Text = "Tambah Barang";
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
         }
     }
 }

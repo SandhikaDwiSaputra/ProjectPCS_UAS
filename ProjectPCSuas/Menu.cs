@@ -58,5 +58,11 @@ namespace ProjectPCSuas
             Pembelian MM = new Pembelian();
             MM.Show();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            PenawaranHeader ph = new PenawaranHeader();
+            ph.Show();
+        }
     }
 }

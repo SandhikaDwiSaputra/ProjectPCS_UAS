@@ -26,8 +26,8 @@
     <Shape ID="DesignTable:t_label_harga" ZOrder="7" X="4689" Y="70" Height="115" Width="221" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:t_pembelian_detail" ZOrder="6" X="4980" Y="70" Height="286" Width="253" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="235" />
     <Shape ID="DesignTable:t_pembelian_header" ZOrder="5" X="5303" Y="70" Height="267" Width="261" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="216" />
-    <Shape ID="DesignTable:t_penawaran_detail" ZOrder="4" X="5634" Y="70" Height="267" Width="256" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="178" />
-    <Shape ID="DesignTable:t_penawaran_header" ZOrder="3" X="5960" Y="70" Height="305" Width="263" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
+    <Shape ID="DesignTable:t_penawaran_detail" ZOrder="4" X="5634" Y="70" Height="286" Width="256" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="178" />
+    <Shape ID="DesignTable:t_penawaran_header" ZOrder="3" X="5960" Y="70" Height="324" Width="263" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
   </Shapes>
   <Connectors>
     <Connector ID="DesignRelation:FK_HAKAKSESGROUPUSER_GROUPUSERS" ZOrder="2" LineWidth="11">

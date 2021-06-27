@@ -143,7 +143,7 @@ namespace ProjectPCSuas
             // tGL_PNWLabel
             // 
             tGL_PNWLabel.AutoSize = true;
-            tGL_PNWLabel.Location = new System.Drawing.Point(593, 85);
+            tGL_PNWLabel.Location = new System.Drawing.Point(673, 84);
             tGL_PNWLabel.Name = "tGL_PNWLabel";
             tGL_PNWLabel.Size = new System.Drawing.Size(60, 13);
             tGL_PNWLabel.TabIndex = 37;
@@ -377,7 +377,6 @@ namespace ProjectPCSuas
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -447,7 +446,7 @@ namespace ProjectPCSuas
             // kOTATextBox
             // 
             this.kOTATextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.m_supplierBindingSource, "KOTA", true));
-            this.kOTATextBox.Location = new System.Drawing.Point(480, 84);
+            this.kOTATextBox.Location = new System.Drawing.Point(567, 84);
             this.kOTATextBox.Name = "kOTATextBox";
             this.kOTATextBox.Size = new System.Drawing.Size(100, 20);
             this.kOTATextBox.TabIndex = 45;
@@ -455,15 +454,15 @@ namespace ProjectPCSuas
             // aLAMATTextBox
             // 
             this.aLAMATTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.m_supplierBindingSource, "ALAMAT", true));
-            this.aLAMATTextBox.Location = new System.Drawing.Point(374, 84);
+            this.aLAMATTextBox.Location = new System.Drawing.Point(405, 83);
             this.aLAMATTextBox.Name = "aLAMATTextBox";
-            this.aLAMATTextBox.Size = new System.Drawing.Size(100, 20);
+            this.aLAMATTextBox.Size = new System.Drawing.Size(139, 20);
             this.aLAMATTextBox.TabIndex = 44;
             // 
             // nAMATextBox
             // 
             this.nAMATextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.m_supplierBindingSource, "NAMA", true));
-            this.nAMATextBox.Location = new System.Drawing.Point(268, 84);
+            this.nAMATextBox.Location = new System.Drawing.Point(282, 84);
             this.nAMATextBox.Name = "nAMATextBox";
             this.nAMATextBox.Size = new System.Drawing.Size(100, 20);
             this.nAMATextBox.TabIndex = 43;
@@ -491,7 +490,7 @@ namespace ProjectPCSuas
             // tGL_PNWDateTimePicker
             // 
             this.tGL_PNWDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.t_pembelian_headerBindingSource, "TGL_PNW", true));
-            this.tGL_PNWDateTimePicker.Location = new System.Drawing.Point(659, 81);
+            this.tGL_PNWDateTimePicker.Location = new System.Drawing.Point(739, 80);
             this.tGL_PNWDateTimePicker.Name = "tGL_PNWDateTimePicker";
             this.tGL_PNWDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.tGL_PNWDateTimePicker.TabIndex = 38;
@@ -590,7 +589,7 @@ namespace ProjectPCSuas
             // HapusItem
             // 
             this.HapusItem.Enabled = false;
-            this.HapusItem.Location = new System.Drawing.Point(231, 592);
+            this.HapusItem.Location = new System.Drawing.Point(318, 563);
             this.HapusItem.Name = "HapusItem";
             this.HapusItem.Size = new System.Drawing.Size(81, 23);
             this.HapusItem.TabIndex = 52;
@@ -622,7 +621,7 @@ namespace ProjectPCSuas
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(864, 80);
+            this.button1.Location = new System.Drawing.Point(405, 563);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 67;

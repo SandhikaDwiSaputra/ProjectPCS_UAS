@@ -263,3 +263,5 @@ C:\Users\dell\Downloads\ProjectPCS_UAS-master (1)\ProjectPCS_UAS-master\ProjectP
 C:\Users\dell\Downloads\ProjectPCS_UAS-master (1)\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.Properties.Resources.resources
 C:\Users\dell\Downloads\ProjectPCS_UAS-master (1)\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.UpdateMasterMerk.resources
 C:\Users\dell\Downloads\ProjectPCS_UAS-master (1)\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.csproj.GenerateResource.Cache
+C:\Users\SanDhika\source\repos\ProjectPCS_UAS\ProjectPCSuas\obj\Debug\ProjectPCSuas.PrintPenawaran.resources
+C:\Users\SanDhika\source\repos\ProjectPCS_UAS\ProjectPCSuas\obj\Debug\ProjectPCSuas.PrintMasterMerk.resources

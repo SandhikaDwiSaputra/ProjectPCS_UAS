@@ -50,11 +50,21 @@ namespace ProjectPCSuas
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             mERK_DESCLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.project_UASDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_merkBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_merkDataGridView)).BeginInit();
             this.SuspendLayout();
+            // 
+            // mERK_DESCLabel
+            // 
+            mERK_DESCLabel.AutoSize = true;
+            mERK_DESCLabel.Location = new System.Drawing.Point(26, 131);
+            mERK_DESCLabel.Name = "mERK_DESCLabel";
+            mERK_DESCLabel.Size = new System.Drawing.Size(73, 13);
+            mERK_DESCLabel.TabIndex = 6;
+            mERK_DESCLabel.Text = "MERK DESC:";
             // 
             // project_UASDataSet
             // 
@@ -155,15 +165,6 @@ namespace ProjectPCSuas
             this.mERK_DESCTextBox.TabIndex = 7;
             this.mERK_DESCTextBox.TextChanged += new System.EventHandler(this.mERK_DESCTextBox_TextChanged);
             // 
-            // mERK_DESCLabel
-            // 
-            mERK_DESCLabel.AutoSize = true;
-            mERK_DESCLabel.Location = new System.Drawing.Point(26, 131);
-            mERK_DESCLabel.Name = "mERK_DESCLabel";
-            mERK_DESCLabel.Size = new System.Drawing.Size(73, 13);
-            mERK_DESCLabel.TabIndex = 6;
-            mERK_DESCLabel.Text = "MERK DESC:";
-            // 
             // Update
             // 
             this.Update.DataPropertyName = "ID";
@@ -237,7 +238,7 @@ namespace ProjectPCSuas
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(373, 125);
+            this.button4.Location = new System.Drawing.Point(251, 51);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 36;
@@ -245,11 +246,22 @@ namespace ProjectPCSuas
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(373, 125);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 37;
+            this.button5.Text = "Print";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Master_Merk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(483, 450);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -292,5 +304,6 @@ namespace ProjectPCSuas
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }

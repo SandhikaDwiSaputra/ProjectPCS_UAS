@@ -227,5 +227,11 @@ namespace ProjectPCSuas
             BrowseMerk bm = new BrowseMerk();
             bm.Show();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            PrintMasterMerk bm = new PrintMasterMerk();
+            bm.Show();
+        }
     }
 }

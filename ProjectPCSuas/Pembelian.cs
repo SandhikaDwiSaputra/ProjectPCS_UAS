@@ -133,6 +133,10 @@ namespace ProjectPCSuas
                          $"FROM m_barang " +
                          $"WHERE id = '{NamaBarang.SelectedValue}'";
             SqlCommand comm4 = new SqlCommand(DataBrg4, conn);
+            String DataBrgUnitP = $"SELECT unit_price " +
+                         $"FROM m_barang " +
+                         $"WHERE id = '{NamaBarang.SelectedValue}'";
+            SqlCommand communitp = new SqlCommand(DataBrgUnitP, conn);
             String DataBrg5 = $"SELECT merk1 " +
                          $"FROM m_barang " +
                          $"WHERE id = '{NamaBarang.SelectedValue}'";
@@ -145,7 +149,7 @@ namespace ProjectPCSuas
             String part_no = comm2.ExecuteScalar().ToString();
             String description = comm3.ExecuteScalar().ToString();
             String unit = comm4.ExecuteScalar().ToString();
-
+            String unitP = communitp.ExecuteScalar().ToString();
 
 
             String DataBrg6 = $"SELECT COUNT(*) FROM t_pembelian_detail WHERE kode = '{kode}' and no_pnw = '{nO_PNWTextBox.Text}'";
@@ -164,13 +168,13 @@ namespace ProjectPCSuas
                 SqlCommand comm7 = new SqlCommand(DataBrg7, conn);
                 String qtyAwal = comm7.ExecuteScalar().ToString();
                 int tambahQTY = Convert.ToInt32(textboxQTY.Text) + Convert.ToInt32(qtyAwal);
-                String query = $"UPDATE t_pembelian_detail SET qty = {tambahQTY} where kode = '{kode}'";
+                String query = $"UPDATE t_pembelian_detail SET qty = {tambahQTY} where kode = '{kode}' and no_pnw = '{nO_PNWTextBox.Text}'";
                 comm = new SqlCommand(query, conn);
                 comm.ExecuteNonQuery();
             }
             else
             {
-                String query = $"Insert into t_pembelian_detail(no_pnw,no_nota,kode,part_no,descriptio,unit,merk,qty) values('{nO_PNWTextBox.Text}','{nO_NOTATextBox.Text}','{kode}','{part_no}','{description}','{unit}','{merk}','{Convert.ToInt32(textboxQTY.Text)}')";
+                String query = $"Insert into t_pembelian_detail(no_pnw,no_nota,kode,part_no,descriptio,unit,merk,qty,unit_price) values('{nO_PNWTextBox.Text}','{nO_NOTATextBox.Text}','{kode}','{part_no}','{description}','{unit}','{merk}','{Convert.ToInt32(textboxQTY.Text)}',{unitP})";
                 comm = new SqlCommand(query, conn);
                 comm.ExecuteNonQuery();
             }
@@ -229,6 +233,12 @@ namespace ProjectPCSuas
             HapusItem.Enabled = true;
             int rowIndex = e.RowIndex;
             KodeBr.Text = dataGridView1.Rows[rowIndex].Cells[0].Value.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            PrintPembelian PP = new PrintPembelian();
+            PP.Show();
         }
     }
 }

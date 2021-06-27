@@ -227,3 +227,4 @@ C:\Users\SanDhika\source\repos\ProjectPCS_UAS\ProjectPCSuas\bin\Debug\stdole.dll
 C:\Users\SanDhika\source\repos\ProjectPCS_UAS\ProjectPCSuas\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\SanDhika\source\repos\ProjectPCS_UAS\ProjectPCSuas\obj\Debug\ProjectPCSuas.PrintSupp.resources
 C:\Users\SanDhika\source\repos\ProjectPCS_UAS\ProjectPCSuas\obj\Debug\ProjectPCSuas.PrintMasterPelanggan.resources
+C:\Users\SanDhika\source\repos\ProjectPCS_UAS\ProjectPCSuas\obj\Debug\ProjectPCSuas.PrintPembelian.resources

@@ -404,5 +404,11 @@ namespace ProjectPCSuas
         {
 
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            PrintPenawaran pp = new PrintPenawaran();
+            pp.Show();
+        }
     }
 }

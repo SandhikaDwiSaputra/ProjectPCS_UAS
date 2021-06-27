@@ -41,5 +41,11 @@ namespace ProjectPCSuas
             this.tableAdapterManager.UpdateAll(this.project_UASDataSet);
 
         }
+
+        private void PrintPelanggan_Click(object sender, EventArgs e)
+        {
+            PrintMasterPelanggan PP = new PrintMasterPelanggan();
+            PP.Show();
+        }
     }
 }

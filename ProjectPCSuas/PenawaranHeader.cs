@@ -394,5 +394,15 @@ namespace ProjectPCSuas
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
         }
+
+        private void nO_PNWToolStripTextBox_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bindingNavigatorPositionItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

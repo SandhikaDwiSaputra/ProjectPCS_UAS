@@ -434,10 +434,12 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
+            this.bindingNavigatorPositionItem.Click += new System.EventHandler(this.bindingNavigatorPositionItem_Click);
             // 
             // bindingNavigatorSeparator1
             // 
@@ -783,8 +785,10 @@
             // 
             // nO_PNWToolStripTextBox
             // 
+            this.nO_PNWToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.nO_PNWToolStripTextBox.Name = "nO_PNWToolStripTextBox";
             this.nO_PNWToolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            this.nO_PNWToolStripTextBox.Click += new System.EventHandler(this.nO_PNWToolStripTextBox_Click);
             // 
             // fillByNoPNWToolStripButton
             // 

@@ -44,6 +44,8 @@ namespace ProjectPCSuas
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MasterSuplier));
             this.m_supplierBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.m_supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uASDataSet2 = new ProjectPCSuas.UASDataSet2();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -68,14 +70,12 @@ namespace ProjectPCSuas
             this.nOTETextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.BrowseBTN = new System.Windows.Forms.Button();
-            this.fillByPId2ToolStrip = new System.Windows.Forms.ToolStrip();
-            this.p_IDToolStripLabel = new System.Windows.Forms.ToolStripLabel();
-            this.p_IDToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.fillByPId2ToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.m_supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.uASDataSet2 = new ProjectPCSuas.UASDataSet2();
+            this.fillByPId2ToolStrip = new System.Windows.Forms.ToolStrip();
+            this.p_IDToolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.p_IDToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.fillByPId2ToolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.m_supplierTableAdapter = new ProjectPCSuas.UASDataSet2TableAdapters.m_supplierTableAdapter();
             this.tableAdapterManager = new ProjectPCSuas.UASDataSet2TableAdapters.TableAdapterManager();
             p_IDLabel = new System.Windows.Forms.Label();
@@ -91,9 +91,9 @@ namespace ProjectPCSuas
             nOTELabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.m_supplierBindingNavigator)).BeginInit();
             this.m_supplierBindingNavigator.SuspendLayout();
-            this.fillByPId2ToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_supplierBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uASDataSet2)).BeginInit();
+            this.fillByPId2ToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // p_IDLabel
@@ -245,6 +245,16 @@ namespace ProjectPCSuas
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // m_supplierBindingSource
+            // 
+            this.m_supplierBindingSource.DataMember = "m_supplier";
+            this.m_supplierBindingSource.DataSource = this.uASDataSet2;
+            // 
+            // uASDataSet2
+            // 
+            this.uASDataSet2.DataSetName = "UASDataSet2";
+            this.uASDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bindingNavigatorCountItem
             // 
@@ -451,37 +461,6 @@ namespace ProjectPCSuas
             this.BrowseBTN.UseVisualStyleBackColor = true;
             this.BrowseBTN.Click += new System.EventHandler(this.BrowseBTN_Click);
             // 
-            // fillByPId2ToolStrip
-            // 
-            this.fillByPId2ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.p_IDToolStripLabel,
-            this.p_IDToolStripTextBox,
-            this.fillByPId2ToolStripButton});
-            this.fillByPId2ToolStrip.Location = new System.Drawing.Point(0, 27);
-            this.fillByPId2ToolStrip.Name = "fillByPId2ToolStrip";
-            this.fillByPId2ToolStrip.Size = new System.Drawing.Size(932, 25);
-            this.fillByPId2ToolStrip.TabIndex = 32;
-            this.fillByPId2ToolStrip.Text = "fillByPId2ToolStrip";
-            // 
-            // p_IDToolStripLabel
-            // 
-            this.p_IDToolStripLabel.Name = "p_IDToolStripLabel";
-            this.p_IDToolStripLabel.Size = new System.Drawing.Size(33, 22);
-            this.p_IDToolStripLabel.Text = "P_ID:";
-            // 
-            // p_IDToolStripTextBox
-            // 
-            this.p_IDToolStripTextBox.Name = "p_IDToolStripTextBox";
-            this.p_IDToolStripTextBox.Size = new System.Drawing.Size(100, 25);
-            // 
-            // fillByPId2ToolStripButton
-            // 
-            this.fillByPId2ToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillByPId2ToolStripButton.Name = "fillByPId2ToolStripButton";
-            this.fillByPId2ToolStripButton.Size = new System.Drawing.Size(56, 22);
-            this.fillByPId2ToolStripButton.Text = "FillByPId";
-            this.fillByPId2ToolStripButton.Click += new System.EventHandler(this.fillByPId2ToolStripButton_Click);
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(87, 288);
@@ -502,15 +481,36 @@ namespace ProjectPCSuas
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // m_supplierBindingSource
+            // fillByPId2ToolStrip
             // 
-            this.m_supplierBindingSource.DataMember = "m_supplier";
-            this.m_supplierBindingSource.DataSource = this.uASDataSet2;
+            this.fillByPId2ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.p_IDToolStripLabel1,
+            this.p_IDToolStripTextBox,
+            this.fillByPId2ToolStripButton1});
+            this.fillByPId2ToolStrip.Location = new System.Drawing.Point(0, 27);
+            this.fillByPId2ToolStrip.Name = "fillByPId2ToolStrip";
+            this.fillByPId2ToolStrip.Size = new System.Drawing.Size(932, 25);
+            this.fillByPId2ToolStrip.TabIndex = 35;
+            this.fillByPId2ToolStrip.Text = "fillByPId2ToolStrip1";
             // 
-            // uASDataSet2
+            // p_IDToolStripLabel1
             // 
-            this.uASDataSet2.DataSetName = "UASDataSet2";
-            this.uASDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.p_IDToolStripLabel1.Name = "p_IDToolStripLabel1";
+            this.p_IDToolStripLabel1.Size = new System.Drawing.Size(33, 22);
+            this.p_IDToolStripLabel1.Text = "P_ID:";
+            // 
+            // p_IDToolStripTextBox
+            // 
+            this.p_IDToolStripTextBox.Name = "p_IDToolStripTextBox";
+            this.p_IDToolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            // 
+            // fillByPId2ToolStripButton1
+            // 
+            this.fillByPId2ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillByPId2ToolStripButton1.Name = "fillByPId2ToolStripButton1";
+            this.fillByPId2ToolStripButton1.Size = new System.Drawing.Size(62, 22);
+            this.fillByPId2ToolStripButton1.Text = "FillByPId2";
+            this.fillByPId2ToolStripButton1.Click += new System.EventHandler(this.fillByPId2ToolStripButton1_Click);
             // 
             // m_supplierTableAdapter
             // 
@@ -548,9 +548,9 @@ namespace ProjectPCSuas
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(932, 407);
+            this.Controls.Add(this.fillByPId2ToolStrip);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.fillByPId2ToolStrip);
             this.Controls.Add(this.BrowseBTN);
             this.Controls.Add(this.label1);
             this.Controls.Add(p_IDLabel);
@@ -583,10 +583,10 @@ namespace ProjectPCSuas
             ((System.ComponentModel.ISupportInitialize)(this.m_supplierBindingNavigator)).EndInit();
             this.m_supplierBindingNavigator.ResumeLayout(false);
             this.m_supplierBindingNavigator.PerformLayout();
-            this.fillByPId2ToolStrip.ResumeLayout(false);
-            this.fillByPId2ToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_supplierBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uASDataSet2)).EndInit();
+            this.fillByPId2ToolStrip.ResumeLayout(false);
+            this.fillByPId2ToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -624,11 +624,11 @@ namespace ProjectPCSuas
         private System.Windows.Forms.TextBox nOTETextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BrowseBTN;
-        private System.Windows.Forms.ToolStrip fillByPId2ToolStrip;
-        private System.Windows.Forms.ToolStripLabel p_IDToolStripLabel;
-        private System.Windows.Forms.ToolStripTextBox p_IDToolStripTextBox;
-        private System.Windows.Forms.ToolStripButton fillByPId2ToolStripButton;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ToolStrip fillByPId2ToolStrip;
+        private System.Windows.Forms.ToolStripLabel p_IDToolStripLabel1;
+        private System.Windows.Forms.ToolStripTextBox p_IDToolStripTextBox;
+        private System.Windows.Forms.ToolStripButton fillByPId2ToolStripButton1;
     }
 }

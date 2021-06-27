@@ -71,19 +71,6 @@ namespace ProjectPCSuas
             BB.Show();
         }
 
-        private void fillByPId2ToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.m_supplierTableAdapter.FillByPId2(this.uASDataSet2.m_supplier, p_IDToolStripTextBox.Text);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             this.m_supplierBindingSource.RemoveCurrent();
@@ -98,6 +85,19 @@ namespace ProjectPCSuas
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void fillByPId2ToolStripButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.m_supplierTableAdapter.FillByPId2(this.uASDataSet2.m_supplier, p_IDToolStripTextBox.Text);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
 
         }
     }

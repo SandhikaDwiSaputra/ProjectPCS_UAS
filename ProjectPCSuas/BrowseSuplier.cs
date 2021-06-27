@@ -32,19 +32,6 @@ namespace ProjectPCSuas
 
         }
 
-        private void fillByPIdToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.m_supplierTableAdapter.FillByPId(this.project_UASDataSet.m_supplier, p_IDToolStripTextBox.Text);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
-
         private void m_supplierDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 11)
@@ -56,8 +43,16 @@ namespace ProjectPCSuas
             }
         }
 
-        private void fillByPIdToolStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private void fillByPIdToolStripButton1_Click(object sender, EventArgs e)
         {
+            try
+            {
+                this.m_supplierTableAdapter.FillByPId(this.project_UASDataSet.m_supplier, p_IDToolStripTextBox1.Text);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
 
         }
     }

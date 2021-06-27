@@ -52,5 +52,11 @@ namespace ProjectPCSuas
         {
 
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Pembelian MM = new Pembelian();
+            MM.Show();
+        }
     }
 }

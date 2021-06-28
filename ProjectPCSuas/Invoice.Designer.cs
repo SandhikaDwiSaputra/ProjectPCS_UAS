@@ -49,10 +49,6 @@ namespace ProjectPCSuas
             System.Windows.Forms.Label aLAMATLabel;
             System.Windows.Forms.Label aLAMAT_NPWLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Invoice));
-            this.uASDataSet2 = new ProjectPCSuas.UASDataSet2();
-            this.t_invoice_headerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.t_invoice_headerTableAdapter = new ProjectPCSuas.UASDataSet2TableAdapters.t_invoice_headerTableAdapter();
-            this.tableAdapterManager = new ProjectPCSuas.UASDataSet2TableAdapters.TableAdapterManager();
             this.t_invoice_headerBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -101,6 +97,15 @@ namespace ProjectPCSuas
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fillByInvoiceNoToolStrip = new System.Windows.Forms.ToolStrip();
+            this.nO_INVToolStripLabel = new System.Windows.Forms.ToolStripLabel();
+            this.nO_INVToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.fillByInvoiceNoToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.t_invoice_headerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uASDataSet2 = new ProjectPCSuas.UASDataSet2();
+            this.t_invoice_headerTableAdapter = new ProjectPCSuas.UASDataSet2TableAdapters.t_invoice_headerTableAdapter();
+            this.tableAdapterManager = new ProjectPCSuas.UASDataSet2TableAdapters.TableAdapterManager();
+            this.msupplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
             nO_INVLabel = new System.Windows.Forms.Label();
             nO_PNWLabel = new System.Windows.Forms.Label();
             tGL_INVLabel = new System.Windows.Forms.Label();
@@ -119,8 +124,6 @@ namespace ProjectPCSuas
             nAMALabel = new System.Windows.Forms.Label();
             aLAMATLabel = new System.Windows.Forms.Label();
             aLAMAT_NPWLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.uASDataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.t_invoice_headerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.t_invoice_headerBindingNavigator)).BeginInit();
             this.t_invoice_headerBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.project_UASDataSet)).BeginInit();
@@ -128,6 +131,10 @@ namespace ProjectPCSuas
             ((System.ComponentModel.ISupportInitialize)(this.m_pelangganBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.t_invoice_detailBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.t_invoice_detailDataGridView)).BeginInit();
+            this.fillByInvoiceNoToolStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.t_invoice_headerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uASDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.msupplierBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // nO_INVLabel
@@ -292,47 +299,6 @@ namespace ProjectPCSuas
             aLAMAT_NPWLabel.TabIndex = 40;
             aLAMAT_NPWLabel.Text = "ALAMAT NPW:";
             // 
-            // uASDataSet2
-            // 
-            this.uASDataSet2.DataSetName = "UASDataSet2";
-            this.uASDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // t_invoice_headerBindingSource
-            // 
-            this.t_invoice_headerBindingSource.DataMember = "t_invoice_header";
-            this.t_invoice_headerBindingSource.DataSource = this.uASDataSet2;
-            // 
-            // t_invoice_headerTableAdapter
-            // 
-            this.t_invoice_headerTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.m_barangTableAdapter = null;
-            this.tableAdapterManager.m_groupuserTableAdapter = null;
-            this.tableAdapterManager.m_hakaksesgroupuserTableAdapter = null;
-            this.tableAdapterManager.m_kotaTableAdapter = null;
-            this.tableAdapterManager.m_merkTableAdapter = null;
-            this.tableAdapterManager.m_modelTableAdapter = null;
-            this.tableAdapterManager.m_pelangganTableAdapter = null;
-            this.tableAdapterManager.m_supplierTableAdapter = null;
-            this.tableAdapterManager.m_usersTableAdapter = null;
-            this.tableAdapterManager.rework_detailTableAdapter = null;
-            this.tableAdapterManager.reworkTableAdapter = null;
-            this.tableAdapterManager.stock_historyTableAdapter = null;
-            this.tableAdapterManager.stockTableAdapter = null;
-            this.tableAdapterManager.t_invoice_detailTableAdapter = null;
-            this.tableAdapterManager.t_invoice_headerTableAdapter = this.t_invoice_headerTableAdapter;
-            this.tableAdapterManager.t_invoiceppn_detailTableAdapter = null;
-            this.tableAdapterManager.t_invoiceppn_headerTableAdapter = null;
-            this.tableAdapterManager.t_label_hargaTableAdapter = null;
-            this.tableAdapterManager.t_pembelian_detailTableAdapter = null;
-            this.tableAdapterManager.t_pembelian_headerTableAdapter = null;
-            this.tableAdapterManager.t_penawaran_detailTableAdapter = null;
-            this.tableAdapterManager.t_penawaran_headerTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = ProjectPCSuas.UASDataSet2TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
             // t_invoice_headerBindingNavigator
             // 
             this.t_invoice_headerBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
@@ -376,7 +342,7 @@ namespace ProjectPCSuas
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 28);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -386,7 +352,7 @@ namespace ProjectPCSuas
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
@@ -395,7 +361,7 @@ namespace ProjectPCSuas
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem
@@ -404,18 +370,19 @@ namespace ProjectPCSuas
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorPositionItem
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -424,7 +391,7 @@ namespace ProjectPCSuas
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -432,7 +399,7 @@ namespace ProjectPCSuas
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -441,20 +408,20 @@ namespace ProjectPCSuas
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
             // 
             // t_invoice_headerBindingNavigatorSaveItem
             // 
             this.t_invoice_headerBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.t_invoice_headerBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("t_invoice_headerBindingNavigatorSaveItem.Image")));
             this.t_invoice_headerBindingNavigatorSaveItem.Name = "t_invoice_headerBindingNavigatorSaveItem";
-            this.t_invoice_headerBindingNavigatorSaveItem.Size = new System.Drawing.Size(29, 24);
+            this.t_invoice_headerBindingNavigatorSaveItem.Size = new System.Drawing.Size(29, 28);
             this.t_invoice_headerBindingNavigatorSaveItem.Text = "Save Data";
             this.t_invoice_headerBindingNavigatorSaveItem.Click += new System.EventHandler(this.t_invoice_headerBindingNavigatorSaveItem_Click);
             // 
@@ -627,11 +594,16 @@ namespace ProjectPCSuas
             // iDComboBox
             // 
             this.iDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.m_pelangganBindingSource, "ID", true));
+            this.iDComboBox.DataSource = this.msupplierBindingSource;
+            this.iDComboBox.DisplayMember = "P_ID";
+            this.iDComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.iDComboBox.FormattingEnabled = true;
             this.iDComboBox.Location = new System.Drawing.Point(77, 106);
             this.iDComboBox.Name = "iDComboBox";
             this.iDComboBox.Size = new System.Drawing.Size(121, 24);
             this.iDComboBox.TabIndex = 35;
+            this.iDComboBox.ValueMember = "P_ID";
+            this.iDComboBox.SelectedValueChanged += new System.EventHandler(this.iDComboBox_SelectedValueChanged);
             // 
             // nAMATextBox
             // 
@@ -747,11 +719,91 @@ namespace ProjectPCSuas
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.Width = 125;
             // 
+            // fillByInvoiceNoToolStrip
+            // 
+            this.fillByInvoiceNoToolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.fillByInvoiceNoToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nO_INVToolStripLabel,
+            this.nO_INVToolStripTextBox,
+            this.fillByInvoiceNoToolStripButton});
+            this.fillByInvoiceNoToolStrip.Location = new System.Drawing.Point(0, 31);
+            this.fillByInvoiceNoToolStrip.Name = "fillByInvoiceNoToolStrip";
+            this.fillByInvoiceNoToolStrip.Size = new System.Drawing.Size(1424, 31);
+            this.fillByInvoiceNoToolStrip.TabIndex = 42;
+            this.fillByInvoiceNoToolStrip.Text = "fillByInvoiceNoToolStrip";
+            // 
+            // nO_INVToolStripLabel
+            // 
+            this.nO_INVToolStripLabel.Name = "nO_INVToolStripLabel";
+            this.nO_INVToolStripLabel.Size = new System.Drawing.Size(64, 28);
+            this.nO_INVToolStripLabel.Text = "NO_INV:";
+            // 
+            // nO_INVToolStripTextBox
+            // 
+            this.nO_INVToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.nO_INVToolStripTextBox.Name = "nO_INVToolStripTextBox";
+            this.nO_INVToolStripTextBox.Size = new System.Drawing.Size(100, 31);
+            // 
+            // fillByInvoiceNoToolStripButton
+            // 
+            this.fillByInvoiceNoToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillByInvoiceNoToolStripButton.Name = "fillByInvoiceNoToolStripButton";
+            this.fillByInvoiceNoToolStripButton.Size = new System.Drawing.Size(115, 28);
+            this.fillByInvoiceNoToolStripButton.Text = "FillByInvoiceNo";
+            this.fillByInvoiceNoToolStripButton.Click += new System.EventHandler(this.fillByInvoiceNoToolStripButton_Click);
+            // 
+            // t_invoice_headerBindingSource
+            // 
+            this.t_invoice_headerBindingSource.DataMember = "t_invoice_header";
+            this.t_invoice_headerBindingSource.DataSource = this.uASDataSet2;
+            // 
+            // uASDataSet2
+            // 
+            this.uASDataSet2.DataSetName = "UASDataSet2";
+            this.uASDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // t_invoice_headerTableAdapter
+            // 
+            this.t_invoice_headerTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.m_barangTableAdapter = null;
+            this.tableAdapterManager.m_groupuserTableAdapter = null;
+            this.tableAdapterManager.m_hakaksesgroupuserTableAdapter = null;
+            this.tableAdapterManager.m_kotaTableAdapter = null;
+            this.tableAdapterManager.m_merkTableAdapter = null;
+            this.tableAdapterManager.m_modelTableAdapter = null;
+            this.tableAdapterManager.m_pelangganTableAdapter = null;
+            this.tableAdapterManager.m_supplierTableAdapter = null;
+            this.tableAdapterManager.m_usersTableAdapter = null;
+            this.tableAdapterManager.rework_detailTableAdapter = null;
+            this.tableAdapterManager.reworkTableAdapter = null;
+            this.tableAdapterManager.stock_historyTableAdapter = null;
+            this.tableAdapterManager.stockTableAdapter = null;
+            this.tableAdapterManager.t_invoice_detailTableAdapter = null;
+            this.tableAdapterManager.t_invoice_headerTableAdapter = this.t_invoice_headerTableAdapter;
+            this.tableAdapterManager.t_invoiceppn_detailTableAdapter = null;
+            this.tableAdapterManager.t_invoiceppn_headerTableAdapter = null;
+            this.tableAdapterManager.t_label_hargaTableAdapter = null;
+            this.tableAdapterManager.t_pembelian_detailTableAdapter = null;
+            this.tableAdapterManager.t_pembelian_headerTableAdapter = null;
+            this.tableAdapterManager.t_penawaran_detailTableAdapter = null;
+            this.tableAdapterManager.t_penawaran_headerTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = ProjectPCSuas.UASDataSet2TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // msupplierBindingSource
+            // 
+            this.msupplierBindingSource.DataMember = "m_supplier";
+            this.msupplierBindingSource.DataSource = this.project_UASDataSet;
+            // 
             // Invoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1424, 698);
+            this.Controls.Add(this.fillByInvoiceNoToolStrip);
             this.Controls.Add(this.t_invoice_detailDataGridView);
             this.Controls.Add(aLAMAT_NPWLabel);
             this.Controls.Add(this.aLAMAT_NPWTextBox);
@@ -793,8 +845,6 @@ namespace ProjectPCSuas
             this.Name = "Invoice";
             this.Text = "Invoice";
             this.Load += new System.EventHandler(this.Invoice_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.uASDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.t_invoice_headerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.t_invoice_headerBindingNavigator)).EndInit();
             this.t_invoice_headerBindingNavigator.ResumeLayout(false);
             this.t_invoice_headerBindingNavigator.PerformLayout();
@@ -803,6 +853,11 @@ namespace ProjectPCSuas
             ((System.ComponentModel.ISupportInitialize)(this.m_pelangganBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.t_invoice_detailBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.t_invoice_detailDataGridView)).EndInit();
+            this.fillByInvoiceNoToolStrip.ResumeLayout(false);
+            this.fillByInvoiceNoToolStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.t_invoice_headerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uASDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.msupplierBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -862,5 +917,10 @@ namespace ProjectPCSuas
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.ToolStrip fillByInvoiceNoToolStrip;
+        private System.Windows.Forms.ToolStripLabel nO_INVToolStripLabel;
+        private System.Windows.Forms.ToolStripTextBox nO_INVToolStripTextBox;
+        private System.Windows.Forms.ToolStripButton fillByInvoiceNoToolStripButton;
+        private System.Windows.Forms.BindingSource msupplierBindingSource;
     }
 }

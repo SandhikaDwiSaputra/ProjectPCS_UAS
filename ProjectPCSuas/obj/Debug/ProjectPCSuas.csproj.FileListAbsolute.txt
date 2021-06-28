@@ -383,3 +383,11 @@ C:\Users\ALDO\source\repos\ProjectPCS_UAS\PCS\ProjectPCSuas\obj\Debug\ProjectPCS
 C:\Users\ALDO\source\repos\ProjectPCS_UAS\PCS\ProjectPCSuas\obj\Debug\ProjectPCSuas.Browse_detail_INV_PPN.resources
 C:\Users\ALDO\source\repos\ProjectPCS_UAS\PCS\ProjectPCSuas\obj\Debug\ProjectPCSuas.browse_Header_INV_PPN.resources
 C:\Users\ALDO\source\repos\ProjectPCS_UAS\PCS\ProjectPCSuas\obj\Debug\ProjectPCSuas.Header_INV_PPN.resources
+C:\Users\Stefanus\OneDrive\Documents\GitHub\ProjectPCS_UAS\ProjectPCSuas\obj\Debug\ProjectPCSuas.browseuser.resources
+C:\Users\Stefanus\OneDrive\Documents\GitHub\ProjectPCS_UAS\ProjectPCSuas\obj\Debug\ProjectPCSuas.Browse_detail_INV_PPN.resources
+C:\Users\Stefanus\OneDrive\Documents\GitHub\ProjectPCS_UAS\ProjectPCSuas\obj\Debug\ProjectPCSuas.browse_Header_INV_PPN.resources
+C:\Users\Stefanus\OneDrive\Documents\GitHub\ProjectPCS_UAS\ProjectPCSuas\obj\Debug\ProjectPCSuas.browsekota.resources
+C:\Users\Stefanus\OneDrive\Documents\GitHub\ProjectPCS_UAS\ProjectPCSuas\obj\Debug\ProjectPCSuas.detail_INV_PPN.resources
+C:\Users\Stefanus\OneDrive\Documents\GitHub\ProjectPCS_UAS\ProjectPCSuas\obj\Debug\ProjectPCSuas.Header_INV_PPN.resources
+C:\Users\Stefanus\OneDrive\Documents\GitHub\ProjectPCS_UAS\ProjectPCSuas\obj\Debug\ProjectPCSuas.Masterkota.resources
+C:\Users\Stefanus\OneDrive\Documents\GitHub\ProjectPCS_UAS\ProjectPCSuas\obj\Debug\ProjectPCSuas.Masteruser.resources

@@ -149,7 +149,7 @@ namespace ProjectPCSuas
             this.m_modelBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.m_modelBindingNavigator.Name = "m_modelBindingNavigator";
             this.m_modelBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.m_modelBindingNavigator.Size = new System.Drawing.Size(824, 27);
+            this.m_modelBindingNavigator.Size = new System.Drawing.Size(824, 31);
             this.m_modelBindingNavigator.TabIndex = 0;
             this.m_modelBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -159,7 +159,7 @@ namespace ProjectPCSuas
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
             // bindingNavigatorCountItem

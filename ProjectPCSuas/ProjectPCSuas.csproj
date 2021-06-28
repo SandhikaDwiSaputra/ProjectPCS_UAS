@@ -97,11 +97,29 @@
       <DependentUpon>DataSupplier.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Invoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Invoice.Designer.cs">
+      <DependentUpon>Invoice.cs</DependentUpon>
+    </Compile>
     <Compile Include="MasterBarang.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MasterBarang.Designer.cs">
       <DependentUpon>MasterBarang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master_GroupUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master_GroupUser.Designer.cs">
+      <DependentUpon>Master_GroupUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master_HakAkses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master_HakAkses.Designer.cs">
+      <DependentUpon>Master_HakAkses.cs</DependentUpon>
     </Compile>
     <Compile Include="Master_Merk.cs">
       <SubType>Form</SubType>
@@ -234,8 +252,17 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>DataSupplier.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Invoice.resx">
+      <DependentUpon>Invoice.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MasterBarang.resx">
       <DependentUpon>MasterBarang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master_GroupUser.resx">
+      <DependentUpon>Master_GroupUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master_HakAkses.resx">
+      <DependentUpon>Master_HakAkses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Master_Merk.resx">
       <DependentUpon>Master_Merk.cs</DependentUpon>

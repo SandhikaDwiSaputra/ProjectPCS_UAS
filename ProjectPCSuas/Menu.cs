@@ -64,5 +64,20 @@ namespace ProjectPCSuas
             PenawaranHeader ph = new PenawaranHeader();
             ph.Show();
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            new Master_HakAkses().Show();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            new Master_GroupUser().Show();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            new Invoice().Show();
+        }
     }
 }

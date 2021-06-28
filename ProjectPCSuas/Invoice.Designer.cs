@@ -41,7 +41,6 @@ namespace ProjectPCSuas
             System.Windows.Forms.Label pPNLabel;
             System.Windows.Forms.Label cASHLabel;
             System.Windows.Forms.Label mEKANIKLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Invoice));
             System.Windows.Forms.Label eMAILLabel;
             System.Windows.Forms.Label kOTALabel;
             System.Windows.Forms.Label nAMA_NPWPLabel;
@@ -49,6 +48,7 @@ namespace ProjectPCSuas
             System.Windows.Forms.Label nAMALabel;
             System.Windows.Forms.Label aLAMATLabel;
             System.Windows.Forms.Label aLAMAT_NPWLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Invoice));
             this.uASDataSet2 = new ProjectPCSuas.UASDataSet2();
             this.t_invoice_headerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.t_invoice_headerTableAdapter = new ProjectPCSuas.UASDataSet2TableAdapters.t_invoice_headerTableAdapter();
@@ -77,25 +77,21 @@ namespace ProjectPCSuas
             this.pPNTextBox = new System.Windows.Forms.TextBox();
             this.cASHTextBox = new System.Windows.Forms.TextBox();
             this.mEKANIKTextBox = new System.Windows.Forms.TextBox();
-            this.fillByInvoiceNoToolStrip = new System.Windows.Forms.ToolStrip();
-            this.nO_INVToolStripLabel = new System.Windows.Forms.ToolStripLabel();
-            this.nO_INVToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.fillByInvoiceNoToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.project_UASDataSet = new ProjectPCSuas.Project_UASDataSet();
             this.m_supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.m_supplierTableAdapter = new ProjectPCSuas.Project_UASDataSetTableAdapters.m_supplierTableAdapter();
             this.tableAdapterManager1 = new ProjectPCSuas.Project_UASDataSetTableAdapters.TableAdapterManager();
+            this.m_pelangganTableAdapter = new ProjectPCSuas.Project_UASDataSetTableAdapters.m_pelangganTableAdapter();
+            this.t_invoice_detailTableAdapter = new ProjectPCSuas.Project_UASDataSetTableAdapters.t_invoice_detailTableAdapter();
             this.eMAILTextBox = new System.Windows.Forms.TextBox();
             this.kOTATextBox = new System.Windows.Forms.TextBox();
             this.nAMA_NPWPTextBox = new System.Windows.Forms.TextBox();
             this.m_pelangganBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.m_pelangganTableAdapter = new ProjectPCSuas.Project_UASDataSetTableAdapters.m_pelangganTableAdapter();
             this.iDComboBox = new System.Windows.Forms.ComboBox();
             this.nAMATextBox = new System.Windows.Forms.TextBox();
             this.aLAMATTextBox = new System.Windows.Forms.TextBox();
             this.aLAMAT_NPWTextBox = new System.Windows.Forms.TextBox();
             this.t_invoice_detailBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.t_invoice_detailTableAdapter = new ProjectPCSuas.Project_UASDataSetTableAdapters.t_invoice_detailTableAdapter();
             this.t_invoice_detailDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -127,7 +123,6 @@ namespace ProjectPCSuas
             ((System.ComponentModel.ISupportInitialize)(this.t_invoice_headerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.t_invoice_headerBindingNavigator)).BeginInit();
             this.t_invoice_headerBindingNavigator.SuspendLayout();
-            this.fillByInvoiceNoToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.project_UASDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_supplierBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_pelangganBindingSource)).BeginInit();
@@ -234,6 +229,69 @@ namespace ProjectPCSuas
             mEKANIKLabel.TabIndex = 25;
             mEKANIKLabel.Text = "MEKANIK:";
             // 
+            // eMAILLabel
+            // 
+            eMAILLabel.AutoSize = true;
+            eMAILLabel.Location = new System.Drawing.Point(1081, 70);
+            eMAILLabel.Name = "eMAILLabel";
+            eMAILLabel.Size = new System.Drawing.Size(52, 17);
+            eMAILLabel.TabIndex = 28;
+            eMAILLabel.Text = "EMAIL:";
+            // 
+            // kOTALabel
+            // 
+            kOTALabel.AutoSize = true;
+            kOTALabel.Location = new System.Drawing.Point(1248, 70);
+            kOTALabel.Name = "kOTALabel";
+            kOTALabel.Size = new System.Drawing.Size(50, 17);
+            kOTALabel.TabIndex = 30;
+            kOTALabel.Text = "KOTA:";
+            // 
+            // nAMA_NPWPLabel
+            // 
+            nAMA_NPWPLabel.AutoSize = true;
+            nAMA_NPWPLabel.Location = new System.Drawing.Point(8, 149);
+            nAMA_NPWPLabel.Name = "nAMA_NPWPLabel";
+            nAMA_NPWPLabel.Size = new System.Drawing.Size(96, 17);
+            nAMA_NPWPLabel.TabIndex = 32;
+            nAMA_NPWPLabel.Text = "NAMA NPWP:";
+            // 
+            // iDLabel
+            // 
+            iDLabel.AutoSize = true;
+            iDLabel.Location = new System.Drawing.Point(46, 109);
+            iDLabel.Name = "iDLabel";
+            iDLabel.Size = new System.Drawing.Size(25, 17);
+            iDLabel.TabIndex = 34;
+            iDLabel.Text = "ID:";
+            // 
+            // nAMALabel
+            // 
+            nAMALabel.AutoSize = true;
+            nAMALabel.Location = new System.Drawing.Point(210, 109);
+            nAMALabel.Name = "nAMALabel";
+            nAMALabel.Size = new System.Drawing.Size(51, 17);
+            nAMALabel.TabIndex = 36;
+            nAMALabel.Text = "NAMA:";
+            // 
+            // aLAMATLabel
+            // 
+            aLAMATLabel.AutoSize = true;
+            aLAMATLabel.Location = new System.Drawing.Point(674, 107);
+            aLAMATLabel.Name = "aLAMATLabel";
+            aLAMATLabel.Size = new System.Drawing.Size(67, 17);
+            aLAMATLabel.TabIndex = 38;
+            aLAMATLabel.Text = "ALAMAT:";
+            // 
+            // aLAMAT_NPWLabel
+            // 
+            aLAMAT_NPWLabel.AutoSize = true;
+            aLAMAT_NPWLabel.Location = new System.Drawing.Point(673, 149);
+            aLAMAT_NPWLabel.Name = "aLAMAT_NPWLabel";
+            aLAMAT_NPWLabel.Size = new System.Drawing.Size(103, 17);
+            aLAMAT_NPWLabel.TabIndex = 40;
+            aLAMAT_NPWLabel.Text = "ALAMAT NPW:";
+            // 
             // uASDataSet2
             // 
             this.uASDataSet2.DataSetName = "UASDataSet2";
@@ -302,7 +360,7 @@ namespace ProjectPCSuas
             this.t_invoice_headerBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.t_invoice_headerBindingNavigator.Name = "t_invoice_headerBindingNavigator";
             this.t_invoice_headerBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.t_invoice_headerBindingNavigator.Size = new System.Drawing.Size(1424, 27);
+            this.t_invoice_headerBindingNavigator.Size = new System.Drawing.Size(1424, 31);
             this.t_invoice_headerBindingNavigator.TabIndex = 0;
             this.t_invoice_headerBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -312,7 +370,7 @@ namespace ProjectPCSuas
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
             // bindingNavigatorCountItem
@@ -358,7 +416,6 @@ namespace ProjectPCSuas
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -489,39 +546,6 @@ namespace ProjectPCSuas
             this.mEKANIKTextBox.Size = new System.Drawing.Size(200, 22);
             this.mEKANIKTextBox.TabIndex = 26;
             // 
-            // fillByInvoiceNoToolStrip
-            // 
-            this.fillByInvoiceNoToolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.fillByInvoiceNoToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nO_INVToolStripLabel,
-            this.nO_INVToolStripTextBox,
-            this.fillByInvoiceNoToolStripButton});
-            this.fillByInvoiceNoToolStrip.Location = new System.Drawing.Point(0, 27);
-            this.fillByInvoiceNoToolStrip.Name = "fillByInvoiceNoToolStrip";
-            this.fillByInvoiceNoToolStrip.Size = new System.Drawing.Size(1424, 27);
-            this.fillByInvoiceNoToolStrip.TabIndex = 27;
-            this.fillByInvoiceNoToolStrip.Text = "fillByInvoiceNoToolStrip";
-            // 
-            // nO_INVToolStripLabel
-            // 
-            this.nO_INVToolStripLabel.Name = "nO_INVToolStripLabel";
-            this.nO_INVToolStripLabel.Size = new System.Drawing.Size(64, 24);
-            this.nO_INVToolStripLabel.Text = "NO_INV:";
-            // 
-            // nO_INVToolStripTextBox
-            // 
-            this.nO_INVToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.nO_INVToolStripTextBox.Name = "nO_INVToolStripTextBox";
-            this.nO_INVToolStripTextBox.Size = new System.Drawing.Size(100, 27);
-            // 
-            // fillByInvoiceNoToolStripButton
-            // 
-            this.fillByInvoiceNoToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillByInvoiceNoToolStripButton.Name = "fillByInvoiceNoToolStripButton";
-            this.fillByInvoiceNoToolStripButton.Size = new System.Drawing.Size(115, 24);
-            this.fillByInvoiceNoToolStripButton.Text = "FillByInvoiceNo";
-            this.fillByInvoiceNoToolStripButton.Click += new System.EventHandler(this.fillByInvoiceNoToolStripButton_Click);
-            // 
             // project_UASDataSet
             // 
             this.project_UASDataSet.DataSetName = "Project_UASDataSet";
@@ -563,14 +587,13 @@ namespace ProjectPCSuas
             this.tableAdapterManager1.t_penawaran_headerTableAdapter = null;
             this.tableAdapterManager1.UpdateOrder = ProjectPCSuas.Project_UASDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // eMAILLabel
+            // m_pelangganTableAdapter
             // 
-            eMAILLabel.AutoSize = true;
-            eMAILLabel.Location = new System.Drawing.Point(1081, 70);
-            eMAILLabel.Name = "eMAILLabel";
-            eMAILLabel.Size = new System.Drawing.Size(52, 17);
-            eMAILLabel.TabIndex = 28;
-            eMAILLabel.Text = "EMAIL:";
+            this.m_pelangganTableAdapter.ClearBeforeFill = true;
+            // 
+            // t_invoice_detailTableAdapter
+            // 
+            this.t_invoice_detailTableAdapter.ClearBeforeFill = true;
             // 
             // eMAILTextBox
             // 
@@ -580,15 +603,6 @@ namespace ProjectPCSuas
             this.eMAILTextBox.Size = new System.Drawing.Size(100, 22);
             this.eMAILTextBox.TabIndex = 29;
             // 
-            // kOTALabel
-            // 
-            kOTALabel.AutoSize = true;
-            kOTALabel.Location = new System.Drawing.Point(1248, 70);
-            kOTALabel.Name = "kOTALabel";
-            kOTALabel.Size = new System.Drawing.Size(50, 17);
-            kOTALabel.TabIndex = 30;
-            kOTALabel.Text = "KOTA:";
-            // 
             // kOTATextBox
             // 
             this.kOTATextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.m_supplierBindingSource, "KOTA", true));
@@ -596,15 +610,6 @@ namespace ProjectPCSuas
             this.kOTATextBox.Name = "kOTATextBox";
             this.kOTATextBox.Size = new System.Drawing.Size(100, 22);
             this.kOTATextBox.TabIndex = 31;
-            // 
-            // nAMA_NPWPLabel
-            // 
-            nAMA_NPWPLabel.AutoSize = true;
-            nAMA_NPWPLabel.Location = new System.Drawing.Point(8, 149);
-            nAMA_NPWPLabel.Name = "nAMA_NPWPLabel";
-            nAMA_NPWPLabel.Size = new System.Drawing.Size(96, 17);
-            nAMA_NPWPLabel.TabIndex = 32;
-            nAMA_NPWPLabel.Text = "NAMA NPWP:";
             // 
             // nAMA_NPWPTextBox
             // 
@@ -619,19 +624,6 @@ namespace ProjectPCSuas
             this.m_pelangganBindingSource.DataMember = "m_pelanggan";
             this.m_pelangganBindingSource.DataSource = this.project_UASDataSet;
             // 
-            // m_pelangganTableAdapter
-            // 
-            this.m_pelangganTableAdapter.ClearBeforeFill = true;
-            // 
-            // iDLabel
-            // 
-            iDLabel.AutoSize = true;
-            iDLabel.Location = new System.Drawing.Point(46, 109);
-            iDLabel.Name = "iDLabel";
-            iDLabel.Size = new System.Drawing.Size(25, 17);
-            iDLabel.TabIndex = 34;
-            iDLabel.Text = "ID:";
-            // 
             // iDComboBox
             // 
             this.iDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.m_pelangganBindingSource, "ID", true));
@@ -641,15 +633,6 @@ namespace ProjectPCSuas
             this.iDComboBox.Size = new System.Drawing.Size(121, 24);
             this.iDComboBox.TabIndex = 35;
             // 
-            // nAMALabel
-            // 
-            nAMALabel.AutoSize = true;
-            nAMALabel.Location = new System.Drawing.Point(210, 109);
-            nAMALabel.Name = "nAMALabel";
-            nAMALabel.Size = new System.Drawing.Size(51, 17);
-            nAMALabel.TabIndex = 36;
-            nAMALabel.Text = "NAMA:";
-            // 
             // nAMATextBox
             // 
             this.nAMATextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.m_pelangganBindingSource, "NAMA", true));
@@ -658,15 +641,6 @@ namespace ProjectPCSuas
             this.nAMATextBox.Size = new System.Drawing.Size(391, 22);
             this.nAMATextBox.TabIndex = 37;
             // 
-            // aLAMATLabel
-            // 
-            aLAMATLabel.AutoSize = true;
-            aLAMATLabel.Location = new System.Drawing.Point(674, 107);
-            aLAMATLabel.Name = "aLAMATLabel";
-            aLAMATLabel.Size = new System.Drawing.Size(67, 17);
-            aLAMATLabel.TabIndex = 38;
-            aLAMATLabel.Text = "ALAMAT:";
-            // 
             // aLAMATTextBox
             // 
             this.aLAMATTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.m_pelangganBindingSource, "ALAMAT", true));
@@ -674,15 +648,6 @@ namespace ProjectPCSuas
             this.aLAMATTextBox.Name = "aLAMATTextBox";
             this.aLAMATTextBox.Size = new System.Drawing.Size(492, 22);
             this.aLAMATTextBox.TabIndex = 39;
-            // 
-            // aLAMAT_NPWLabel
-            // 
-            aLAMAT_NPWLabel.AutoSize = true;
-            aLAMAT_NPWLabel.Location = new System.Drawing.Point(673, 149);
-            aLAMAT_NPWLabel.Name = "aLAMAT_NPWLabel";
-            aLAMAT_NPWLabel.Size = new System.Drawing.Size(103, 17);
-            aLAMAT_NPWLabel.TabIndex = 40;
-            aLAMAT_NPWLabel.Text = "ALAMAT NPW:";
             // 
             // aLAMAT_NPWTextBox
             // 
@@ -696,10 +661,6 @@ namespace ProjectPCSuas
             // 
             this.t_invoice_detailBindingSource.DataMember = "t_invoice_detail";
             this.t_invoice_detailBindingSource.DataSource = this.project_UASDataSet;
-            // 
-            // t_invoice_detailTableAdapter
-            // 
-            this.t_invoice_detailTableAdapter.ClearBeforeFill = true;
             // 
             // t_invoice_detailDataGridView
             // 
@@ -806,7 +767,6 @@ namespace ProjectPCSuas
             this.Controls.Add(this.kOTATextBox);
             this.Controls.Add(eMAILLabel);
             this.Controls.Add(this.eMAILTextBox);
-            this.Controls.Add(this.fillByInvoiceNoToolStrip);
             this.Controls.Add(nO_INVLabel);
             this.Controls.Add(this.nO_INVTextBox);
             this.Controls.Add(nO_PNWLabel);
@@ -838,8 +798,6 @@ namespace ProjectPCSuas
             ((System.ComponentModel.ISupportInitialize)(this.t_invoice_headerBindingNavigator)).EndInit();
             this.t_invoice_headerBindingNavigator.ResumeLayout(false);
             this.t_invoice_headerBindingNavigator.PerformLayout();
-            this.fillByInvoiceNoToolStrip.ResumeLayout(false);
-            this.fillByInvoiceNoToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.project_UASDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_supplierBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_pelangganBindingSource)).EndInit();
@@ -880,10 +838,6 @@ namespace ProjectPCSuas
         private System.Windows.Forms.TextBox pPNTextBox;
         private System.Windows.Forms.TextBox cASHTextBox;
         private System.Windows.Forms.TextBox mEKANIKTextBox;
-        private System.Windows.Forms.ToolStrip fillByInvoiceNoToolStrip;
-        private System.Windows.Forms.ToolStripLabel nO_INVToolStripLabel;
-        private System.Windows.Forms.ToolStripTextBox nO_INVToolStripTextBox;
-        private System.Windows.Forms.ToolStripButton fillByInvoiceNoToolStripButton;
         private Project_UASDataSet project_UASDataSet;
         private System.Windows.Forms.BindingSource m_supplierBindingSource;
         private Project_UASDataSetTableAdapters.m_supplierTableAdapter m_supplierTableAdapter;

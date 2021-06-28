@@ -37,18 +37,5 @@ namespace ProjectPCSuas
             this.t_invoice_headerTableAdapter.Fill(this.uASDataSet2.t_invoice_header);
 
         }
-
-        private void fillByInvoiceNoToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.t_invoice_headerTableAdapter.FillByInvoiceNo(this.uASDataSet2.t_invoice_header, nO_INVToolStripTextBox.Text);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
     }
 }

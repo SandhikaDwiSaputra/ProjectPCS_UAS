@@ -240,5 +240,10 @@ namespace ProjectPCSuas
             PrintPembelian PP = new PrintPembelian();
             PP.Show();
         }
+
+        private void t_pembelian_headerBindingNavigator_RefreshItems(object sender, EventArgs e)
+        {
+
+        }
     }
 }

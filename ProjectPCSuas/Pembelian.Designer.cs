@@ -322,6 +322,7 @@ namespace ProjectPCSuas
             this.t_pembelian_headerBindingNavigator.Size = new System.Drawing.Size(1051, 25);
             this.t_pembelian_headerBindingNavigator.TabIndex = 0;
             this.t_pembelian_headerBindingNavigator.Text = "bindingNavigator1";
+            this.t_pembelian_headerBindingNavigator.RefreshItems += new System.EventHandler(this.t_pembelian_headerBindingNavigator_RefreshItems);
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -377,6 +378,7 @@ namespace ProjectPCSuas
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";

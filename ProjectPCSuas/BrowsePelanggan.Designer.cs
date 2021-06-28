@@ -63,6 +63,8 @@ namespace ProjectPCSuas
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.project_UASDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_pelangganBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_pelangganBindingNavigator)).BeginInit();
@@ -256,10 +258,11 @@ namespace ProjectPCSuas
             this.dataGridViewTextBoxColumn13,
             this.dataGridViewTextBoxColumn14});
             this.m_pelangganDataGridView.DataSource = this.m_pelangganBindingSource;
-            this.m_pelangganDataGridView.Location = new System.Drawing.Point(12, 28);
+            this.m_pelangganDataGridView.Location = new System.Drawing.Point(12, 57);
             this.m_pelangganDataGridView.Name = "m_pelangganDataGridView";
-            this.m_pelangganDataGridView.Size = new System.Drawing.Size(1346, 314);
+            this.m_pelangganDataGridView.Size = new System.Drawing.Size(1346, 285);
             this.m_pelangganDataGridView.TabIndex = 1;
+            this.m_pelangganDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.m_pelangganDataGridView_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -346,11 +349,30 @@ namespace ProjectPCSuas
             this.dataGridViewTextBoxColumn14.HeaderText = "KETERANGAN";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(12, 31);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(118, 28);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Cari";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // BrowsePelanggan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 387);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.m_pelangganDataGridView);
             this.Controls.Add(this.m_pelangganBindingNavigator);
             this.Name = "BrowsePelanggan";
@@ -401,5 +423,7 @@ namespace ProjectPCSuas
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
     }
 }

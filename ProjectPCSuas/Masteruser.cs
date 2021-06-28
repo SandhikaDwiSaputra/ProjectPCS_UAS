@@ -47,5 +47,11 @@ namespace ProjectPCSuas
             browseuser bu = new browseuser();
             bu.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Print_data_user pdu = new Print_data_user();
+                pdu.Show();
+        }
     }
 }

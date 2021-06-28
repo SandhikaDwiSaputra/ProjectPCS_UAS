@@ -85,6 +85,54 @@
     <Compile Include="BrowseSuplier.Designer.cs">
       <DependentUpon>BrowseSuplier.cs</DependentUpon>
     </Compile>
+    <Compile Include="Print_data_kota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Print_data_kota.Designer.cs">
+      <DependentUpon>Print_data_kota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Print_data_user.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Print_data_user.Designer.cs">
+      <DependentUpon>Print_data_user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Laporan_Detail_INV_PPN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laporan_Detail_INV_PPN.Designer.cs">
+      <DependentUpon>Laporan_Detail_INV_PPN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="laporanheaderinvPPN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="laporanheaderinvPPN.Designer.cs">
+      <DependentUpon>laporanheaderinvPPN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Printdatakota.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Printdatakota.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Printdatauser.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Printdatauser.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="laporanDetail_INV_PPN.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>laporanDetail_INV_PPN.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="laporan_header_INV_PPN.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>laporan_header_INV_PPN.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DataPenawaran.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -301,6 +349,28 @@
     <EmbeddedResource Include="browse_Header_INV_PPN.resx">
       <DependentUpon>browse_Header_INV_PPN.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="laporanheaderinvPPN.resx">
+      <DependentUpon>laporanheaderinvPPN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laporan_Detail_INV_PPN.resx">
+      <DependentUpon>Laporan_Detail_INV_PPN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Printdatakota.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Printdatakota.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Printdatauser.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Printdatauser.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="laporanDetail_INV_PPN.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>laporanDetail_INV_PPN.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="laporan_header_INV_PPN.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>laporan_header_INV_PPN.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="DataPenawaran.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>DataPenawaran.cs</LastGenOutput>
@@ -371,6 +441,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PrintSupp.resx">
       <DependentUpon>PrintSupp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Print_data_kota.resx">
+      <DependentUpon>Print_data_kota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Print_data_user.resx">
+      <DependentUpon>Print_data_user.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

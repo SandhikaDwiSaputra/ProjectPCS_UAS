@@ -30,32 +30,33 @@ namespace ProjectPCSuas
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Masteruser));
             System.Windows.Forms.Label uSERNAMELabel;
             System.Windows.Forms.Label pASSWORDLabel;
             System.Windows.Forms.Label nAMAGROUPUSERLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Masteruser));
             this.project_UASDataSet = new ProjectPCSuas.Project_UASDataSet();
             this.m_usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.m_usersTableAdapter = new ProjectPCSuas.Project_UASDataSetTableAdapters.m_usersTableAdapter();
             this.tableAdapterManager = new ProjectPCSuas.Project_UASDataSetTableAdapters.TableAdapterManager();
             this.m_usersBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.m_usersBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.uSERNAMETextBox = new System.Windows.Forms.TextBox();
             this.pASSWORDTextBox = new System.Windows.Forms.TextBox();
             this.nAMAGROUPUSERTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             uSERNAMELabel = new System.Windows.Forms.Label();
             pASSWORDLabel = new System.Windows.Forms.Label();
             nAMAGROUPUSERLabel = new System.Windows.Forms.Label();
@@ -64,6 +65,34 @@ namespace ProjectPCSuas
             ((System.ComponentModel.ISupportInitialize)(this.m_usersBindingNavigator)).BeginInit();
             this.m_usersBindingNavigator.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // uSERNAMELabel
+            // 
+            uSERNAMELabel.AutoSize = true;
+            uSERNAMELabel.Location = new System.Drawing.Point(217, 138);
+            uSERNAMELabel.Name = "uSERNAMELabel";
+            uSERNAMELabel.Size = new System.Drawing.Size(89, 17);
+            uSERNAMELabel.TabIndex = 1;
+            uSERNAMELabel.Text = "USERNAME:";
+            // 
+            // pASSWORDLabel
+            // 
+            pASSWORDLabel.AutoSize = true;
+            pASSWORDLabel.Location = new System.Drawing.Point(214, 191);
+            pASSWORDLabel.Name = "pASSWORDLabel";
+            pASSWORDLabel.Size = new System.Drawing.Size(92, 17);
+            pASSWORDLabel.TabIndex = 3;
+            pASSWORDLabel.Text = "PASSWORD:";
+            pASSWORDLabel.Click += new System.EventHandler(this.pASSWORDLabel_Click);
+            // 
+            // nAMAGROUPUSERLabel
+            // 
+            nAMAGROUPUSERLabel.AutoSize = true;
+            nAMAGROUPUSERLabel.Location = new System.Drawing.Point(166, 248);
+            nAMAGROUPUSERLabel.Name = "nAMAGROUPUSERLabel";
+            nAMAGROUPUSERLabel.Size = new System.Drawing.Size(140, 17);
+            nAMAGROUPUSERLabel.TabIndex = 5;
+            nAMAGROUPUSERLabel.Text = "NAMAGROUPUSER:";
             // 
             // project_UASDataSet
             // 
@@ -137,13 +166,38 @@ namespace ProjectPCSuas
             this.m_usersBindingNavigator.TabIndex = 0;
             this.m_usersBindingNavigator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 22);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem
@@ -152,34 +206,28 @@ namespace ProjectPCSuas
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 22);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorPositionItem
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 20);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -201,44 +249,17 @@ namespace ProjectPCSuas
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // m_usersBindingNavigatorSaveItem
             // 
             this.m_usersBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.m_usersBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("m_usersBindingNavigatorSaveItem.Image")));
             this.m_usersBindingNavigatorSaveItem.Name = "m_usersBindingNavigatorSaveItem";
-            this.m_usersBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
+            this.m_usersBindingNavigatorSaveItem.Size = new System.Drawing.Size(29, 24);
             this.m_usersBindingNavigatorSaveItem.Text = "Save Data";
             this.m_usersBindingNavigatorSaveItem.Click += new System.EventHandler(this.m_usersBindingNavigatorSaveItem_Click);
-            // 
-            // uSERNAMELabel
-            // 
-            uSERNAMELabel.AutoSize = true;
-            uSERNAMELabel.Location = new System.Drawing.Point(217, 138);
-            uSERNAMELabel.Name = "uSERNAMELabel";
-            uSERNAMELabel.Size = new System.Drawing.Size(89, 17);
-            uSERNAMELabel.TabIndex = 1;
-            uSERNAMELabel.Text = "USERNAME:";
             // 
             // uSERNAMETextBox
             // 
@@ -248,16 +269,6 @@ namespace ProjectPCSuas
             this.uSERNAMETextBox.Size = new System.Drawing.Size(228, 22);
             this.uSERNAMETextBox.TabIndex = 2;
             // 
-            // pASSWORDLabel
-            // 
-            pASSWORDLabel.AutoSize = true;
-            pASSWORDLabel.Location = new System.Drawing.Point(214, 191);
-            pASSWORDLabel.Name = "pASSWORDLabel";
-            pASSWORDLabel.Size = new System.Drawing.Size(92, 17);
-            pASSWORDLabel.TabIndex = 3;
-            pASSWORDLabel.Text = "PASSWORD:";
-            pASSWORDLabel.Click += new System.EventHandler(this.pASSWORDLabel_Click);
-            // 
             // pASSWORDTextBox
             // 
             this.pASSWORDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.m_usersBindingSource, "PASSWORD", true));
@@ -266,15 +277,6 @@ namespace ProjectPCSuas
             this.pASSWORDTextBox.Size = new System.Drawing.Size(228, 22);
             this.pASSWORDTextBox.TabIndex = 4;
             this.pASSWORDTextBox.TextChanged += new System.EventHandler(this.pASSWORDTextBox_TextChanged);
-            // 
-            // nAMAGROUPUSERLabel
-            // 
-            nAMAGROUPUSERLabel.AutoSize = true;
-            nAMAGROUPUSERLabel.Location = new System.Drawing.Point(166, 248);
-            nAMAGROUPUSERLabel.Name = "nAMAGROUPUSERLabel";
-            nAMAGROUPUSERLabel.Size = new System.Drawing.Size(140, 17);
-            nAMAGROUPUSERLabel.TabIndex = 5;
-            nAMAGROUPUSERLabel.Text = "NAMAGROUPUSER:";
             // 
             // nAMAGROUPUSERTextBox
             // 
@@ -304,11 +306,22 @@ namespace ProjectPCSuas
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(650, 63);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Print";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Masteruser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(nAMAGROUPUSERLabel);
@@ -355,5 +368,6 @@ namespace ProjectPCSuas
         private System.Windows.Forms.TextBox nAMAGROUPUSERTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

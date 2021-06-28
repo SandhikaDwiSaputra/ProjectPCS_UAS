@@ -47,5 +47,11 @@ namespace ProjectPCSuas
             browse_Header_INV_PPN bp = new browse_Header_INV_PPN();
             bp.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            laporanheaderinvPPN lh = new laporanheaderinvPPN();
+            lh.Show();
+        }
     }
 }

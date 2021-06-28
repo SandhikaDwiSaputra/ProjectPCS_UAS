@@ -48,5 +48,10 @@ namespace ProjectPCSuas
             bp.Show();
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Laporan_Detail_INV_PPN lp = new Laporan_Detail_INV_PPN();
+            lp.Show();
+        }
     }
 }

@@ -38,5 +38,11 @@ namespace ProjectPCSuas
             bk.Show();
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Print_data_kota pdk = new Print_data_kota();
+            pdk.Show();
+        }
     }
 }

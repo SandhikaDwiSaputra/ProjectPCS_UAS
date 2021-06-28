@@ -97,6 +97,54 @@
       <DependentUpon>DataSupplier.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="browsekota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="browsekota.Designer.cs">
+      <DependentUpon>browsekota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="browseuser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="browseuser.Designer.cs">
+      <DependentUpon>browseuser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="detail_INV_PPN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="detail_INV_PPN.Designer.cs">
+      <DependentUpon>detail_INV_PPN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Browse_detail_INV_PPN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Browse_detail_INV_PPN.Designer.cs">
+      <DependentUpon>Browse_detail_INV_PPN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="browse_Header_INV_PPN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="browse_Header_INV_PPN.Designer.cs">
+      <DependentUpon>browse_Header_INV_PPN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Header_INV_PPN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Header_INV_PPN.Designer.cs">
+      <DependentUpon>Header_INV_PPN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Masteruser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masteruser.Designer.cs">
+      <DependentUpon>Masteruser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Masterkota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masterkota.Designer.cs">
+      <DependentUpon>Masterkota.cs</DependentUpon>
+    </Compile>
     <Compile Include="Invoice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,6 +292,15 @@
     <EmbeddedResource Include="BrowseSuplier.resx">
       <DependentUpon>BrowseSuplier.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="browseuser.resx">
+      <DependentUpon>browseuser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Browse_detail_INV_PPN.resx">
+      <DependentUpon>Browse_detail_INV_PPN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="browse_Header_INV_PPN.resx">
+      <DependentUpon>browse_Header_INV_PPN.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DataPenawaran.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>DataPenawaran.cs</LastGenOutput>
@@ -252,11 +309,26 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>DataSupplier.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="browsekota.resx">
+      <DependentUpon>browsekota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="detail_INV_PPN.resx">
+      <DependentUpon>detail_INV_PPN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Header_INV_PPN.resx">
+      <DependentUpon>Header_INV_PPN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masterkota.resx">
+      <DependentUpon>Masterkota.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Invoice.resx">
       <DependentUpon>Invoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MasterBarang.resx">
       <DependentUpon>MasterBarang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masteruser.resx">
+      <DependentUpon>Masteruser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Master_GroupUser.resx">
       <DependentUpon>Master_GroupUser.cs</DependentUpon>

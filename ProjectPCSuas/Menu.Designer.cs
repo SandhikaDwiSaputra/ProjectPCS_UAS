@@ -48,6 +48,7 @@ namespace ProjectPCSuas
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.project_UASDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_merkBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -195,7 +196,7 @@ namespace ProjectPCSuas
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(191, 217);
+            this.button11.Location = new System.Drawing.Point(476, 97);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(107, 23);
             this.button11.TabIndex = 12;
@@ -205,7 +206,7 @@ namespace ProjectPCSuas
             // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(191, 259);
+            this.button12.Location = new System.Drawing.Point(476, 136);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(107, 23);
             this.button12.TabIndex = 13;
@@ -225,7 +226,7 @@ namespace ProjectPCSuas
             // 
             // button14
             // 
-            this.button14.Location = new System.Drawing.Point(339, 259);
+            this.button14.Location = new System.Drawing.Point(191, 217);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(107, 23);
             this.button14.TabIndex = 15;
@@ -233,11 +234,22 @@ namespace ProjectPCSuas
             this.button14.UseVisualStyleBackColor = true;
             this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(476, 217);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(107, 23);
+            this.button15.TabIndex = 16;
+            this.button15.Text = "Stock";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button15);
             this.Controls.Add(this.button14);
             this.Controls.Add(this.button13);
             this.Controls.Add(this.button12);
@@ -280,5 +292,6 @@ namespace ProjectPCSuas
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button button15;
     }
 }

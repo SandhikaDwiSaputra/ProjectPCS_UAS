@@ -55,12 +55,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="2Pembelian.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="2Pembelian.Designer.cs">
-      <DependentUpon>2Pembelian.cs</DependentUpon>
-    </Compile>
     <Compile Include="BrowseBarang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +84,12 @@
     </Compile>
     <Compile Include="BrowseSuplier.Designer.cs">
       <DependentUpon>BrowseSuplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KartuStok.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KartuStok.Designer.cs">
+      <DependentUpon>KartuStok.cs</DependentUpon>
     </Compile>
     <Compile Include="Print_data_kota.cs">
       <SubType>Form</SubType>
@@ -331,9 +331,6 @@
     <Compile Include="UpdateMasterMerk.Designer.cs">
       <DependentUpon>UpdateMasterMerk.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="2Pembelian.resx">
-      <DependentUpon>2Pembelian.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="BrowseBarang.resx">
       <DependentUpon>BrowseBarang.cs</DependentUpon>
     </EmbeddedResource>
@@ -357,6 +354,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="browse_Header_INV_PPN.resx">
       <DependentUpon>browse_Header_INV_PPN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KartuStok.resx">
+      <DependentUpon>KartuStok.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="laporanheaderinvPPN.resx">
       <DependentUpon>laporanheaderinvPPN.cs</DependentUpon>

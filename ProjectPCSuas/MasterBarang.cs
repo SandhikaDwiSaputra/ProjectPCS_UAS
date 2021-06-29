@@ -13,9 +13,11 @@ namespace ProjectPCSuas
 {
     public partial class MasterBarang : Form
     {
+        SqlConnection conn;
         public MasterBarang()
         {
             InitializeComponent();
+            conn = new SqlConnection(@"Data Source=.\SQLExpress;Initial Catalog=UAS;Integrated Security=True");
         }
 
         private void m_barangBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -24,6 +26,37 @@ namespace ProjectPCSuas
             this.m_barangBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.uASDataSet2);
 
+            conn.Open();
+
+            String DataBrg = "SELECT count(*) " +
+                             "FROM stock_history ";
+            SqlCommand comm = new SqlCommand(DataBrg, conn);
+            String kode = comm.ExecuteScalar().ToString();
+
+            String DataBrg2 = "SELECT ID " +
+                             "FROM m_barang " +
+                             "where kode='" + kODETextBox.Text + "'";
+            SqlCommand comm2 = new SqlCommand(DataBrg2, conn);
+            String kode2 = comm2.ExecuteScalar().ToString();
+
+            if (Convert.ToInt32(kode) < 1)
+            {
+                String query = "Insert into stock_history(ID_STOCK_HISTORY, ID_BARANG, STOCK_HISTORY_VALUE, STOCK_HISTORY_DATE) values(1, " + Convert.ToInt32(kode2) + ", " + Convert.ToInt32(uNITTextBox.Text) + ", GETDATE())";
+                comm = new SqlCommand(query, conn);
+                comm.ExecuteNonQuery();
+            }
+            else
+            {
+                String id = "SELECT MAX(ID_STOCK_HISTORY) " +
+                             "FROM stock_history ";
+                SqlCommand comm3 = new SqlCommand(id, conn);
+                String kode3 = comm3.ExecuteScalar().ToString();
+
+                String query = "Insert into stock_history(ID_STOCK_HISTORY, ID_BARANG, STOCK_HISTORY_VALUE, STOCK_HISTORY_DATE) values("+(Convert.ToInt32(kode3)+1)+", " + Convert.ToInt32(kode2) + ", " + Convert.ToInt32(uNITTextBox.Text) + ", GETDATE())";
+                comm = new SqlCommand(query, conn);
+                comm.ExecuteNonQuery();
+            }
+            conn.Close();
         }
 
         private void Form1_Load(object sender, EventArgs e)

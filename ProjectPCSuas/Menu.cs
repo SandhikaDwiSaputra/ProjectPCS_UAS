@@ -99,5 +99,11 @@ namespace ProjectPCSuas
         {
             new Header_INV_PPN().Show();
         }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            KartuStok ks = new KartuStok();
+            ks.Show();
+        }
     }
 }

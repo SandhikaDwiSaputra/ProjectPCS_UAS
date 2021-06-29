@@ -50,26 +50,30 @@ namespace ProjectPCSuas
 
         private void data()
         {
-            try
-            {
-                this.rework_detailTableAdapter.FillByReworkId(this.uASDataSet2.rework_detail, new System.Nullable<int>(((int)(System.Convert.ChangeType(rework_idTextBox.Text, typeof(int))))));
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
             rework_detail_qtyTextBox.Text = "0";
             rework_detail_unit_price_tempTextBox.Text = "0";
             rework_detail_amountTextBox.Text = "0";
+            rework_detail_brandTextBox.Text = "";
+            if (rework_idTextBox.Text != null)
+            {
+                try
+                {
+                    this.rework_detailTableAdapter.FillByReworkId(this.uASDataSet2.rework_detail, Convert.ToInt32(rework_idTextBox.Text));
+                }
+                catch (System.Exception ex)
+                {
+                    System.Windows.Forms.MessageBox.Show(ex.Message);
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             conn.Open();
 
-            String D = "SELECT  count(*)" +
-                            "FROM rework" +
-                            "where rework_id ="+rework_idTextBox.Text;
+            String D = "SELECT  count(rework_id) " +
+                       "FROM rework " +
+                       "where rework_id="+rework_idTextBox.Text;
             SqlCommand c = new SqlCommand(D, conn);
             String c2 = c.ExecuteScalar().ToString();
 
@@ -80,20 +84,20 @@ namespace ProjectPCSuas
                 this.tableAdapterManager.UpdateAll(this.uASDataSet2);
             }
 
-            String Data = "SELECT  count(*)" +
+            String Data = "SELECT  count(*) " +
                             "FROM rework_detail ";
             SqlCommand com = new SqlCommand(Data, conn);
             String kode = com.ExecuteScalar().ToString();
 
             if (Convert.ToInt32(kode) < 1)
             {
-                String query = "Insert into rework_detail values(1, " + Convert.ToInt32(rework_idTextBox.Text) + ", " + (int)rework_detail_item_idComboBox.SelectedValue + ", '" + rework_detail_item_codeTextBox.Text + "', '" + rework_detail_item_part_noTextBox.Text + "', '" + rework_detail_item_descTextBox.Text + "', '" + rework_detail_unitTextBox.Text + "', " + Convert.ToInt32(rework_detail_qtyTextBox.Text) + ", " + Convert.ToInt32(rework_detail_unit_priceTextBox.Text) + ", " + Convert.ToInt32(rework_detail_unit_price_tempTextBox.Text) + ", " + Convert.ToInt32(rework_detail_amountTextBox.Text) + ", '"+rework_detail_brandTextBox.Text+"' )";
+                String query = "Insert into rework_detail values(1, " + Convert.ToInt32(rework_idTextBox.Text) + ", " + (int)rework_detail_item_idComboBox.SelectedValue + ", '" + rework_detail_item_codeTextBox.Text + "', '" + rework_detail_item_part_noTextBox.Text + "', '" + rework_detail_item_descTextBox.Text + "', '" + rework_detail_unitTextBox.Text + "', " + Convert.ToInt32(rework_detail_qtyTextBox.Text) + ", " + Convert.ToInt32(rework_detail_unit_priceTextBox.Text) + ", " + Convert.ToInt32(rework_detail_unit_price_tempTextBox.Text) + ", " + Convert.ToInt32(rework_detail_amountTextBox.Text) + ", '"+rework_detail_brandTextBox.Text+"')";
                 SqlCommand comm = new SqlCommand(query, conn);
                 comm.ExecuteNonQuery();
             }
             else
             {
-                String id = "SELECT  max(rework_detail_id)" +
+                String id = "SELECT  max(rework_detail_id) " +
                             "FROM rework_detail ";
                 SqlCommand comId = new SqlCommand(id, conn);
                 String id2 = comId.ExecuteScalar().ToString();

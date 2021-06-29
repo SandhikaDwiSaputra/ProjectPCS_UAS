@@ -47,5 +47,10 @@ namespace ProjectPCSuas
             PrintMasterPelanggan PP = new PrintMasterPelanggan();
             PP.Show();
         }
+
+        private void m_pelangganBindingNavigator_RefreshItems(object sender, EventArgs e)
+        {
+
+        }
     }
 }

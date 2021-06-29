@@ -164,19 +164,48 @@ namespace ProjectPCSuas
             }
             else if (Convert.ToInt32(cekBarang) > 0)
             {
+                String jmlhBarang = $"SELECT unit FROM m_barang WHERE kode = '{kode}' ";
+                SqlCommand commjmlhBR = new SqlCommand(jmlhBarang, conn);
+
+                String JumlahAwal = commjmlhBR.ExecuteScalar().ToString();
+                int TambahJumlah = Convert.ToInt32(JumlahAwal) + Convert.ToInt32(cek);
+                String querytambahunit = $"UPDATE m_barang SET unit = {TambahJumlah} where kode = '{kode}'";
+                comm = new SqlCommand(querytambahunit, conn);
+                comm.ExecuteNonQuery();
+
                 String DataBrg7 = $"SELECT qty FROM t_pembelian_detail WHERE kode = '{kode}' and no_pnw = '{nO_PNWTextBox.Text}'";
                 SqlCommand comm7 = new SqlCommand(DataBrg7, conn);
+                
                 String qtyAwal = comm7.ExecuteScalar().ToString();
                 int tambahQTY = Convert.ToInt32(textboxQTY.Text) + Convert.ToInt32(qtyAwal);
+                
                 String query = $"UPDATE t_pembelian_detail SET qty = {tambahQTY} where kode = '{kode}' and no_pnw = '{nO_PNWTextBox.Text}'";
+                
                 comm = new SqlCommand(query, conn);
                 comm.ExecuteNonQuery();
+                this.Validate();
+                this.t_pembelian_headerBindingSource.EndEdit();
+
+                this.tableAdapterManager.UpdateAll(this.project_UASDataSet);
             }
             else
             {
+                String jmlhBarang = $"SELECT unit FROM m_barang WHERE kode = '{kode}' ";
+                SqlCommand commjmlhBR = new SqlCommand(jmlhBarang, conn);
+
+                String JumlahAwal = commjmlhBR.ExecuteScalar().ToString();
+                int TambahJumlah = Convert.ToInt32(JumlahAwal) + Convert.ToInt32(cek);
+                String querytambahunit = $"UPDATE m_barang SET unit = {TambahJumlah} where kode = '{kode}'";
+                comm = new SqlCommand(querytambahunit, conn);
+                comm.ExecuteNonQuery();
+
                 String query = $"Insert into t_pembelian_detail(no_pnw,no_nota,kode,part_no,descriptio,unit,merk,qty,unit_price) values('{nO_PNWTextBox.Text}','{nO_NOTATextBox.Text}','{kode}','{part_no}','{description}','{unit}','{merk}','{Convert.ToInt32(textboxQTY.Text)}',{unitP})";
                 comm = new SqlCommand(query, conn);
                 comm.ExecuteNonQuery();
+                this.Validate();
+                this.t_pembelian_headerBindingSource.EndEdit();
+
+                this.tableAdapterManager.UpdateAll(this.project_UASDataSet);
             }
 
             conn.Close();
@@ -191,6 +220,8 @@ namespace ProjectPCSuas
             {
 
                 conn.Open();
+
+
                 String DataBrg = $"SELECT kode " +
                              $"FROM m_barang " +
                              $"WHERE id = '{NamaBarang.SelectedValue}'";
@@ -217,10 +248,29 @@ namespace ProjectPCSuas
                 String description = comm3.ExecuteScalar().ToString();
                 String unit = comm3.ExecuteScalar().ToString();
 
+
+                String jmlhBarang = $"SELECT unit FROM m_barang WHERE kode = '{kode}' ";
+                SqlCommand commjmlhBR = new SqlCommand(jmlhBarang, conn);
+
+                String JumlahAwal = commjmlhBR.ExecuteScalar().ToString();
+
+                String jmlhBarangawal2 = $"SELECT qty FROM t_pembelian_detail WHERE kode = '{kode}' ";
+                SqlCommand commjmlhBR2 = new SqlCommand(jmlhBarangawal2, conn);
+
+                int JumlahAwal2 = Convert.ToInt32(commjmlhBR2.ExecuteScalar().ToString());
+                int TambahJumlah = Convert.ToInt32(JumlahAwal) - JumlahAwal2;
+                String querytambahunit = $"UPDATE m_barang SET unit = {TambahJumlah} where kode = '{kode}'";
+                comm = new SqlCommand(querytambahunit, conn);
+                comm.ExecuteNonQuery();
+
+
                 String cek = textboxQTY.Text;
                 String query = $"DELETE FROM t_pembelian_detail WHERE KODE = '{KodeBr.Text}' AND NO_NOTA = '{nO_NOTATextBox.Text}'";
                 comm = new SqlCommand(query, conn);
                 comm.ExecuteNonQuery();
+
+
+                
 
                 conn.Close();
                 data();
@@ -244,6 +294,22 @@ namespace ProjectPCSuas
         private void t_pembelian_headerBindingNavigator_RefreshItems(object sender, EventArgs e)
         {
 
+        }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            String query = $"delete from t_pembelian_detail where no_pnw = '{nO_PNWTextBox.Text}'";
+            SqlCommand comm = new SqlCommand(query, conn);
+            comm.ExecuteNonQuery();
+            MessageBox.Show("Berhasil Menghapus");
+            conn.Close();
+
+
+            this.Validate();
+            this.t_pembelian_headerBindingSource.EndEdit();
+
+            this.tableAdapterManager.UpdateAll(this.project_UASDataSet);
         }
     }
 }

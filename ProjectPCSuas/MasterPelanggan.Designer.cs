@@ -305,6 +305,7 @@ namespace ProjectPCSuas
             this.m_pelangganBindingNavigator.Size = new System.Drawing.Size(758, 25);
             this.m_pelangganBindingNavigator.TabIndex = 39;
             this.m_pelangganBindingNavigator.Text = "bindingNavigator1";
+            this.m_pelangganBindingNavigator.RefreshItems += new System.EventHandler(this.m_pelangganBindingNavigator_RefreshItems);
             // 
             // bindingNavigatorAddNewItem
             // 

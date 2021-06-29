@@ -634,3 +634,4 @@ C:\Users\dell\Downloads\ProjectPCS_UAS-master\ProjectPCS_UAS-master\ProjectPCSua
 C:\Users\dell\Downloads\ProjectPCS_UAS-master\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.Print_data_kota.resources
 C:\Users\dell\Downloads\ProjectPCS_UAS-master\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.Print_data_user.resources
 C:\Users\dell\Downloads\ProjectPCS_UAS-master\ProjectPCS_UAS-master\ProjectPCSuas\obj\Debug\ProjectPCSuas.Rework.resources
+C:\Users\SanDhika\Source\Repos\ProjectPCS_UAS123\ProjectPCSuas\obj\Debug\ProjectPCSuas.Rework.resources

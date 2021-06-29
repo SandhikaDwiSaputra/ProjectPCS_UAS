@@ -108,6 +108,7 @@ namespace ProjectPCSuas
             }
 
             conn.Close();
+            data();
         }
 
         private void rework_detail_item_idComboBox_SelectedIndexChanged(object sender, EventArgs e)

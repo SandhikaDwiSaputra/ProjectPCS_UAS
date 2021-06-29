@@ -97,21 +97,29 @@ namespace ProjectPCSuas
         private void bindingNavigatorMovePreviousItem_Click(object sender, EventArgs e)
         {
             data();
+            HapusItem.Enabled = false;
+            textBox1.Enabled = false;
         }
 
         private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
         {
             data();
+            HapusItem.Enabled = false;
+            textBox1.Enabled = false;
         }
 
         private void bindingNavigatorMoveLastItem_Click(object sender, EventArgs e)
         {
             data();
+            HapusItem.Enabled = false;
+            textBox1.Enabled = false;
         }
 
         private void bindingNavigatorMoveFirstItem_Click(object sender, EventArgs e)
         {
             data();
+            HapusItem.Enabled = false;
+            textBox1.Enabled = false;
         }
 
         private void TambahItem_Click_1(object sender, EventArgs e)
@@ -164,43 +172,51 @@ namespace ProjectPCSuas
             }
             else if (Convert.ToInt32(cekBarang) > 0)
             {
+                String jmlhBarang = $"SELECT unit FROM m_barang WHERE kode = '{kode}' ";
+                SqlCommand commjmlhBR = new SqlCommand(jmlhBarang, conn);
+
+                String JumlahAwal = commjmlhBR.ExecuteScalar().ToString();
+                int TambahJumlah = Convert.ToInt32(JumlahAwal) + Convert.ToInt32(cek);
+                String querytambahunit = $"UPDATE m_barang SET unit = {TambahJumlah} where kode = '{kode}'";
+                comm = new SqlCommand(querytambahunit, conn);
+                comm.ExecuteNonQuery();
+
+
                 String DataBrg7 = $"SELECT qty FROM t_pembelian_detail WHERE kode = '{kode}' and no_pnw = '{nO_PNWTextBox.Text}'";
                 SqlCommand comm7 = new SqlCommand(DataBrg7, conn);
+
                 String qtyAwal = comm7.ExecuteScalar().ToString();
                 int tambahQTY = Convert.ToInt32(textboxQTY.Text) + Convert.ToInt32(qtyAwal);
+
                 String query = $"UPDATE t_pembelian_detail SET qty = {tambahQTY} where kode = '{kode}' and no_pnw = '{nO_PNWTextBox.Text}'";
+
                 comm = new SqlCommand(query, conn);
                 comm.ExecuteNonQuery();
+                this.Validate();
+                this.t_pembelian_headerBindingSource.EndEdit();
+
+                this.tableAdapterManager.UpdateAll(this.project_UASDataSet);
+                textboxQTY.Clear();
             }
             else
             {
+                String jmlhBarang = $"SELECT unit FROM m_barang WHERE kode = '{kode}' ";
+                SqlCommand commjmlhBR = new SqlCommand(jmlhBarang, conn);
+
+                String JumlahAwal = commjmlhBR.ExecuteScalar().ToString();
+                int TambahJumlah = Convert.ToInt32(JumlahAwal) + Convert.ToInt32(cek);
+                String querytambahunit = $"UPDATE m_barang SET unit = {TambahJumlah} where kode = '{kode}'";
+                comm = new SqlCommand(querytambahunit, conn);
+                comm.ExecuteNonQuery();
+
                 String query = $"Insert into t_pembelian_detail(no_pnw,no_nota,kode,part_no,descriptio,unit,merk,qty,unit_price) values('{nO_PNWTextBox.Text}','{nO_NOTATextBox.Text}','{kode}','{part_no}','{description}','{unit}','{merk}','{Convert.ToInt32(textboxQTY.Text)}',{unitP})";
                 comm = new SqlCommand(query, conn);
                 comm.ExecuteNonQuery();
-            }
+                this.Validate();
+                this.t_pembelian_headerBindingSource.EndEdit();
 
-            //kartu stok
-            String data1 = "SELECT count(*) " +
-                             "FROM stock_history ";
-            SqlCommand commData = new SqlCommand(data1, conn);
-            String kodeData = commData.ExecuteScalar().ToString();
-
-            if (Convert.ToInt32(kodeData) < 1)
-            {
-                String query = "Insert into stock_history(ID_STOCK_HISTORY, ID_PEMBELIAN, STOCK_HISTORY_VALUE, STOCK_HISTORY_DATE) values(1, " + Convert.ToInt32(nO_PNWTextBox.Text) + ", " + Convert.ToInt32(textboxQTY.Text) + ", GETDATE())";
-                comm = new SqlCommand(query, conn);
-                comm.ExecuteNonQuery();
-            }
-            else
-            {
-                String id = "SELECT MAX(ID_STOCK_HISTORY) " +
-                             "FROM stock_history ";
-                SqlCommand commID = new SqlCommand(id, conn);
-                String kode3 = commID.ExecuteScalar().ToString();
-
-                String query = "Insert into stock_history(ID_STOCK_HISTORY, ID_PEMBELIAN, STOCK_HISTORY_VALUE, STOCK_HISTORY_DATE) values("+(Convert.ToInt32(kode3)+1)+", " + Convert.ToInt32(nO_PNWTextBox.Text) + ", " + Convert.ToInt32(textboxQTY.Text) + ", GETDATE())";
-                comm = new SqlCommand(query, conn);
-                comm.ExecuteNonQuery();
+                this.tableAdapterManager.UpdateAll(this.project_UASDataSet);
+                textboxQTY.Clear();
             }
 
             conn.Close();
@@ -215,6 +231,8 @@ namespace ProjectPCSuas
             {
 
                 conn.Open();
+
+
                 String DataBrg = $"SELECT kode " +
                              $"FROM m_barang " +
                              $"WHERE id = '{NamaBarang.SelectedValue}'";
@@ -241,10 +259,29 @@ namespace ProjectPCSuas
                 String description = comm3.ExecuteScalar().ToString();
                 String unit = comm3.ExecuteScalar().ToString();
 
+
+                String jmlhBarang = $"SELECT unit FROM m_barang WHERE kode = '{kode}' ";
+                SqlCommand commjmlhBR = new SqlCommand(jmlhBarang, conn);
+
+                String JumlahAwal = commjmlhBR.ExecuteScalar().ToString();
+
+                String jmlhBarangawal2 = $"SELECT qty FROM t_pembelian_detail WHERE kode = '{kode}' ";
+                SqlCommand commjmlhBR2 = new SqlCommand(jmlhBarangawal2, conn);
+
+                int JumlahAwal2 = Convert.ToInt32(commjmlhBR2.ExecuteScalar().ToString());
+                int TambahJumlah = Convert.ToInt32(JumlahAwal) - JumlahAwal2;
+                String querytambahunit = $"UPDATE m_barang SET unit = {TambahJumlah} where kode = '{kode}'";
+                comm = new SqlCommand(querytambahunit, conn);
+                comm.ExecuteNonQuery();
+
+
                 String cek = textboxQTY.Text;
                 String query = $"DELETE FROM t_pembelian_detail WHERE KODE = '{KodeBr.Text}' AND NO_NOTA = '{nO_NOTATextBox.Text}'";
                 comm = new SqlCommand(query, conn);
                 comm.ExecuteNonQuery();
+
+
+
 
                 conn.Close();
                 data();
@@ -255,8 +292,11 @@ namespace ProjectPCSuas
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             HapusItem.Enabled = true;
+            textBox1.Enabled = true;
             int rowIndex = e.RowIndex;
             KodeBr.Text = dataGridView1.Rows[rowIndex].Cells[0].Value.ToString();
+            textBox1.Text = dataGridView1.Rows[rowIndex].Cells[5].Value.ToString();
+            NamaBarang.SelectedItem = dataGridView1.Rows[rowIndex].Cells[2].Value.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -268,6 +308,129 @@ namespace ProjectPCSuas
         private void t_pembelian_headerBindingNavigator_RefreshItems(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conn.Open();
+                String jmlhBarangawal2 = $"SELECT qty FROM t_pembelian_detail WHERE kode = '{KodeBr.Text}' and no_pnw = '{nO_PNWTextBox.Text}' ";
+                SqlCommand commjmlhBR2 = new SqlCommand(jmlhBarangawal2, conn);
+
+                int JumlahAwal2 = Convert.ToInt32(commjmlhBR2.ExecuteScalar().ToString());
+                conn.Close();
+
+                int UpdateQTY = Convert.ToInt32(textBox1.Text);
+                if (UpdateQTY > 0)
+                {
+                    if (Convert.ToInt32(textBox1.Text) > JumlahAwal2)
+                    {
+                        conn.Open();
+                        //MENGHITUNG JARAK PERBEDAAN QTY
+                        int jarakQty = Convert.ToInt32(textBox1.Text) - JumlahAwal2;
+
+                        //MENGAMBIL QTY
+                        jmlhBarangawal2 = $"SELECT unit " +
+                                     $"FROM m_barang " +
+                                     $"where kode like '{KodeBr.Text}' ";
+                        commjmlhBR2 = new SqlCommand(jmlhBarangawal2, conn);
+                        String qtyBarang = commjmlhBR2.ExecuteScalar().ToString();
+
+                        //MENAMBAH QTY DI BARANG
+                        int totalAKhirQty = jarakQty + Convert.ToInt32(qtyBarang);
+
+                        //UPDATE BARANG
+                        String query = $"update m_barang set unit = {totalAKhirQty} where kode like '{KodeBr.Text}'";
+                        SqlCommand comm2 = new SqlCommand(query, conn);
+                        comm2.ExecuteNonQuery();
+
+
+                        //UPDATE PEMBLIAN DETAIL
+                        query = $"update t_pembelian_detail set qty = {textBox1.Text} where kode like '{KodeBr.Text}' and no_pnw = '{nO_PNWTextBox.Text}'";
+                        comm2 = new SqlCommand(query, conn);
+                        comm2.ExecuteNonQuery();
+
+                        MessageBox.Show("Stock Telah Di Update");
+                        textBox1.Clear();
+                        conn.Close();
+                        data();
+
+                    }
+                    else
+                    {
+                        conn.Open();
+                        //MENGHITUNG JARAK PERBEDAAN QTY
+                        int jarakQty = Convert.ToInt32(JumlahAwal2) - Convert.ToInt32(textBox1.Text);
+
+                        //MENGAMBIL QTY
+                        jmlhBarangawal2 = $"SELECT unit " +
+                                     $"FROM m_barang " +
+                                     $"where kode like '{KodeBr.Text}' ";
+                        commjmlhBR2 = new SqlCommand(jmlhBarangawal2, conn);
+                        String qtyBarang = commjmlhBR2.ExecuteScalar().ToString();
+
+                        //MENAMBAH QTY DI BARANG
+                        int totalAKhirQty = Convert.ToInt32(qtyBarang) - jarakQty;
+
+                        //UPDATE BARANG
+                        String query = $"update m_barang set unit = {totalAKhirQty} where kode like '{KodeBr.Text}'";
+                        SqlCommand comm2 = new SqlCommand(query, conn);
+                        comm2.ExecuteNonQuery();
+
+
+                        //UPDATE PEMBLIAN DETAIL
+                        query = $"update t_pembelian_detail set qty = {textBox1.Text} where kode like '{KodeBr.Text}' and no_pnw = '{nO_PNWTextBox.Text}'";
+                        comm2 = new SqlCommand(query, conn);
+                        comm2.ExecuteNonQuery();
+
+                        MessageBox.Show("Stock Telah Di Update");
+                        textBox1.Clear();
+                        conn.Close();
+                        data();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Input Kurang Dari 0");
+                }
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Input Bukan Angka Atau Kurang Dari 0");
+            }
+        }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            String query = $"delete from t_pembelian_detail where no_pnw = '{nO_PNWTextBox.Text}'";
+            SqlCommand comm = new SqlCommand(query, conn);
+            comm.ExecuteNonQuery();
+            MessageBox.Show("Berhasil Menghapus");
+            conn.Close();
+
+
+
+            this.Validate();
+            this.t_pembelian_headerBindingSource.EndEdit();
+
+            this.tableAdapterManager.UpdateAll(this.project_UASDataSet);
+        }
+
+        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            this.dataGridView1.DataSource = null;
+            dataGridView1.Rows.Clear();
+            HapusItem.Enabled = false;
+            textBox1.Enabled = false;
         }
     }
 }

@@ -45,6 +45,7 @@ namespace ProjectPCSuas
             System.Windows.Forms.Label dESCRIPTIONLabel;
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label kETERANGANLabel;
+            System.Windows.Forms.Label label7;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pembelian));
             this.project_UASDataSet = new ProjectPCSuas.Project_UASDataSet();
             this.t_pembelian_headerBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -89,6 +90,8 @@ namespace ProjectPCSuas
             this.kETERANGANTextBox = new System.Windows.Forms.TextBox();
             this.m_barangTableAdapter = new ProjectPCSuas.Project_UASDataSetTableAdapters.m_barangTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             nOTELabel = new System.Windows.Forms.Label();
             p_IDLabel = new System.Windows.Forms.Label();
             nPWPLabel = new System.Windows.Forms.Label();
@@ -104,6 +107,7 @@ namespace ProjectPCSuas
             dESCRIPTIONLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             kETERANGANLabel = new System.Windows.Forms.Label();
+            label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.project_UASDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.t_pembelian_headerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.t_pembelian_headerBindingNavigator)).BeginInit();
@@ -179,7 +183,7 @@ namespace ProjectPCSuas
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(581, 519);
+            label6.Location = new System.Drawing.Point(736, 522);
             label6.Name = "label6";
             label6.Size = new System.Drawing.Size(87, 13);
             label6.TabIndex = 65;
@@ -188,7 +192,7 @@ namespace ProjectPCSuas
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(581, 489);
+            label5.Location = new System.Drawing.Point(736, 492);
             label5.Name = "label5";
             label5.Size = new System.Drawing.Size(32, 13);
             label5.TabIndex = 63;
@@ -197,7 +201,7 @@ namespace ProjectPCSuas
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(581, 463);
+            label4.Location = new System.Drawing.Point(736, 466);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(66, 13);
             label4.TabIndex = 61;
@@ -206,7 +210,7 @@ namespace ProjectPCSuas
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(581, 434);
+            label3.Location = new System.Drawing.Point(736, 437);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(45, 13);
             label3.TabIndex = 59;
@@ -215,7 +219,7 @@ namespace ProjectPCSuas
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(229, 516);
+            label2.Location = new System.Drawing.Point(112, 473);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(35, 13);
             label2.TabIndex = 58;
@@ -224,7 +228,7 @@ namespace ProjectPCSuas
             // dESCRIPTIONLabel
             // 
             dESCRIPTIONLabel.AutoSize = true;
-            dESCRIPTIONLabel.Location = new System.Drawing.Point(229, 460);
+            dESCRIPTIONLabel.Location = new System.Drawing.Point(431, 434);
             dESCRIPTIONLabel.Name = "dESCRIPTIONLabel";
             dESCRIPTIONLabel.Size = new System.Drawing.Size(83, 13);
             dESCRIPTIONLabel.TabIndex = 55;
@@ -233,7 +237,7 @@ namespace ProjectPCSuas
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(229, 486);
+            label1.Location = new System.Drawing.Point(431, 473);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(32, 13);
             label1.TabIndex = 54;
@@ -242,11 +246,20 @@ namespace ProjectPCSuas
             // kETERANGANLabel
             // 
             kETERANGANLabel.AutoSize = true;
-            kETERANGANLabel.Location = new System.Drawing.Point(228, 434);
+            kETERANGANLabel.Location = new System.Drawing.Point(115, 437);
             kETERANGANLabel.Name = "kETERANGANLabel";
             kETERANGANLabel.Size = new System.Drawing.Size(84, 13);
             kETERANGANLabel.TabIndex = 49;
             kETERANGANLabel.Text = "KETERANGAN:";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new System.Drawing.Point(111, 512);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(70, 13);
+            label7.TabIndex = 73;
+            label7.Text = "Update QTY:";
             // 
             // project_UASDataSet
             // 
@@ -332,6 +345,7 @@ namespace ProjectPCSuas
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Add new";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorCountItem
             // 
@@ -348,6 +362,7 @@ namespace ProjectPCSuas
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -436,6 +451,7 @@ namespace ProjectPCSuas
             this.dataGridView1.Size = new System.Drawing.Size(825, 280);
             this.dataGridView1.TabIndex = 48;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             // 
             // nOTETextBox
             // 
@@ -524,7 +540,7 @@ namespace ProjectPCSuas
             // Gtotal
             // 
             this.Gtotal.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_pembelian_headerBindingSource, "DISCOUNT", true));
-            this.Gtotal.Location = new System.Drawing.Point(671, 516);
+            this.Gtotal.Location = new System.Drawing.Point(826, 519);
             this.Gtotal.Name = "Gtotal";
             this.Gtotal.Size = new System.Drawing.Size(113, 20);
             this.Gtotal.TabIndex = 66;
@@ -533,7 +549,7 @@ namespace ProjectPCSuas
             // PPN
             // 
             this.PPN.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_pembelian_headerBindingSource, "DISCOUNT", true));
-            this.PPN.Location = new System.Drawing.Point(671, 487);
+            this.PPN.Location = new System.Drawing.Point(826, 490);
             this.PPN.Name = "PPN";
             this.PPN.Size = new System.Drawing.Size(113, 20);
             this.PPN.TabIndex = 64;
@@ -542,7 +558,7 @@ namespace ProjectPCSuas
             // Discount
             // 
             this.Discount.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_pembelian_headerBindingSource, "DISCOUNT", true));
-            this.Discount.Location = new System.Drawing.Point(671, 461);
+            this.Discount.Location = new System.Drawing.Point(826, 464);
             this.Discount.Name = "Discount";
             this.Discount.Size = new System.Drawing.Size(113, 20);
             this.Discount.TabIndex = 62;
@@ -551,7 +567,7 @@ namespace ProjectPCSuas
             // Totalsemua
             // 
             this.Totalsemua.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_pembelian_headerBindingSource, "DISCOUNT", true));
-            this.Totalsemua.Location = new System.Drawing.Point(671, 431);
+            this.Totalsemua.Location = new System.Drawing.Point(826, 434);
             this.Totalsemua.Name = "Totalsemua";
             this.Totalsemua.Size = new System.Drawing.Size(113, 20);
             this.Totalsemua.TabIndex = 60;
@@ -560,9 +576,9 @@ namespace ProjectPCSuas
             // KodeBr
             // 
             this.KodeBr.Enabled = false;
-            this.KodeBr.Location = new System.Drawing.Point(318, 513);
+            this.KodeBr.Location = new System.Drawing.Point(201, 470);
             this.KodeBr.Name = "KodeBr";
-            this.KodeBr.Size = new System.Drawing.Size(205, 20);
+            this.KodeBr.Size = new System.Drawing.Size(182, 20);
             this.KodeBr.TabIndex = 57;
             // 
             // NamaBarang
@@ -570,9 +586,9 @@ namespace ProjectPCSuas
             this.NamaBarang.DataSource = this.mbarangBindingSource;
             this.NamaBarang.DisplayMember = "DESCRIPTION";
             this.NamaBarang.FormattingEnabled = true;
-            this.NamaBarang.Location = new System.Drawing.Point(318, 460);
+            this.NamaBarang.Location = new System.Drawing.Point(520, 434);
             this.NamaBarang.Name = "NamaBarang";
-            this.NamaBarang.Size = new System.Drawing.Size(205, 21);
+            this.NamaBarang.Size = new System.Drawing.Size(158, 21);
             this.NamaBarang.TabIndex = 56;
             this.NamaBarang.ValueMember = "ID";
             // 
@@ -583,17 +599,17 @@ namespace ProjectPCSuas
             // 
             // textboxQTY
             // 
-            this.textboxQTY.Location = new System.Drawing.Point(318, 487);
+            this.textboxQTY.Location = new System.Drawing.Point(520, 473);
             this.textboxQTY.Name = "textboxQTY";
-            this.textboxQTY.Size = new System.Drawing.Size(205, 20);
+            this.textboxQTY.Size = new System.Drawing.Size(158, 20);
             this.textboxQTY.TabIndex = 53;
             // 
             // HapusItem
             // 
             this.HapusItem.Enabled = false;
-            this.HapusItem.Location = new System.Drawing.Point(318, 563);
+            this.HapusItem.Location = new System.Drawing.Point(295, 546);
             this.HapusItem.Name = "HapusItem";
-            this.HapusItem.Size = new System.Drawing.Size(81, 23);
+            this.HapusItem.Size = new System.Drawing.Size(88, 23);
             this.HapusItem.TabIndex = 52;
             this.HapusItem.Text = "Hapus Item";
             this.HapusItem.UseVisualStyleBackColor = true;
@@ -601,9 +617,9 @@ namespace ProjectPCSuas
             // 
             // TambahItem
             // 
-            this.TambahItem.Location = new System.Drawing.Point(231, 563);
+            this.TambahItem.Location = new System.Drawing.Point(549, 516);
             this.TambahItem.Name = "TambahItem";
-            this.TambahItem.Size = new System.Drawing.Size(81, 23);
+            this.TambahItem.Size = new System.Drawing.Size(129, 23);
             this.TambahItem.TabIndex = 51;
             this.TambahItem.Text = "Tambah Item";
             this.TambahItem.UseVisualStyleBackColor = true;
@@ -612,9 +628,9 @@ namespace ProjectPCSuas
             // kETERANGANTextBox
             // 
             this.kETERANGANTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_pembelian_headerBindingSource, "KETERANGAN", true));
-            this.kETERANGANTextBox.Location = new System.Drawing.Point(318, 431);
+            this.kETERANGANTextBox.Location = new System.Drawing.Point(201, 434);
             this.kETERANGANTextBox.Name = "kETERANGANTextBox";
-            this.kETERANGANTextBox.Size = new System.Drawing.Size(205, 20);
+            this.kETERANGANTextBox.Size = new System.Drawing.Size(182, 20);
             this.kETERANGANTextBox.TabIndex = 50;
             // 
             // m_barangTableAdapter
@@ -623,19 +639,40 @@ namespace ProjectPCSuas
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(405, 563);
+            this.button1.Location = new System.Drawing.Point(434, 516);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(109, 23);
             this.button1.TabIndex = 67;
             this.button1.Text = "Print";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Enabled = false;
+            this.textBox1.Location = new System.Drawing.Point(201, 508);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(182, 20);
+            this.textBox1.TabIndex = 72;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(201, 546);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(88, 23);
+            this.button2.TabIndex = 71;
+            this.button2.Text = "Update";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Pembelian
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1051, 666);
+            this.Controls.Add(label7);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(label6);
             this.Controls.Add(this.Gtotal);
@@ -735,5 +772,7 @@ namespace ProjectPCSuas
         private System.Windows.Forms.BindingSource mbarangBindingSource;
         private Project_UASDataSetTableAdapters.m_barangTableAdapter m_barangTableAdapter;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button2;
     }
 }

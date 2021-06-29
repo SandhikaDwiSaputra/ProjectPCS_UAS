@@ -32,38 +32,38 @@ namespace ProjectPCSuas
 
         private void t_invoice_headerBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.t_invoice_headerBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.uASDataSet2);
+            //this.Validate();
+            //this.t_invoice_headerBindingSource.EndEdit();
+            //this.tableAdapterManager.UpdateAll(this.uASDataSet2);
 
-            conn.Open();
+            //conn.Open();
 
-            String DataBrg = "SELECT count(*) " +
-                             "FROM stock_history ";
-            SqlCommand comm = new SqlCommand(DataBrg, conn);
-            String kode = comm.ExecuteScalar().ToString();
+            //String DataBrg = "SELECT count(*) " +
+            //                 "FROM stock_history ";
+            //SqlCommand comm = new SqlCommand(DataBrg, conn);
+            //String kode = comm.ExecuteScalar().ToString();
 
-            //masukin textbox qty nya
-            int QTY = Convert.ToInt32();
+            ////masukin textbox qty nya
+            //int QTY = Convert.ToInt32();
 
-            if (Convert.ToInt32(kode) < 1)
-            {
-                String query = "Insert into stock_history(ID_STOCK_HISTORY, ID_INVOICE, STOCK_HISTORY_VALUE, STOCK_HISTORY_DATE) values(1, " + Convert.ToInt32(nO_INVTextBox.Text) + ", " + QTY + ", GETDATE())";
-                comm = new SqlCommand(query, conn);
-                comm.ExecuteNonQuery();
-            }
-            else
-            {
-                String id = "SELECT MAX(ID_STOCK_HISTORY) " +
-                             "FROM stock_history ";
-                SqlCommand comm3 = new SqlCommand(id, conn);
-                String kode3 = comm3.ExecuteScalar().ToString();
+            //if (Convert.ToInt32(kode) < 1)
+            //{
+            //    String query = "Insert into stock_history(ID_STOCK_HISTORY, ID_INVOICE, STOCK_HISTORY_VALUE, STOCK_HISTORY_DATE) values(1, " + Convert.ToInt32(nO_INVTextBox.Text) + ", " + QTY + ", GETDATE())";
+            //    comm = new SqlCommand(query, conn);
+            //    comm.ExecuteNonQuery();
+            //}
+            //else
+            //{
+            //    String id = "SELECT MAX(ID_STOCK_HISTORY) " +
+            //                 "FROM stock_history ";
+            //    SqlCommand comm3 = new SqlCommand(id, conn);
+            //    String kode3 = comm3.ExecuteScalar().ToString();
 
-                String query = "Insert into stock_history(ID_STOCK_HISTORY, ID_INVOICE, STOCK_HISTORY_VALUE, STOCK_HISTORY_DATE) values(" + (Convert.ToInt32(kode3) + 1) + ", " + Convert.ToInt32(nO_INVTextBox.Text) + ", " + QTY + ", GETDATE())";
-                comm = new SqlCommand(query, conn);
-                comm.ExecuteNonQuery();
-            }
-            conn.Close();
+            //    String query = "Insert into stock_history(ID_STOCK_HISTORY, ID_INVOICE, STOCK_HISTORY_VALUE, STOCK_HISTORY_DATE) values(" + (Convert.ToInt32(kode3) + 1) + ", " + Convert.ToInt32(nO_INVTextBox.Text) + ", " + QTY + ", GETDATE())";
+            //    comm = new SqlCommand(query, conn);
+            //    comm.ExecuteNonQuery();
+            //}
+            //conn.Close();
 
         }
 

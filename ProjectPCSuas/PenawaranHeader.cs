@@ -32,6 +32,12 @@ namespace ProjectPCSuas
                 this.Validate();
                 this.t_penawaran_headerBindingSource.EndEdit();
                 this.tableAdapterManager.UpdateAll(this.uASDataSet2);
+
+                conn.Open();
+                String query = "Insert into t_invoice_header(NO_PNW, P_ID, PART_CHARG, SERVICE_CH, DISCOUNT, PPN) VALUES('"+nO_PNWTextBox.Text+"', '"+p_IDComboBox.SelectedValue+"', "+Convert.ToInt32(pART_CHARGTextBox.Text)+", "+Convert.ToInt32(sERVICE_CHTextBox.Text)+", "+Convert.ToInt32(dISCOUNTTextBox.Text)+", "+Convert.ToInt32(pPNTextBox.Text)+")";
+                SqlCommand comm = new SqlCommand(query, conn);
+                comm.ExecuteNonQuery();
+                conn.Close();
             }
         }
 
@@ -66,17 +72,15 @@ namespace ProjectPCSuas
             {
                 if ((int)dESCRIPTIONComboBox.SelectedValue != -1)
                 {
-                    conn.Open();
                     try
                     {
                         this.t_penawaran_detailTableAdapter.FillByNOPNW(this.uASDataSet2.t_penawaran_detail, nO_PNWTextBox.Text);
                     }
-                    catch (System.Exception ex)
-                    {
-                        System.Windows.Forms.MessageBox.Show(ex.Message);
+                    catch (System.NullReferenceException)
+                    { 
+                    
                     }
                     qTYTextBox.Text = "";
-                    conn.Close();
                 }
             }
             catch (System.NullReferenceException)
@@ -147,6 +151,18 @@ namespace ProjectPCSuas
             if (button1.Text.Equals("Tambah Barang"))
             {
                 conn.Open();
+                String Data = "SELECT COUNT(NO_PNW) " +
+                                 "FROM t_penawaran_header " +
+                                 "WHERE NO_PNW = '" + nO_PNWTextBox.Text + "'";
+                SqlCommand com = new SqlCommand(Data, conn);
+                String pnw = com.ExecuteScalar().ToString();
+
+                if (Convert.ToInt32(pnw) < 1)
+                {
+                    this.t_penawaran_headerBindingSource.EndEdit();
+                    this.tableAdapterManager.UpdateAll(this.uASDataSet2);
+                }
+
 
                 String DataBrg = "SELECT kode " +
                                  "FROM m_barang " +
@@ -265,7 +281,7 @@ namespace ProjectPCSuas
                  String description = comm3.ExecuteScalar().ToString();
                  String unit = comm4.ExecuteScalar().ToString();
 
-                 String query = "DELETE FROM t_penawaran_detail WHERE NO_PNW='" + nO_PNWTextBox.Text + "'";
+                 String query = "DELETE FROM t_penawaran_detail WHERE NO_PNW='" + nO_PNWTextBox.Text + "' AND KODE='"+kode+"'";
                  comm = new SqlCommand(query, conn);
                  comm.ExecuteNonQuery();
                  conn.Close();
@@ -273,17 +289,7 @@ namespace ProjectPCSuas
                  data();
                  total();
 
-                 this.t_penawaran_headerBindingSource.RemoveCurrent();
                  this.tableAdapterManager.UpdateAll(this.uASDataSet2);
-
-                 if (t_penawaran_headerBindingSource.Position == t_penawaran_headerBindingSource.Count)
-                 {
-                     t_penawaran_headerBindingSource.MovePrevious();
-                 }
-                 else
-                 {
-                     t_penawaran_headerBindingSource.MoveNext();
-                 }
              }
              button2.Enabled = false;
         }
@@ -327,13 +333,24 @@ namespace ProjectPCSuas
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
+            dISCOUNTTextBox.Text = "0";
+            sERVICE_CHTextBox.Text = "0";
             data();
             total();
         }
 
         private void t_penawaran_detailDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            conn.Open();
             String kode = t_penawaran_detailDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+            String DataBrg = "SELECT id " +
+                             "FROM m_barang " +
+                             "WHERE kode = '" + kode + "'";
+            SqlCommand comm = new SqlCommand(DataBrg, conn);
+            String code = comm.ExecuteScalar().ToString();
+
+            dESCRIPTIONComboBox.SelectedValue = code;
+            conn.Close();
             try
             {
                 this.t_penawaran_detailTableAdapter.FillBy1(this.uASDataSet2.t_penawaran_detail, nO_PNWTextBox.Text, kode);

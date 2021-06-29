@@ -105,5 +105,11 @@ namespace ProjectPCSuas
             KartuStok ks = new KartuStok();
             ks.Show();
         }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            Rework r = new Rework();
+            r.Show();
+        }
     }
 }

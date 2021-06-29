@@ -320,6 +320,12 @@
       <DependentUpon>ReportPembelian.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Rework.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rework.Designer.cs">
+      <DependentUpon>Rework.cs</DependentUpon>
+    </Compile>
     <Compile Include="UASDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -477,6 +483,9 @@
     <EmbeddedResource Include="ReportPembelian.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReportPembelian.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rework.resx">
+      <DependentUpon>Rework.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateMasterMerk.resx">
       <DependentUpon>UpdateMasterMerk.cs</DependentUpon>

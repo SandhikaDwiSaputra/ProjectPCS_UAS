@@ -30,7 +30,6 @@ namespace ProjectPCSuas
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label nO_INVLabel;
             System.Windows.Forms.Label nO_PNWLabel;
             System.Windows.Forms.Label tGL_INVLabel;
             System.Windows.Forms.Label tGL_TERIMALabel;
@@ -48,9 +47,10 @@ namespace ProjectPCSuas
             System.Windows.Forms.Label nAMALabel;
             System.Windows.Forms.Label aLAMATLabel;
             System.Windows.Forms.Label aLAMAT_NPWLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Invoice));
             System.Windows.Forms.Label dESCRIPTIONLabel;
             System.Windows.Forms.Label qTYLabel;
+            System.Windows.Forms.Label nO_INVLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Invoice));
             this.t_invoice_headerBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.t_invoice_headerBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -66,7 +66,6 @@ namespace ProjectPCSuas
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.t_invoice_headerBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.nO_INVTextBox = new System.Windows.Forms.TextBox();
             this.nO_PNWTextBox = new System.Windows.Forms.TextBox();
             this.tGL_INVDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.tGL_TERIMADateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -118,7 +117,9 @@ namespace ProjectPCSuas
             this.qTYTextBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            nO_INVLabel = new System.Windows.Forms.Label();
+            this.t_invoice_headerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.t_invoice_headerTableAdapter1 = new ProjectPCSuas.Project_UASDataSetTableAdapters.t_invoice_headerTableAdapter();
+            this.nO_INVTextBox = new System.Windows.Forms.TextBox();
             nO_PNWLabel = new System.Windows.Forms.Label();
             tGL_INVLabel = new System.Windows.Forms.Label();
             tGL_TERIMALabel = new System.Windows.Forms.Label();
@@ -138,6 +139,7 @@ namespace ProjectPCSuas
             aLAMAT_NPWLabel = new System.Windows.Forms.Label();
             dESCRIPTIONLabel = new System.Windows.Forms.Label();
             qTYLabel = new System.Windows.Forms.Label();
+            nO_INVLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.t_invoice_headerBindingNavigator)).BeginInit();
             this.t_invoice_headerBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.t_invoice_headerBindingSource)).BeginInit();
@@ -150,16 +152,8 @@ namespace ProjectPCSuas
             this.fillByInvoiceNoToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.t_invoice_detailDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_barangBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.t_invoice_headerBindingSource1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // nO_INVLabel
-            // 
-            nO_INVLabel.AutoSize = true;
-            nO_INVLabel.Location = new System.Drawing.Point(12, 70);
-            nO_INVLabel.Name = "nO_INVLabel";
-            nO_INVLabel.Size = new System.Drawing.Size(59, 17);
-            nO_INVLabel.TabIndex = 1;
-            nO_INVLabel.Text = "NO INV:";
             // 
             // nO_PNWLabel
             // 
@@ -314,6 +308,33 @@ namespace ProjectPCSuas
             aLAMAT_NPWLabel.TabIndex = 40;
             aLAMAT_NPWLabel.Text = "ALAMAT NPW:";
             // 
+            // dESCRIPTIONLabel
+            // 
+            dESCRIPTIONLabel.AutoSize = true;
+            dESCRIPTIONLabel.Location = new System.Drawing.Point(15, 487);
+            dESCRIPTIONLabel.Name = "dESCRIPTIONLabel";
+            dESCRIPTIONLabel.Size = new System.Drawing.Size(99, 17);
+            dESCRIPTIONLabel.TabIndex = 44;
+            dESCRIPTIONLabel.Text = "Nama Barang:";
+            // 
+            // qTYLabel
+            // 
+            qTYLabel.AutoSize = true;
+            qTYLabel.Location = new System.Drawing.Point(63, 521);
+            qTYLabel.Name = "qTYLabel";
+            qTYLabel.Size = new System.Drawing.Size(41, 17);
+            qTYLabel.TabIndex = 45;
+            qTYLabel.Text = "QTY:";
+            // 
+            // nO_INVLabel
+            // 
+            nO_INVLabel.AutoSize = true;
+            nO_INVLabel.Location = new System.Drawing.Point(12, 70);
+            nO_INVLabel.Name = "nO_INVLabel";
+            nO_INVLabel.Size = new System.Drawing.Size(59, 17);
+            nO_INVLabel.TabIndex = 48;
+            nO_INVLabel.Text = "NO INV:";
+            // 
             // t_invoice_headerBindingNavigator
             // 
             this.t_invoice_headerBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
@@ -411,7 +432,6 @@ namespace ProjectPCSuas
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -455,14 +475,6 @@ namespace ProjectPCSuas
             this.t_invoice_headerBindingNavigatorSaveItem.Size = new System.Drawing.Size(29, 24);
             this.t_invoice_headerBindingNavigatorSaveItem.Text = "Save Data";
             this.t_invoice_headerBindingNavigatorSaveItem.Click += new System.EventHandler(this.t_invoice_headerBindingNavigatorSaveItem_Click);
-            // 
-            // nO_INVTextBox
-            // 
-            this.nO_INVTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_invoice_headerBindingSource, "NO_INV", true));
-            this.nO_INVTextBox.Location = new System.Drawing.Point(77, 67);
-            this.nO_INVTextBox.Name = "nO_INVTextBox";
-            this.nO_INVTextBox.Size = new System.Drawing.Size(100, 22);
-            this.nO_INVTextBox.TabIndex = 2;
             // 
             // nO_PNWTextBox
             // 
@@ -693,7 +705,6 @@ namespace ProjectPCSuas
             // 
             // nO_INVToolStripTextBox
             // 
-            this.nO_INVToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.nO_INVToolStripTextBox.Name = "nO_INVToolStripTextBox";
             this.nO_INVToolStripTextBox.Size = new System.Drawing.Size(100, 27);
             // 
@@ -855,15 +866,6 @@ namespace ProjectPCSuas
             // 
             this.m_barangTableAdapter.ClearBeforeFill = true;
             // 
-            // dESCRIPTIONLabel
-            // 
-            dESCRIPTIONLabel.AutoSize = true;
-            dESCRIPTIONLabel.Location = new System.Drawing.Point(15, 487);
-            dESCRIPTIONLabel.Name = "dESCRIPTIONLabel";
-            dESCRIPTIONLabel.Size = new System.Drawing.Size(99, 17);
-            dESCRIPTIONLabel.TabIndex = 44;
-            dESCRIPTIONLabel.Text = "Nama Barang:";
-            // 
             // dESCRIPTIONComboBox
             // 
             this.dESCRIPTIONComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.m_barangBindingSource, "DESCRIPTION", true));
@@ -872,15 +874,6 @@ namespace ProjectPCSuas
             this.dESCRIPTIONComboBox.Name = "dESCRIPTIONComboBox";
             this.dESCRIPTIONComboBox.Size = new System.Drawing.Size(159, 24);
             this.dESCRIPTIONComboBox.TabIndex = 45;
-            // 
-            // qTYLabel
-            // 
-            qTYLabel.AutoSize = true;
-            qTYLabel.Location = new System.Drawing.Point(63, 521);
-            qTYLabel.Name = "qTYLabel";
-            qTYLabel.Size = new System.Drawing.Size(41, 17);
-            qTYLabel.TabIndex = 45;
-            qTYLabel.Text = "QTY:";
             // 
             // qTYTextBox
             // 
@@ -910,11 +903,30 @@ namespace ProjectPCSuas
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // t_invoice_headerBindingSource1
+            // 
+            this.t_invoice_headerBindingSource1.DataMember = "t_invoice_header";
+            this.t_invoice_headerBindingSource1.DataSource = this.project_UASDataSet;
+            // 
+            // t_invoice_headerTableAdapter1
+            // 
+            this.t_invoice_headerTableAdapter1.ClearBeforeFill = true;
+            // 
+            // nO_INVTextBox
+            // 
+            this.nO_INVTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_invoice_headerBindingSource1, "NO_INV", true));
+            this.nO_INVTextBox.Location = new System.Drawing.Point(77, 67);
+            this.nO_INVTextBox.Name = "nO_INVTextBox";
+            this.nO_INVTextBox.Size = new System.Drawing.Size(100, 22);
+            this.nO_INVTextBox.TabIndex = 49;
+            // 
             // Invoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1432, 698);
+            this.Controls.Add(nO_INVLabel);
+            this.Controls.Add(this.nO_INVTextBox);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(qTYLabel);
@@ -939,8 +951,6 @@ namespace ProjectPCSuas
             this.Controls.Add(this.kOTATextBox);
             this.Controls.Add(eMAILLabel);
             this.Controls.Add(this.eMAILTextBox);
-            this.Controls.Add(nO_INVLabel);
-            this.Controls.Add(this.nO_INVTextBox);
             this.Controls.Add(nO_PNWLabel);
             this.Controls.Add(this.nO_PNWTextBox);
             this.Controls.Add(tGL_INVLabel);
@@ -979,6 +989,7 @@ namespace ProjectPCSuas
             this.fillByInvoiceNoToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.t_invoice_detailDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_barangBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.t_invoice_headerBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1003,7 +1014,6 @@ namespace ProjectPCSuas
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton t_invoice_headerBindingNavigatorSaveItem;
-        private System.Windows.Forms.TextBox nO_INVTextBox;
         private System.Windows.Forms.TextBox nO_PNWTextBox;
         private System.Windows.Forms.DateTimePicker tGL_INVDateTimePicker;
         private System.Windows.Forms.DateTimePicker tGL_TERIMADateTimePicker;
@@ -1053,5 +1063,8 @@ namespace ProjectPCSuas
         private System.Windows.Forms.TextBox qTYTextBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.BindingSource t_invoice_headerBindingSource1;
+        private Project_UASDataSetTableAdapters.t_invoice_headerTableAdapter t_invoice_headerTableAdapter1;
+        private System.Windows.Forms.TextBox nO_INVTextBox;
     }
 }

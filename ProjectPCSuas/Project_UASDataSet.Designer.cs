@@ -21192,12 +21192,19 @@ SELECT ID_STOCK_HISTORY, ID_BARANG, ID_INVOICE, ID_PEMBELIAN, ID_REWORK, REWORK_
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT NO_INV, NO_PNW, TGL_INV, TGL_TERIMA, P_ID, PART_CHARG, SERVICE_CH, DISCOUN" +
                 "T, NETTO, NONPROFIT, PPN, CASH, MEKANIK FROM dbo.t_invoice_header";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT NO_INV, NO_PNW, TGL_INV, TGL_TERIMA, P_ID, PART_CHARG, SERVICE_CH, DISCOUN" +
+                "T, NETTO, NONPROFIT, PPN, CASH, MEKANIK \r\nFROM dbo.t_invoice_header \r\nWHERE NO_I" +
+                "NV = @NO_INV";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NO_INV", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "NO_INV", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21222,6 +21229,25 @@ SELECT ID_STOCK_HISTORY, ID_BARANG, ID_INVOICE, ID_PEMBELIAN, ID_REWORK, REWORK_
             Project_UASDataSet.t_invoice_headerDataTable dataTable = new Project_UASDataSet.t_invoice_headerDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy2(Project_UASDataSet.t_invoice_headerDataTable dataTable, string NO_INV) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((NO_INV == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(NO_INV));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

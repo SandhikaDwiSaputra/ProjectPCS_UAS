@@ -23,7 +23,7 @@ namespace ProjectPCSuas
             {
                 try
                 {
-                    this.t_invoice_detailTableAdapter.FillBy2(this.project_UASDataSet.t_invoice_detail, nO_INVTextBox.Text);
+                    this.t_invoice_headerTableAdapter1.FillBy2(this.project_UASDataSet.t_invoice_header, nO_INVTextBox.Text);
                 }
                 catch (System.Exception ex)
                 {
@@ -124,6 +124,8 @@ namespace ProjectPCSuas
 
         private void Invoice_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'project_UASDataSet.t_invoice_header' table. You can move, or remove it, as needed.
+            this.t_invoice_headerTableAdapter1.Fill(this.project_UASDataSet.t_invoice_header);
             // TODO: This line of code loads data into the 'project_UASDataSet.m_barang' table. You can move, or remove it, as needed.
             this.m_barangTableAdapter.Fill(this.project_UASDataSet.m_barang);
             // TODO: This line of code loads data into the 'project_UASDataSet.t_invoice_detail' table. You can move, or remove it, as needed.
@@ -408,6 +410,19 @@ namespace ProjectPCSuas
             conn.Close();
             button2.Enabled = true;
             button1.Text = "Update Barang";
+        }
+
+        private void fillBy2ToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.t_invoice_headerTableAdapter1.FillBy2(this.project_UASDataSet.t_invoice_header, nO_INVTextBox.Text);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

@@ -14,6 +14,7 @@ namespace ProjectPCSuas
     public partial class PenawaranHeader : Form
     {
         SqlConnection conn;
+        int no_inv;
 
         public PenawaranHeader()
         {
@@ -34,7 +35,12 @@ namespace ProjectPCSuas
                 this.tableAdapterManager.UpdateAll(this.uASDataSet2);
 
                 conn.Open();
-                String query = "Insert into t_invoice_header(NO_PNW, P_ID, PART_CHARG, SERVICE_CH, DISCOUNT, PPN) VALUES('"+nO_PNWTextBox.Text+"', '"+p_IDComboBox.SelectedValue+"', "+Convert.ToInt32(pART_CHARGTextBox.Text)+", "+Convert.ToInt32(sERVICE_CHTextBox.Text)+", "+Convert.ToInt32(dISCOUNTTextBox.Text)+", "+Convert.ToInt32(pPNTextBox.Text)+")";
+                String data = "SELECT COUNT(*) FROM t_invoice_header";
+                SqlCommand command = new SqlCommand(data, conn);
+                int hasil = (int)command.ExecuteScalar();
+                no_inv = hasil + 1;
+
+                String query = "Insert into t_invoice_header(NO_INV, NO_PNW, P_ID, PART_CHARG, SERVICE_CH, DISCOUNT, PPN) VALUES('" + no_inv + "', '" + nO_PNWTextBox.Text+"', '"+p_IDComboBox.SelectedValue+"', "+Convert.ToInt32(pART_CHARGTextBox.Text)+", "+Convert.ToInt32(sERVICE_CHTextBox.Text)+", "+Convert.ToInt32(dISCOUNTTextBox.Text)+", "+Convert.ToInt32(pPNTextBox.Text)+")";
                 SqlCommand comm = new SqlCommand(query, conn);
                 comm.ExecuteNonQuery();
                 conn.Close();
@@ -193,6 +199,10 @@ namespace ProjectPCSuas
                 comm = new SqlCommand(query, conn);
                 comm.ExecuteNonQuery();
 
+                String data = "Insert into t_invoice_detail values('" + no_inv + "', '" + kode + "', '" + part_no + "', '" + description + "', " + Convert.ToInt32(qTYTextBox.Text) + ", 0, " + Convert.ToInt32(unit) + ", " + Convert.ToInt32(unit) + ")";
+                SqlCommand command = new SqlCommand(data, conn);
+                command.ExecuteNonQuery();
+
                 conn.Close();
             }
             else
@@ -208,6 +218,10 @@ namespace ProjectPCSuas
                 String query = "UPDATE t_penawaran_detail SET qty = " + Convert.ToInt32(qTYTextBox.Text) + " WHERE kode = '" + kode + "' AND NO_PNW='" + nO_PNWTextBox.Text + "'";
                 comm = new SqlCommand(query, conn);
                 comm.ExecuteNonQuery();
+
+                String data = "UPDATE t_invoice_detail SET qty = " + Convert.ToInt32(qTYTextBox.Text) + " WHERE kode = '" + kode + "' AND NO_INV='" + no_inv + "'";
+                SqlCommand command = new SqlCommand(data, conn);
+                command.ExecuteNonQuery();
                 conn.Close();
                 button1.Text = "Tambah Barang";
                 button2.Enabled = false;

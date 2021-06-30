@@ -44,6 +44,7 @@ namespace ProjectPCSuas
             rework_detail_item_part_noTextBox.ReadOnly = true;
             rework_detail_unit_priceTextBox.ReadOnly = true;
             rework_detail_unitTextBox.ReadOnly = true;
+            rework_detail_amountTextBox.ReadOnly = true;
 
             data();
         }
@@ -106,9 +107,25 @@ namespace ProjectPCSuas
                 SqlCommand comm = new SqlCommand(query, conn);
                 comm.ExecuteNonQuery();
             }
+            String Qty = "SELECT  qty " +
+                         "FROM t_invoice_detail "+
+                         "where no_inv="+invoice_idComboBox.SelectedValue;
+            SqlCommand comq = new SqlCommand(Qty, conn);
+            String qty2 = comq.ExecuteScalar().ToString();
 
-            conn.Close();
+            if (Convert.ToInt32(qty2) > Convert.ToInt32(rework_detail_qtyTextBox.Text))
+            {
+                int qtyA = Convert.ToInt32(qty2) - Convert.ToInt32(rework_detail_qtyTextBox);
+                String query2 = "update t_invoice_detail set qty=" + qtyA + " where no_inv=" + invoice_idComboBox.SelectedValue;
+                SqlCommand commQu = new SqlCommand(query2, conn);
+                commQu.ExecuteNonQuery();
+            }
+            else
+            {
+                MessageBox.Show("Barang hanya ada " + qty2);
+            }
             data();
+            conn.Close();
         }
 
         private void rework_detail_item_idComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -189,6 +206,15 @@ namespace ProjectPCSuas
             SqlCommand comm = new SqlCommand(query, conn);
             comm.ExecuteNonQuery();
             conn.Close();
+        }
+
+        private void rework_detail_qtyTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (rework_detail_qtyTextBox.Text.Length > 0)
+            {
+                int ttl = Convert.ToInt32(rework_detail_qtyTextBox.Text) * Convert.ToInt32(rework_detail_unit_priceTextBox.Text);
+                rework_detail_amountTextBox.Text = ttl.ToString();
+            }
         }
     }
 }

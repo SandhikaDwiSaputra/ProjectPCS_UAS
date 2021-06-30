@@ -651,6 +651,7 @@
             this.rework_detail_qtyTextBox.Name = "rework_detail_qtyTextBox";
             this.rework_detail_qtyTextBox.Size = new System.Drawing.Size(100, 20);
             this.rework_detail_qtyTextBox.TabIndex = 39;
+            this.rework_detail_qtyTextBox.TextChanged += new System.EventHandler(this.rework_detail_qtyTextBox_TextChanged);
             // 
             // rework_detail_unit_priceTextBox
             // 

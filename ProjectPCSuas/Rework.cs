@@ -30,6 +30,8 @@ namespace ProjectPCSuas
 
         private void Rework_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'uASDataSet2.t_invoice_header' table. You can move, or remove it, as needed.
+            this.t_invoice_headerTableAdapter.Fill(this.uASDataSet2.t_invoice_header);
             // TODO: This line of code loads data into the 'uASDataSet2.m_barang' table. You can move, or remove it, as needed.
             this.m_barangTableAdapter.Fill(this.uASDataSet2.m_barang);
             // TODO: This line of code loads data into the 'uASDataSet2.t_invoice_detail' table. You can move, or remove it, as needed.
@@ -55,7 +57,11 @@ namespace ProjectPCSuas
             rework_detail_unit_price_tempTextBox.Text = "0";
             rework_detail_amountTextBox.Text = "0";
             rework_detail_brandTextBox.Text = "";
-            if (rework_idTextBox.Text != null)
+            if (rework_idTextBox.Text.Length == 0)
+            {
+                rework_idTextBox.Text = "0";
+            }
+            if (rework_idTextBox.Text.Length > 0)
             {
                 try
                 {
@@ -109,14 +115,15 @@ namespace ProjectPCSuas
             }
             String Qty = "SELECT  qty " +
                          "FROM t_invoice_detail "+
-                         "where no_inv="+invoice_idComboBox.SelectedValue;
+                         "where no_inv="+invoice_idComboBox.SelectedValue +
+                         " and kode='"+rework_detail_item_codeTextBox.Text+"'";
             SqlCommand comq = new SqlCommand(Qty, conn);
             String qty2 = comq.ExecuteScalar().ToString();
 
-            if (qty2.Length>0 && Convert.ToInt32(qty2) > Convert.ToInt32(rework_detail_qtyTextBox.Text))
+            if (qty2.Length > 0 && Convert.ToInt32(qty2) >= Convert.ToInt32(rework_detail_qtyTextBox.Text))
             {
-                int qtyA = Convert.ToInt32(qty2) - Convert.ToInt32(rework_detail_qtyTextBox);
-                String query2 = "update t_invoice_detail set qty=" + qtyA + " where no_inv=" + invoice_idComboBox.SelectedValue + " and kode='"+rework_detail_item_codeTextBox.Text+"'";
+                int qtyA = (Convert.ToInt32(qty2) - Convert.ToInt32(rework_detail_qtyTextBox.Text));
+                String query2 = "update t_invoice_detail set qty=" + qtyA + " where no_inv=" + invoice_idComboBox.SelectedValue + " and kode='" + rework_detail_item_codeTextBox.Text + "'";
                 SqlCommand commQu = new SqlCommand(query2, conn);
                 commQu.ExecuteNonQuery();
             }
@@ -133,7 +140,6 @@ namespace ProjectPCSuas
             if (rework_detail_item_idComboBox.SelectedIndex != -1)
             {
                 conn.Open();
-
                 String Data = "SELECT kode " +
                                "FROM m_barang " +
                                "WHERE id = " + rework_detail_item_idComboBox.SelectedValue;
@@ -163,14 +169,13 @@ namespace ProjectPCSuas
                                "WHERE id = " + rework_detail_item_idComboBox.SelectedValue;
                 SqlCommand com5 = new SqlCommand(Data5, conn);
                 String unit = com5.ExecuteScalar().ToString();
+                conn.Close();
 
                 rework_detail_item_codeTextBox.Text = kode;
                 rework_detail_item_descTextBox.Text = desc;
                 rework_detail_item_part_noTextBox.Text = partNo;
                 rework_detail_unit_priceTextBox.Text = price;
                 rework_detail_unitTextBox.Text = unit;
-
-                conn.Close();
             }
         }
 

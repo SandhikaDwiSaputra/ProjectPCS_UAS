@@ -109,6 +109,9 @@
             this.rework_detail_item_idComboBox = new System.Windows.Forms.ComboBox();
             this.mbarangBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
+            this.uASDataSet2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tinvoiceheaderBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.t_invoice_headerTableAdapter = new ProjectPCSuas.UASDataSet2TableAdapters.t_invoice_headerTableAdapter();
             rework_detail_item_codeLabel = new System.Windows.Forms.Label();
             rework_detail_item_part_noLabel = new System.Windows.Forms.Label();
             rework_detail_item_descLabel = new System.Windows.Forms.Label();
@@ -138,6 +141,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.rework_detailDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tinvoicedetailBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mbarangBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uASDataSet2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tinvoiceheaderBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // rework_detail_item_codeLabel
@@ -696,7 +701,7 @@
             // invoice_idComboBox
             // 
             this.invoice_idComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reworkBindingSource, "invoice_id", true));
-            this.invoice_idComboBox.DataSource = this.tinvoicedetailBindingSource;
+            this.invoice_idComboBox.DataSource = this.tinvoiceheaderBindingSource;
             this.invoice_idComboBox.DisplayMember = "NO_INV";
             this.invoice_idComboBox.FormattingEnabled = true;
             this.invoice_idComboBox.Location = new System.Drawing.Point(103, 85);
@@ -810,6 +815,20 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // uASDataSet2BindingSource
+            // 
+            this.uASDataSet2BindingSource.DataSource = this.uASDataSet2;
+            this.uASDataSet2BindingSource.Position = 0;
+            // 
+            // tinvoiceheaderBindingSource
+            // 
+            this.tinvoiceheaderBindingSource.DataMember = "t_invoice_header";
+            this.tinvoiceheaderBindingSource.DataSource = this.uASDataSet2;
+            // 
+            // t_invoice_headerTableAdapter
+            // 
+            this.t_invoice_headerTableAdapter.ClearBeforeFill = true;
+            // 
             // Rework
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -872,6 +891,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.rework_detailDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tinvoicedetailBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mbarangBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uASDataSet2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tinvoiceheaderBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -937,5 +958,8 @@
         private UASDataSet2TableAdapters.m_barangTableAdapter m_barangTableAdapter;
         private System.Windows.Forms.BindingSource mbarangBindingSource;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.BindingSource uASDataSet2BindingSource;
+        private System.Windows.Forms.BindingSource tinvoiceheaderBindingSource;
+        private UASDataSet2TableAdapters.t_invoice_headerTableAdapter t_invoice_headerTableAdapter;
     }
 }

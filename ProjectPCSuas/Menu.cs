@@ -92,12 +92,12 @@ namespace ProjectPCSuas
 
         private void button13_Click(object sender, EventArgs e)
         {
-            new detail_INV_PPN().Show();
+
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
-            new Header_INV_PPN().Show();
+            new Detail_Header_INV_PPN().Show();
         }
 
         private void button15_Click(object sender, EventArgs e)

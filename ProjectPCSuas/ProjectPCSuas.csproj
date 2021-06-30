@@ -103,18 +103,6 @@
     <Compile Include="Print_data_user.Designer.cs">
       <DependentUpon>Print_data_user.cs</DependentUpon>
     </Compile>
-    <Compile Include="Laporan_Detail_INV_PPN.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Laporan_Detail_INV_PPN.Designer.cs">
-      <DependentUpon>Laporan_Detail_INV_PPN.cs</DependentUpon>
-    </Compile>
-    <Compile Include="laporanheaderinvPPN.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="laporanheaderinvPPN.Designer.cs">
-      <DependentUpon>laporanheaderinvPPN.cs</DependentUpon>
-    </Compile>
     <Compile Include="Printdatakota.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -125,18 +113,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Printdatauser.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="laporanDetail_INV_PPN.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>laporanDetail_INV_PPN.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="laporan_header_INV_PPN.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>laporan_header_INV_PPN.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DataPenawaran.cs">
@@ -163,29 +139,11 @@
     <Compile Include="browseuser.Designer.cs">
       <DependentUpon>browseuser.cs</DependentUpon>
     </Compile>
-    <Compile Include="detail_INV_PPN.cs">
+    <Compile Include="Detail_Header_INV_PPN.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="detail_INV_PPN.Designer.cs">
-      <DependentUpon>detail_INV_PPN.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Browse_detail_INV_PPN.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Browse_detail_INV_PPN.Designer.cs">
-      <DependentUpon>Browse_detail_INV_PPN.cs</DependentUpon>
-    </Compile>
-    <Compile Include="browse_Header_INV_PPN.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="browse_Header_INV_PPN.Designer.cs">
-      <DependentUpon>browse_Header_INV_PPN.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Header_INV_PPN.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Header_INV_PPN.Designer.cs">
-      <DependentUpon>Header_INV_PPN.cs</DependentUpon>
+    <Compile Include="Detail_Header_INV_PPN.Designer.cs">
+      <DependentUpon>Detail_Header_INV_PPN.cs</DependentUpon>
     </Compile>
     <Compile Include="Masteruser.cs">
       <SubType>Form</SubType>
@@ -355,20 +313,8 @@
     <EmbeddedResource Include="browseuser.resx">
       <DependentUpon>browseuser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Browse_detail_INV_PPN.resx">
-      <DependentUpon>Browse_detail_INV_PPN.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="browse_Header_INV_PPN.resx">
-      <DependentUpon>browse_Header_INV_PPN.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="KartuStok.resx">
       <DependentUpon>KartuStok.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="laporanheaderinvPPN.resx">
-      <DependentUpon>laporanheaderinvPPN.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Laporan_Detail_INV_PPN.resx">
-      <DependentUpon>Laporan_Detail_INV_PPN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Printdatakota.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -377,14 +323,6 @@
     <EmbeddedResource Include="Printdatauser.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Printdatauser.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="laporanDetail_INV_PPN.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>laporanDetail_INV_PPN.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="laporan_header_INV_PPN.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>laporan_header_INV_PPN.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="DataPenawaran.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -397,11 +335,8 @@
     <EmbeddedResource Include="browsekota.resx">
       <DependentUpon>browsekota.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="detail_INV_PPN.resx">
-      <DependentUpon>detail_INV_PPN.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Header_INV_PPN.resx">
-      <DependentUpon>Header_INV_PPN.cs</DependentUpon>
+    <EmbeddedResource Include="Detail_Header_INV_PPN.resx">
+      <DependentUpon>Detail_Header_INV_PPN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Masterkota.resx">
       <DependentUpon>Masterkota.cs</DependentUpon>

@@ -113,10 +113,10 @@ namespace ProjectPCSuas
             SqlCommand comq = new SqlCommand(Qty, conn);
             String qty2 = comq.ExecuteScalar().ToString();
 
-            if (Convert.ToInt32(qty2) > Convert.ToInt32(rework_detail_qtyTextBox.Text))
+            if (qty2.Length>0 && Convert.ToInt32(qty2) > Convert.ToInt32(rework_detail_qtyTextBox.Text))
             {
                 int qtyA = Convert.ToInt32(qty2) - Convert.ToInt32(rework_detail_qtyTextBox);
-                String query2 = "update t_invoice_detail set qty=" + qtyA + " where no_inv=" + invoice_idComboBox.SelectedValue;
+                String query2 = "update t_invoice_detail set qty=" + qtyA + " where no_inv=" + invoice_idComboBox.SelectedValue + " and kode='"+rework_detail_item_codeTextBox.Text+"'";
                 SqlCommand commQu = new SqlCommand(query2, conn);
                 commQu.ExecuteNonQuery();
             }

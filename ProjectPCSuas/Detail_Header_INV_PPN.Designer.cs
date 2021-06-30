@@ -41,7 +41,6 @@ namespace ProjectPCSuas
             System.Windows.Forms.Label pPNLabel;
             System.Windows.Forms.Label cASHLabel;
             System.Windows.Forms.Label mEKANIKLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Detail_Header_INV_PPN));
             System.Windows.Forms.Label kODELabel;
             System.Windows.Forms.Label pART_NOLabel;
             System.Windows.Forms.Label dESCRIPTIOLabel;
@@ -49,6 +48,7 @@ namespace ProjectPCSuas
             System.Windows.Forms.Label uNIT_PRICELabel;
             System.Windows.Forms.Label uNIT_PRIC2Label;
             System.Windows.Forms.Label qTYLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Detail_Header_INV_PPN));
             this.project_UASDataSet = new ProjectPCSuas.Project_UASDataSet();
             this.t_invoiceppn_headerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.t_invoiceppn_headerTableAdapter = new ProjectPCSuas.Project_UASDataSetTableAdapters.t_invoiceppn_headerTableAdapter();
@@ -95,6 +95,7 @@ namespace ProjectPCSuas
             this.uNIT_PRICETextBox = new System.Windows.Forms.TextBox();
             this.uNIT_PRIC2TextBox = new System.Windows.Forms.TextBox();
             this.qTYTextBox = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             nO_INVLabel = new System.Windows.Forms.Label();
             nO_PNWLabel = new System.Windows.Forms.Label();
             tGL_INVLabel = new System.Windows.Forms.Label();
@@ -222,6 +223,70 @@ namespace ProjectPCSuas
             mEKANIKLabel.Text = "MEKANIK:";
             mEKANIKLabel.Click += new System.EventHandler(this.mEKANIKLabel_Click);
             // 
+            // kODELabel
+            // 
+            kODELabel.AutoSize = true;
+            kODELabel.Location = new System.Drawing.Point(674, 485);
+            kODELabel.Name = "kODELabel";
+            kODELabel.Size = new System.Drawing.Size(51, 17);
+            kODELabel.TabIndex = 29;
+            kODELabel.Text = "KODE:";
+            // 
+            // pART_NOLabel
+            // 
+            pART_NOLabel.AutoSize = true;
+            pART_NOLabel.Location = new System.Drawing.Point(651, 513);
+            pART_NOLabel.Name = "pART_NOLabel";
+            pART_NOLabel.Size = new System.Drawing.Size(74, 17);
+            pART_NOLabel.TabIndex = 30;
+            pART_NOLabel.Text = "PART NO:";
+            // 
+            // dESCRIPTIOLabel
+            // 
+            dESCRIPTIOLabel.AutoSize = true;
+            dESCRIPTIOLabel.Location = new System.Drawing.Point(631, 541);
+            dESCRIPTIOLabel.Name = "dESCRIPTIOLabel";
+            dESCRIPTIOLabel.Size = new System.Drawing.Size(94, 17);
+            dESCRIPTIOLabel.TabIndex = 31;
+            dESCRIPTIOLabel.Text = "DESCRIPTIO:";
+            // 
+            // qTY_MLabel
+            // 
+            qTY_MLabel.AutoSize = true;
+            qTY_MLabel.Location = new System.Drawing.Point(669, 597);
+            qTY_MLabel.Name = "qTY_MLabel";
+            qTY_MLabel.Size = new System.Drawing.Size(56, 17);
+            qTY_MLabel.TabIndex = 32;
+            qTY_MLabel.Text = "QTY M:";
+            qTY_MLabel.Click += new System.EventHandler(this.qTY_MLabel_Click);
+            // 
+            // uNIT_PRICELabel
+            // 
+            uNIT_PRICELabel.AutoSize = true;
+            uNIT_PRICELabel.Location = new System.Drawing.Point(637, 625);
+            uNIT_PRICELabel.Name = "uNIT_PRICELabel";
+            uNIT_PRICELabel.Size = new System.Drawing.Size(88, 17);
+            uNIT_PRICELabel.TabIndex = 34;
+            uNIT_PRICELabel.Text = "UNIT PRICE:";
+            // 
+            // uNIT_PRIC2Label
+            // 
+            uNIT_PRIC2Label.AutoSize = true;
+            uNIT_PRIC2Label.Location = new System.Drawing.Point(638, 657);
+            uNIT_PRIC2Label.Name = "uNIT_PRIC2Label";
+            uNIT_PRIC2Label.Size = new System.Drawing.Size(87, 17);
+            uNIT_PRIC2Label.TabIndex = 36;
+            uNIT_PRIC2Label.Text = "UNIT PRIC2:";
+            // 
+            // qTYLabel
+            // 
+            qTYLabel.AutoSize = true;
+            qTYLabel.Location = new System.Drawing.Point(684, 569);
+            qTYLabel.Name = "qTYLabel";
+            qTYLabel.Size = new System.Drawing.Size(41, 17);
+            qTYLabel.TabIndex = 38;
+            qTYLabel.Text = "QTY:";
+            // 
             // project_UASDataSet
             // 
             this.project_UASDataSet.DataSetName = "Project_UASDataSet";
@@ -306,7 +371,7 @@ namespace ProjectPCSuas
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 28);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -316,7 +381,7 @@ namespace ProjectPCSuas
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 28);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
@@ -325,7 +390,7 @@ namespace ProjectPCSuas
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 28);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem
@@ -334,13 +399,13 @@ namespace ProjectPCSuas
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 28);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -355,7 +420,7 @@ namespace ProjectPCSuas
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -363,7 +428,7 @@ namespace ProjectPCSuas
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 28);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -372,20 +437,20 @@ namespace ProjectPCSuas
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 28);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // t_invoiceppn_headerBindingNavigatorSaveItem
             // 
             this.t_invoiceppn_headerBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.t_invoiceppn_headerBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("t_invoiceppn_headerBindingNavigatorSaveItem.Image")));
             this.t_invoiceppn_headerBindingNavigatorSaveItem.Name = "t_invoiceppn_headerBindingNavigatorSaveItem";
-            this.t_invoiceppn_headerBindingNavigatorSaveItem.Size = new System.Drawing.Size(29, 28);
+            this.t_invoiceppn_headerBindingNavigatorSaveItem.Size = new System.Drawing.Size(29, 24);
             this.t_invoiceppn_headerBindingNavigatorSaveItem.Text = "Save Data";
             this.t_invoiceppn_headerBindingNavigatorSaveItem.Click += new System.EventHandler(this.t_invoiceppn_headerBindingNavigatorSaveItem_Click);
             // 
@@ -573,15 +638,6 @@ namespace ProjectPCSuas
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.Width = 125;
             // 
-            // kODELabel
-            // 
-            kODELabel.AutoSize = true;
-            kODELabel.Location = new System.Drawing.Point(674, 485);
-            kODELabel.Name = "kODELabel";
-            kODELabel.Size = new System.Drawing.Size(51, 17);
-            kODELabel.TabIndex = 29;
-            kODELabel.Text = "KODE:";
-            // 
             // kODETextBox
             // 
             this.kODETextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_invoiceppn_detailBindingSource, "KODE", true));
@@ -589,15 +645,6 @@ namespace ProjectPCSuas
             this.kODETextBox.Name = "kODETextBox";
             this.kODETextBox.Size = new System.Drawing.Size(200, 22);
             this.kODETextBox.TabIndex = 30;
-            // 
-            // pART_NOLabel
-            // 
-            pART_NOLabel.AutoSize = true;
-            pART_NOLabel.Location = new System.Drawing.Point(651, 513);
-            pART_NOLabel.Name = "pART_NOLabel";
-            pART_NOLabel.Size = new System.Drawing.Size(74, 17);
-            pART_NOLabel.TabIndex = 30;
-            pART_NOLabel.Text = "PART NO:";
             // 
             // pART_NOTextBox
             // 
@@ -607,15 +654,6 @@ namespace ProjectPCSuas
             this.pART_NOTextBox.Size = new System.Drawing.Size(200, 22);
             this.pART_NOTextBox.TabIndex = 31;
             // 
-            // dESCRIPTIOLabel
-            // 
-            dESCRIPTIOLabel.AutoSize = true;
-            dESCRIPTIOLabel.Location = new System.Drawing.Point(631, 541);
-            dESCRIPTIOLabel.Name = "dESCRIPTIOLabel";
-            dESCRIPTIOLabel.Size = new System.Drawing.Size(94, 17);
-            dESCRIPTIOLabel.TabIndex = 31;
-            dESCRIPTIOLabel.Text = "DESCRIPTIO:";
-            // 
             // dESCRIPTIOTextBox
             // 
             this.dESCRIPTIOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_invoiceppn_detailBindingSource, "DESCRIPTIO", true));
@@ -623,16 +661,6 @@ namespace ProjectPCSuas
             this.dESCRIPTIOTextBox.Name = "dESCRIPTIOTextBox";
             this.dESCRIPTIOTextBox.Size = new System.Drawing.Size(200, 22);
             this.dESCRIPTIOTextBox.TabIndex = 32;
-            // 
-            // qTY_MLabel
-            // 
-            qTY_MLabel.AutoSize = true;
-            qTY_MLabel.Location = new System.Drawing.Point(669, 597);
-            qTY_MLabel.Name = "qTY_MLabel";
-            qTY_MLabel.Size = new System.Drawing.Size(56, 17);
-            qTY_MLabel.TabIndex = 32;
-            qTY_MLabel.Text = "QTY M:";
-            qTY_MLabel.Click += new System.EventHandler(this.qTY_MLabel_Click);
             // 
             // qTY_MTextBox
             // 
@@ -643,15 +671,6 @@ namespace ProjectPCSuas
             this.qTY_MTextBox.TabIndex = 33;
             this.qTY_MTextBox.TextChanged += new System.EventHandler(this.qTY_MTextBox_TextChanged);
             // 
-            // uNIT_PRICELabel
-            // 
-            uNIT_PRICELabel.AutoSize = true;
-            uNIT_PRICELabel.Location = new System.Drawing.Point(637, 625);
-            uNIT_PRICELabel.Name = "uNIT_PRICELabel";
-            uNIT_PRICELabel.Size = new System.Drawing.Size(88, 17);
-            uNIT_PRICELabel.TabIndex = 34;
-            uNIT_PRICELabel.Text = "UNIT PRICE:";
-            // 
             // uNIT_PRICETextBox
             // 
             this.uNIT_PRICETextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_invoiceppn_detailBindingSource, "UNIT_PRICE", true));
@@ -659,15 +678,6 @@ namespace ProjectPCSuas
             this.uNIT_PRICETextBox.Name = "uNIT_PRICETextBox";
             this.uNIT_PRICETextBox.Size = new System.Drawing.Size(200, 22);
             this.uNIT_PRICETextBox.TabIndex = 35;
-            // 
-            // uNIT_PRIC2Label
-            // 
-            uNIT_PRIC2Label.AutoSize = true;
-            uNIT_PRIC2Label.Location = new System.Drawing.Point(638, 657);
-            uNIT_PRIC2Label.Name = "uNIT_PRIC2Label";
-            uNIT_PRIC2Label.Size = new System.Drawing.Size(87, 17);
-            uNIT_PRIC2Label.TabIndex = 36;
-            uNIT_PRIC2Label.Text = "UNIT PRIC2:";
             // 
             // uNIT_PRIC2TextBox
             // 
@@ -677,15 +687,6 @@ namespace ProjectPCSuas
             this.uNIT_PRIC2TextBox.Size = new System.Drawing.Size(200, 22);
             this.uNIT_PRIC2TextBox.TabIndex = 37;
             // 
-            // qTYLabel
-            // 
-            qTYLabel.AutoSize = true;
-            qTYLabel.Location = new System.Drawing.Point(684, 569);
-            qTYLabel.Name = "qTYLabel";
-            qTYLabel.Size = new System.Drawing.Size(41, 17);
-            qTYLabel.TabIndex = 38;
-            qTYLabel.Text = "QTY:";
-            // 
             // qTYTextBox
             // 
             this.qTYTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_invoiceppn_detailBindingSource, "QTY", true));
@@ -694,11 +695,22 @@ namespace ProjectPCSuas
             this.qTYTextBox.Size = new System.Drawing.Size(200, 22);
             this.qTYTextBox.TabIndex = 39;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(483, 746);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(81, 32);
+            this.button1.TabIndex = 40;
+            this.button1.Text = "Print";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Detail_Header_INV_PPN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1890, 970);
+            this.Controls.Add(this.button1);
             this.Controls.Add(qTYLabel);
             this.Controls.Add(this.qTYTextBox);
             this.Controls.Add(uNIT_PRIC2Label);
@@ -799,5 +811,6 @@ namespace ProjectPCSuas
         private System.Windows.Forms.TextBox uNIT_PRICETextBox;
         private System.Windows.Forms.TextBox uNIT_PRIC2TextBox;
         private System.Windows.Forms.TextBox qTYTextBox;
+        private System.Windows.Forms.Button button1;
     }
 }

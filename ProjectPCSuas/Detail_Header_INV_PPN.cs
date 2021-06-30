@@ -83,5 +83,12 @@ namespace ProjectPCSuas
         {
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            print_PPN dp = new print_PPN();
+            dp.Show();
+                
+        }
     }
 }

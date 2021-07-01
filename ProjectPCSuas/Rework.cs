@@ -53,10 +53,6 @@ namespace ProjectPCSuas
 
         private void data()
         {
-            rework_detail_qtyTextBox.Text = "0";
-            rework_detail_unit_price_tempTextBox.Text = "0";
-            rework_detail_amountTextBox.Text = "0";
-            rework_detail_brandTextBox.Text = "";
             if (rework_idTextBox.Text.Length == 0)
             {
                 rework_idTextBox.Text = "0";
@@ -71,111 +67,87 @@ namespace ProjectPCSuas
                 {
                     System.Windows.Forms.MessageBox.Show(ex.Message);
                 }
+                rework_detail_qtyTextBox.Text = "0";
+                rework_detail_unit_price_tempTextBox.Text = "0";
+                rework_detail_amountTextBox.Text = "0";
+                rework_detail_brandTextBox.Text = "";
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            conn.Open();
-
-            String D = "SELECT  count(rework_id) " +
-                       "FROM rework " +
-                       "where rework_id="+rework_idTextBox.Text;
-            SqlCommand c = new SqlCommand(D, conn);
-            String c2 = c.ExecuteScalar().ToString();
-
-            if (Convert.ToInt32(c2) < 1)
+            if (button1.Text.Equals("Tambah"))
             {
-                this.Validate();
-                this.reworkBindingSource.EndEdit();
-                this.tableAdapterManager.UpdateAll(this.uASDataSet2);
-            }
+                conn.Open();
 
-            String Data = "SELECT  count(*) " +
-                            "FROM rework_detail ";
-            SqlCommand com = new SqlCommand(Data, conn);
-            String kode = com.ExecuteScalar().ToString();
+                String D = "SELECT  count(rework_id) " +
+                           "FROM rework " +
+                           "where rework_id=" + rework_idTextBox.Text;
+                SqlCommand c = new SqlCommand(D, conn);
+                String c2 = c.ExecuteScalar().ToString();
 
-            if (Convert.ToInt32(kode) < 1)
-            {
-                String query = "Insert into rework_detail values(1, " + Convert.ToInt32(rework_idTextBox.Text) + ", " + (int)rework_detail_item_idComboBox.SelectedValue + ", '" + rework_detail_item_codeTextBox.Text + "', '" + rework_detail_item_part_noTextBox.Text + "', '" + rework_detail_item_descTextBox.Text + "', '" + rework_detail_unitTextBox.Text + "', " + Convert.ToInt32(rework_detail_qtyTextBox.Text) + ", " + Convert.ToInt32(rework_detail_unit_priceTextBox.Text) + ", " + Convert.ToInt32(rework_detail_unit_price_tempTextBox.Text) + ", " + Convert.ToInt32(rework_detail_amountTextBox.Text) + ", '"+rework_detail_brandTextBox.Text+"')";
-                SqlCommand comm = new SqlCommand(query, conn);
-                comm.ExecuteNonQuery();
+                if (Convert.ToInt32(c2) < 1)
+                {
+                    this.Validate();
+                    this.reworkBindingSource.EndEdit();
+                    this.tableAdapterManager.UpdateAll(this.uASDataSet2);
+                }
+
+                String Data = "SELECT  count(*) " +
+                                "FROM rework_detail ";
+                SqlCommand com = new SqlCommand(Data, conn);
+                String kode = com.ExecuteScalar().ToString();
+
+                if (Convert.ToInt32(kode) < 1)
+                {
+                    String query = "Insert into rework_detail values(1, " + Convert.ToInt32(rework_idTextBox.Text) + ", " + (int)rework_detail_item_idComboBox.SelectedValue + ", '" + rework_detail_item_codeTextBox.Text + "', '" + rework_detail_item_part_noTextBox.Text + "', '" + rework_detail_item_descTextBox.Text + "', '" + rework_detail_unitTextBox.Text + "', " + Convert.ToInt32(rework_detail_qtyTextBox.Text) + ", " + Convert.ToInt32(rework_detail_unit_priceTextBox.Text) + ", " + Convert.ToInt32(rework_detail_unit_price_tempTextBox.Text) + ", " + Convert.ToInt32(rework_detail_amountTextBox.Text) + ", '" + rework_detail_brandTextBox.Text + "')";
+                    SqlCommand comm = new SqlCommand(query, conn);
+                    comm.ExecuteNonQuery();
+                }
+                else
+                {
+                    String id = "SELECT  max(rework_detail_id) " +
+                                "FROM rework_detail ";
+                    SqlCommand comId = new SqlCommand(id, conn);
+                    String id2 = comId.ExecuteScalar().ToString();
+
+                    String query = "Insert into rework_detail values(" + (Convert.ToInt32(id2) + 1) + " , " + Convert.ToInt32(rework_idTextBox.Text) + ", " + (int)rework_detail_item_idComboBox.SelectedValue + ", '" + rework_detail_item_codeTextBox.Text + "', '" + rework_detail_item_part_noTextBox.Text + "', '" + rework_detail_item_descTextBox.Text + "', '" + rework_detail_unitTextBox.Text + "', " + Convert.ToInt32(rework_detail_qtyTextBox.Text) + ", " + Convert.ToInt32(rework_detail_unit_priceTextBox.Text) + ", " + Convert.ToInt32(rework_detail_unit_price_tempTextBox.Text) + ", " + Convert.ToInt32(rework_detail_amountTextBox.Text) + ", '" + rework_detail_brandTextBox.Text + "' )";
+                    SqlCommand comm = new SqlCommand(query, conn);
+                    comm.ExecuteNonQuery();
+                }
+                String q = "SELECT  qty " +
+                             "FROM t_invoice_detail " +
+                             "where no_inv=" + invoice_idComboBox.SelectedValue +
+                             " and kode='" + rework_detail_item_codeTextBox.Text + "'";
+                SqlCommand comQty = new SqlCommand(q, conn);
+                String qty2 = comQty.ExecuteScalar().ToString();
+
+                if (qty2.Length > 0 && Convert.ToInt32(qty2) >= Convert.ToInt32(rework_detail_qtyTextBox.Text))
+                {
+                    int qtyA = Convert.ToInt32(qty2.ToString()) - Convert.ToInt32(rework_detail_qtyTextBox.Text);
+                    String query2 = "update t_invoice_detail set qty=" + qtyA + " where no_inv=" + invoice_idComboBox.SelectedValue + " and kode='" + rework_detail_item_codeTextBox.Text + "'";
+                    SqlCommand commQu = new SqlCommand(query2, conn);
+                    commQu.ExecuteNonQuery();
+                    data();
+                    conn.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Barang hanya ada " + qty2);
+                    conn.Close();
+                }
             }
             else
-            {
-                String id = "SELECT  max(rework_detail_id) " +
-                            "FROM rework_detail ";
-                SqlCommand comId = new SqlCommand(id, conn);
-                String id2 = comId.ExecuteScalar().ToString();
-
-                String query = "Insert into rework_detail values("+(Convert.ToInt32(id2)+1)+" , " + Convert.ToInt32(rework_idTextBox.Text) + ", " + (int)rework_detail_item_idComboBox.SelectedValue + ", '" + rework_detail_item_codeTextBox.Text + "', '" + rework_detail_item_part_noTextBox.Text + "', '" + rework_detail_item_descTextBox.Text + "', '" + rework_detail_unitTextBox.Text + "', " + Convert.ToInt32(rework_detail_qtyTextBox.Text) + ", " + Convert.ToInt32(rework_detail_unit_priceTextBox.Text) + ", " + Convert.ToInt32(rework_detail_unit_price_tempTextBox.Text) + ", " + Convert.ToInt32(rework_detail_amountTextBox.Text) + ", '" + rework_detail_brandTextBox.Text + "' )";
-                SqlCommand comm = new SqlCommand(query, conn);
-                comm.ExecuteNonQuery();
+            { 
+            
             }
-            String Qty = "SELECT  qty " +
-                         "FROM t_invoice_detail "+
-                         "where no_inv="+invoice_idComboBox.SelectedValue +
-                         " and kode='"+rework_detail_item_codeTextBox.Text+"'";
-            SqlCommand comq = new SqlCommand(Qty, conn);
-            String qty2 = comq.ExecuteScalar().ToString();
-
-            if (qty2.Length > 0 && Convert.ToInt32(qty2) >= Convert.ToInt32(rework_detail_qtyTextBox.Text))
-            {
-                int qtyA = (Convert.ToInt32(qty2) - Convert.ToInt32(rework_detail_qtyTextBox.Text));
-                String query2 = "update t_invoice_detail set qty=" + qtyA + " where no_inv=" + invoice_idComboBox.SelectedValue + " and kode='" + rework_detail_item_codeTextBox.Text + "'";
-                SqlCommand commQu = new SqlCommand(query2, conn);
-                commQu.ExecuteNonQuery();
-            }
-            else
-            {
-                MessageBox.Show("Barang hanya ada " + qty2);
-            }
-            data();
-            conn.Close();
         }
 
         private void rework_detail_item_idComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (rework_detail_item_idComboBox.SelectedIndex != -1)
             {
-                conn.Open();
-                String Data = "SELECT kode " +
-                               "FROM m_barang " +
-                               "WHERE id = " + rework_detail_item_idComboBox.SelectedValue;
-                SqlCommand com = new SqlCommand(Data, conn);
-                String kode = com.ExecuteScalar().ToString();
-
-                String Data2 = "SELECT part_no " +
-                               "FROM m_barang " +
-                               "WHERE id = " + rework_detail_item_idComboBox.SelectedValue;
-                SqlCommand com2 = new SqlCommand(Data2, conn);
-                String partNo = com2.ExecuteScalar().ToString();
-
-                String Data3 = "SELECT description " +
-                               "FROM m_barang " +
-                               "WHERE id = " + rework_detail_item_idComboBox.SelectedValue;
-                SqlCommand com3 = new SqlCommand(Data3, conn);
-                String desc = com3.ExecuteScalar().ToString();
-
-                String Data4 = "SELECT unit_price " +
-                               "FROM m_barang " +
-                               "WHERE id = " + rework_detail_item_idComboBox.SelectedValue;
-                SqlCommand com4 = new SqlCommand(Data4, conn);
-                String price = com4.ExecuteScalar().ToString();
-
-                String Data5 = "SELECT unit " +
-                               "FROM m_barang " +
-                               "WHERE id = " + rework_detail_item_idComboBox.SelectedValue;
-                SqlCommand com5 = new SqlCommand(Data5, conn);
-                String unit = com5.ExecuteScalar().ToString();
-                conn.Close();
-
-                rework_detail_item_codeTextBox.Text = kode;
-                rework_detail_item_descTextBox.Text = desc;
-                rework_detail_item_part_noTextBox.Text = partNo;
-                rework_detail_unit_priceTextBox.Text = price;
-                rework_detail_unitTextBox.Text = unit;
+                textBox1.Text = rework_detail_item_idComboBox.SelectedValue.ToString();
             }
         }
 
@@ -215,11 +187,108 @@ namespace ProjectPCSuas
 
         private void rework_detail_qtyTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (rework_detail_qtyTextBox.Text.Length > 0)
+            if (rework_detail_qtyTextBox.Text.Length > 0 && rework_detail_unit_priceTextBox.Text.Length > 0)
             {
                 int ttl = Convert.ToInt32(rework_detail_qtyTextBox.Text) * Convert.ToInt32(rework_detail_unit_priceTextBox.Text);
                 rework_detail_amountTextBox.Text = ttl.ToString();
             }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text.Length > 0)
+            {
+                conn.Open();
+                String Data = "SELECT kode " +
+                               "FROM m_barang " +
+                               "WHERE id = " + textBox1.Text;
+                SqlCommand com = new SqlCommand(Data, conn);
+                String kode = com.ExecuteScalar().ToString();
+
+                String Data2 = "SELECT part_no " +
+                               "FROM m_barang " +
+                               "WHERE id = " + textBox1.Text;
+                SqlCommand com2 = new SqlCommand(Data2, conn);
+                String partNo = com2.ExecuteScalar().ToString();
+
+                String Data3 = "SELECT description " +
+                               "FROM m_barang " +
+                               "WHERE id = " + textBox1.Text;
+                SqlCommand com3 = new SqlCommand(Data3, conn);
+                String desc = com3.ExecuteScalar().ToString();
+
+                String Data4 = "SELECT unit_price " +
+                               "FROM m_barang " +
+                               "WHERE id = " + textBox1.Text;
+                SqlCommand com4 = new SqlCommand(Data4, conn);
+                String price = com4.ExecuteScalar().ToString();
+
+                String Data5 = "SELECT unit " +
+                               "FROM m_barang " +
+                               "WHERE id = " + textBox1.Text;
+                SqlCommand com5 = new SqlCommand(Data5, conn);
+                String unit = com5.ExecuteScalar().ToString();
+                conn.Close();
+
+                rework_detail_item_codeTextBox.Text = kode;
+                rework_detail_item_descTextBox.Text = desc;
+                rework_detail_item_part_noTextBox.Text = partNo;
+                rework_detail_unit_priceTextBox.Text = price;
+                rework_detail_unitTextBox.Text = unit;
+            }
+        }
+
+        private void rework_detail_unit_priceTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (rework_detail_qtyTextBox.Text.Length > 0 && rework_detail_unit_priceTextBox.Text.Length > 0)
+            {
+                int ttl = Convert.ToInt32(rework_detail_qtyTextBox.Text) * Convert.ToInt32(rework_detail_unit_priceTextBox.Text);
+                rework_detail_amountTextBox.Text = ttl.ToString();
+            }
+        }
+
+        private void rework_detailDataGridView_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rework_detailDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            rework_detail_item_idComboBox.SelectedValue = rework_detailDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
+            if (e.ColumnIndex == 12)
+            {
+                DialogResult result = MessageBox.Show("Apakah anda yakin ingin delete?",
+                "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    conn.Open();
+                    String q = "SELECT  qty " +
+                                 "FROM t_invoice_detail " +
+                                 "where no_inv=" + invoice_idComboBox.SelectedValue +
+                                 " and kode='" + rework_detail_item_codeTextBox.Text + "'";
+                    SqlCommand comQty = new SqlCommand(q, conn);
+                    String qty2 = comQty.ExecuteScalar().ToString();
+
+                    if (qty2.Length > 0 && Convert.ToInt32(qty2) >= Convert.ToInt32(rework_detail_qtyTextBox.Text))
+                    {
+                        int qtyA = Convert.ToInt32(qty2.ToString()) + Convert.ToInt32(rework_detail_qtyTextBox.Text);
+                        String query2 = "update t_invoice_detail set qty=" + qtyA + " where no_inv=" + invoice_idComboBox.SelectedValue + " and kode='" + rework_detail_item_codeTextBox.Text + "'";
+                        SqlCommand commQu = new SqlCommand(query2, conn);
+                        commQu.ExecuteNonQuery();
+                    }
+
+                    String query = "DELETE FROM rework_detail WHERE rework_id=" + rework_idTextBox.Text + " and rework_detail_id=" + rework_detailDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    SqlCommand comm = new SqlCommand(query, conn);
+                    comm.ExecuteNonQuery();
+                    data();
+                    conn.Close();
+                }
+            }
+        }
+
+        private void rework_detailDataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

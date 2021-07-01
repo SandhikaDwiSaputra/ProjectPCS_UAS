@@ -73,18 +73,6 @@
             this.reworkBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.rework_detailBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rework_detailDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rework_detail_item_codeTextBox = new System.Windows.Forms.TextBox();
             this.rework_detail_item_part_noTextBox = new System.Windows.Forms.TextBox();
             this.rework_detail_item_descTextBox = new System.Windows.Forms.TextBox();
@@ -96,6 +84,7 @@
             this.rework_detail_brandTextBox = new System.Windows.Forms.TextBox();
             this.rework_idTextBox = new System.Windows.Forms.TextBox();
             this.invoice_idComboBox = new System.Windows.Forms.ComboBox();
+            this.tinvoiceheaderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tinvoicedetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rework_date_inDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.rework_date_outDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -110,8 +99,21 @@
             this.mbarangBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.uASDataSet2BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tinvoiceheaderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.t_invoice_headerTableAdapter = new ProjectPCSuas.UASDataSet2TableAdapters.t_invoice_headerTableAdapter();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             rework_detail_item_codeLabel = new System.Windows.Forms.Label();
             rework_detail_item_part_noLabel = new System.Windows.Forms.Label();
             rework_detail_item_descLabel = new System.Windows.Forms.Label();
@@ -139,10 +141,10 @@
             this.reworkBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rework_detailBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rework_detailDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tinvoiceheaderBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tinvoicedetailBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mbarangBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uASDataSet2BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tinvoiceheaderBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // rework_detail_item_codeLabel
@@ -538,84 +540,16 @@
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10,
             this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12});
+            this.dataGridViewTextBoxColumn12,
+            this.Delete});
             this.rework_detailDataGridView.DataSource = this.rework_detailBindingSource;
             this.rework_detailDataGridView.Location = new System.Drawing.Point(9, 234);
             this.rework_detailDataGridView.Name = "rework_detailDataGridView";
-            this.rework_detailDataGridView.Size = new System.Drawing.Size(842, 182);
+            this.rework_detailDataGridView.Size = new System.Drawing.Size(880, 182);
             this.rework_detailDataGridView.TabIndex = 23;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "rework_detail_id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "rework_detail_id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "rework_id";
-            this.dataGridViewTextBoxColumn2.HeaderText = "rework_id";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "rework_detail_item_id";
-            this.dataGridViewTextBoxColumn3.HeaderText = "rework_detail_item_id";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "rework_detail_item_code";
-            this.dataGridViewTextBoxColumn4.HeaderText = "rework_detail_item_code";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "rework_detail_item_part_no";
-            this.dataGridViewTextBoxColumn5.HeaderText = "rework_detail_item_part_no";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "rework_detail_item_desc";
-            this.dataGridViewTextBoxColumn6.HeaderText = "rework_detail_item_desc";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "rework_detail_unit";
-            this.dataGridViewTextBoxColumn7.HeaderText = "rework_detail_unit";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "rework_detail_qty";
-            this.dataGridViewTextBoxColumn8.HeaderText = "rework_detail_qty";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "rework_detail_unit_price";
-            this.dataGridViewTextBoxColumn9.HeaderText = "rework_detail_unit_price";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "rework_detail_unit_price_temp";
-            this.dataGridViewTextBoxColumn10.HeaderText = "rework_detail_unit_price_temp";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "rework_detail_amount";
-            this.dataGridViewTextBoxColumn11.HeaderText = "rework_detail_amount";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "rework_detail_brand";
-            this.dataGridViewTextBoxColumn12.HeaderText = "rework_detail_brand";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.rework_detailDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.rework_detailDataGridView_CellContentClick);
+            this.rework_detailDataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.rework_detailDataGridView_CellContentDoubleClick);
+            this.rework_detailDataGridView.Click += new System.EventHandler(this.rework_detailDataGridView_Click);
             // 
             // rework_detail_item_codeTextBox
             // 
@@ -665,6 +599,7 @@
             this.rework_detail_unit_priceTextBox.Name = "rework_detail_unit_priceTextBox";
             this.rework_detail_unit_priceTextBox.Size = new System.Drawing.Size(100, 20);
             this.rework_detail_unit_priceTextBox.TabIndex = 41;
+            this.rework_detail_unit_priceTextBox.TextChanged += new System.EventHandler(this.rework_detail_unit_priceTextBox_TextChanged);
             // 
             // rework_detail_unit_price_tempTextBox
             // 
@@ -709,6 +644,11 @@
             this.invoice_idComboBox.Size = new System.Drawing.Size(200, 21);
             this.invoice_idComboBox.TabIndex = 51;
             this.invoice_idComboBox.ValueMember = "NO_INV";
+            // 
+            // tinvoiceheaderBindingSource
+            // 
+            this.tinvoiceheaderBindingSource.DataMember = "t_invoice_header";
+            this.tinvoiceheaderBindingSource.DataSource = this.uASDataSet2;
             // 
             // tinvoicedetailBindingSource
             // 
@@ -820,20 +760,112 @@
             this.uASDataSet2BindingSource.DataSource = this.uASDataSet2;
             this.uASDataSet2BindingSource.Position = 0;
             // 
-            // tinvoiceheaderBindingSource
-            // 
-            this.tinvoiceheaderBindingSource.DataMember = "t_invoice_header";
-            this.tinvoiceheaderBindingSource.DataSource = this.uASDataSet2;
-            // 
             // t_invoice_headerTableAdapter
             // 
             this.t_invoice_headerTableAdapter.ClearBeforeFill = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(121, 798);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 72;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "rework_detail_id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "rework_detail_id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "rework_id";
+            this.dataGridViewTextBoxColumn2.HeaderText = "rework_id";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "rework_detail_item_id";
+            this.dataGridViewTextBoxColumn3.HeaderText = "rework_detail_item_id";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "rework_detail_item_code";
+            this.dataGridViewTextBoxColumn4.HeaderText = "rework_detail_item_code";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 130;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "rework_detail_item_part_no";
+            this.dataGridViewTextBoxColumn5.HeaderText = "rework_detail_item_part_no";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "rework_detail_item_desc";
+            this.dataGridViewTextBoxColumn6.HeaderText = "rework_detail_item_desc";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "rework_detail_unit";
+            this.dataGridViewTextBoxColumn7.HeaderText = "rework_detail_unit";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "rework_detail_qty";
+            this.dataGridViewTextBoxColumn8.HeaderText = "rework_detail_qty";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "rework_detail_unit_price";
+            this.dataGridViewTextBoxColumn9.HeaderText = "rework_detail_unit_price";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Width = 130;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "rework_detail_unit_price_temp";
+            this.dataGridViewTextBoxColumn10.HeaderText = "rework_detail_unit_price_temp";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "rework_detail_amount";
+            this.dataGridViewTextBoxColumn11.HeaderText = "rework_detail_amount";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "rework_detail_brand";
+            this.dataGridViewTextBoxColumn12.HeaderText = "rework_detail_brand";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            // 
+            // Delete
+            // 
+            this.Delete.DataPropertyName = "rework_detail_id";
+            this.Delete.HeaderText = "";
+            this.Delete.Name = "Delete";
+            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Delete.Text = "Delete";
+            this.Delete.UseColumnTextForButtonValue = true;
             // 
             // Rework
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(935, 830);
+            this.ClientSize = new System.Drawing.Size(935, 661);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(rework_detail_item_idLabel);
             this.Controls.Add(this.rework_detail_item_idComboBox);
@@ -889,10 +921,10 @@
             this.reworkBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rework_detailBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rework_detailDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tinvoiceheaderBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tinvoicedetailBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mbarangBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uASDataSet2BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tinvoiceheaderBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -920,18 +952,6 @@
         private UASDataSet2TableAdapters.rework_detailTableAdapter rework_detailTableAdapter;
         private System.Windows.Forms.BindingSource rework_detailBindingSource;
         private System.Windows.Forms.DataGridView rework_detailDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.TextBox rework_detail_item_codeTextBox;
         private System.Windows.Forms.TextBox rework_detail_item_part_noTextBox;
         private System.Windows.Forms.TextBox rework_detail_item_descTextBox;
@@ -961,5 +981,19 @@
         private System.Windows.Forms.BindingSource uASDataSet2BindingSource;
         private System.Windows.Forms.BindingSource tinvoiceheaderBindingSource;
         private UASDataSet2TableAdapters.t_invoice_headerTableAdapter t_invoice_headerTableAdapter;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
     }
 }

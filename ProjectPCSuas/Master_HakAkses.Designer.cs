@@ -135,6 +135,7 @@ namespace ProjectPCSuas
             this.btnClear.TabIndex = 42;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // Master_HakAkses
             // 

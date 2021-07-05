@@ -138,5 +138,10 @@ namespace ProjectPCSuas
                 refreshData();
             }
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            refreshData();
+        }
     }
 }

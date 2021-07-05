@@ -149,7 +149,7 @@ namespace ProjectPCSuas
             if (MessageBox.Show("Delete Access for this group user?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 conn.Open();
-                String query = $"DELETE FROM m_groupuser WHERE NAMAGROUPUSER = '{cbGroupUser.SelectedValue.ToString()}' AND NAMAMENU = '{txtMenu.Text}'";
+                String query = $"DELETE FROM m_hakaksesgroupuser WHERE NAMAGROUPUSER = '{cbGroupUser.SelectedValue.ToString()}' AND NAMAMENU = '{txtMenu.Text}'";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
                 conn.Close();

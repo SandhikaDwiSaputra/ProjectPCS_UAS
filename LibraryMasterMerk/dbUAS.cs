@@ -12,7 +12,7 @@ namespace LibraryMasterMerk
         public static SqlConnection GetConnection()
         {
             string connectionString =
-                "Data Source=localhost\\SqlExpress;Initial Catalog=Project_UAS;" +
+                "Data Source=localhost\\SqlExpress;Initial Catalog=UAS;" +
                 "Integrated Security=True";
             SqlConnection connection = new SqlConnection(connectionString);
             return connection;

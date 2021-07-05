@@ -52,10 +52,6 @@ namespace ProjectPCSuas
             this.dESCRIPTIONTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.BrowseBTN = new System.Windows.Forms.Button();
-            this.btnCari = new System.Windows.Forms.Button();
-            this.btnInsert = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.TBcari = new System.Windows.Forms.TextBox();
             this.m_modelDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,6 +60,8 @@ namespace ProjectPCSuas
             this.listView1 = new System.Windows.Forms.ListView();
             this.MODEL_ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.DESCRIPTION = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TBcari = new System.Windows.Forms.TextBox();
+            this.btnCari = new System.Windows.Forms.Button();
             dESCRIPTIONLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.uASDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_modelBindingSource)).BeginInit();
@@ -269,48 +267,13 @@ namespace ProjectPCSuas
             // 
             // BrowseBTN
             // 
-            this.BrowseBTN.Location = new System.Drawing.Point(547, 160);
+            this.BrowseBTN.Location = new System.Drawing.Point(395, 157);
             this.BrowseBTN.Name = "BrowseBTN";
             this.BrowseBTN.Size = new System.Drawing.Size(75, 23);
             this.BrowseBTN.TabIndex = 33;
             this.BrowseBTN.Text = "Browse";
             this.BrowseBTN.UseVisualStyleBackColor = true;
             this.BrowseBTN.Click += new System.EventHandler(this.BrowseBTN_Click);
-            // 
-            // btnCari
-            // 
-            this.btnCari.Location = new System.Drawing.Point(256, 211);
-            this.btnCari.Name = "btnCari";
-            this.btnCari.Size = new System.Drawing.Size(75, 23);
-            this.btnCari.TabIndex = 34;
-            this.btnCari.Text = "Search";
-            this.btnCari.UseVisualStyleBackColor = true;
-            this.btnCari.Click += new System.EventHandler(this.btnCari_Click);
-            // 
-            // btnInsert
-            // 
-            this.btnInsert.Location = new System.Drawing.Point(385, 160);
-            this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(75, 23);
-            this.btnInsert.TabIndex = 35;
-            this.btnInsert.Text = "Insert";
-            this.btnInsert.UseVisualStyleBackColor = true;
-            // 
-            // btnClear
-            // 
-            this.btnClear.Location = new System.Drawing.Point(466, 160);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 23);
-            this.btnClear.TabIndex = 36;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            // 
-            // TBcari
-            // 
-            this.TBcari.Location = new System.Drawing.Point(43, 211);
-            this.TBcari.Name = "TBcari";
-            this.TBcari.Size = new System.Drawing.Size(207, 22);
-            this.TBcari.TabIndex = 37;
             // 
             // m_modelDataGridView
             // 
@@ -385,6 +348,23 @@ namespace ProjectPCSuas
             // 
             this.DESCRIPTION.Text = "Description";
             // 
+            // TBcari
+            // 
+            this.TBcari.Location = new System.Drawing.Point(43, 211);
+            this.TBcari.Name = "TBcari";
+            this.TBcari.Size = new System.Drawing.Size(207, 22);
+            this.TBcari.TabIndex = 37;
+            // 
+            // btnCari
+            // 
+            this.btnCari.Location = new System.Drawing.Point(256, 211);
+            this.btnCari.Name = "btnCari";
+            this.btnCari.Size = new System.Drawing.Size(75, 23);
+            this.btnCari.TabIndex = 34;
+            this.btnCari.Text = "Search";
+            this.btnCari.UseVisualStyleBackColor = true;
+            this.btnCari.Click += new System.EventHandler(this.btnCari_Click);
+            // 
             // Master_Model
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -393,8 +373,6 @@ namespace ProjectPCSuas
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.m_modelDataGridView);
             this.Controls.Add(this.TBcari);
-            this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.btnCari);
             this.Controls.Add(this.BrowseBTN);
             this.Controls.Add(this.label1);
@@ -437,10 +415,6 @@ namespace ProjectPCSuas
         private System.Windows.Forms.TextBox dESCRIPTIONTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BrowseBTN;
-        private System.Windows.Forms.Button btnCari;
-        private System.Windows.Forms.Button btnInsert;
-        private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.TextBox TBcari;
         private System.Windows.Forms.DataGridView m_modelDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -449,5 +423,7 @@ namespace ProjectPCSuas
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader MODEL_ID;
         private System.Windows.Forms.ColumnHeader DESCRIPTION;
+        private System.Windows.Forms.TextBox TBcari;
+        private System.Windows.Forms.Button btnCari;
     }
 }

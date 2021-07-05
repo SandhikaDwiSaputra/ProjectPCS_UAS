@@ -23,7 +23,7 @@ namespace ProjectPCSuas
             {
                 try
                 {
-                    this.t_invoice_headerTableAdapter1.FillBy2(this.project_UASDataSet.t_invoice_header, nO_INVTextBox.Text);
+                    this.t_invoice_detailTableAdapter.FillBy3(this.project_UASDataSet.t_invoice_detail, nO_INVTextBox.Text);
                 }
                 catch (System.Exception ex)
                 {
@@ -136,7 +136,8 @@ namespace ProjectPCSuas
             this.m_supplierTableAdapter.Fill(this.project_UASDataSet.m_supplier);
             // TODO: This line of code loads data into the 'uASDataSet2.t_invoice_header' table. You can move, or remove it, as needed.
             this.t_invoice_headerTableAdapter.Fill(this.uASDataSet2.t_invoice_header);
-
+            data();
+            total();
         }
 
         private void fillByInvoiceNoToolStripButton_Click(object sender, EventArgs e)

@@ -12,7 +12,7 @@ namespace LibraryMasterMerk
         public static List<MasterModel> get()
         {
             List<MasterModel> modelList = new List<MasterModel>();
-            SqlConnection connection = new SqlConnection(@"Data Source=.\SQLExpress;Initial Catalog=Project_UAS;Integrated Security=True");
+            SqlConnection connection = new SqlConnection(@"Data Source=.\SQLExpress;Initial Catalog=UAS;Integrated Security=True");
             string selectStatement =
                 "SELECT MODEL_ID, DESCRIPTION " +
                 "FROM m_model ";
@@ -44,7 +44,7 @@ namespace LibraryMasterMerk
         public static List<MasterModel> getByModelDesc(String code)
         {
             List<MasterModel> modelList = new List<MasterModel>();
-            SqlConnection connection = new SqlConnection(@"Data Source=.\SQLExpress;Initial Catalog=Project_UAS;Integrated Security=True");
+            SqlConnection connection = new SqlConnection(@"Data Source=.\SQLExpress;Initial Catalog=UAS;Integrated Security=True");
             string selectStatement =
                 "SELECT MODEL_ID, DESCRIPTION " +
                 "FROM m_model " +
